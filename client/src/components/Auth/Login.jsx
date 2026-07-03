@@ -246,11 +246,11 @@ export default function Login({ onLogin }) {
           </div>
 
           {/* Quick Profile Selectors Panel */}
-          <div className="space-y-3">
-            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest text-center">
-              Quick Officer Access Profiles
+          <div className="p-5 rounded-3xl glass-panel bg-slate-900/60 border border-slate-800/80 shadow-2xl space-y-3">
+            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest text-center border-b border-slate-800/60 pb-3">
+              Quick Officer Access Profiles (Only for Demo)
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="space-y-2">
               {usersList.map((user) => {
                 const isActive = activeProfile === user.role;
                 return (
@@ -258,33 +258,31 @@ export default function Login({ onLogin }) {
                     key={user.role}
                     type="button"
                     onClick={() => handleProfileSelect(user)}
-                    className={`text-left p-4 rounded-2xl glass-card bg-slate-900/40 border transition-all duration-300 flex flex-col justify-between h-36 group ${
+                    className={`w-full text-left px-4 py-3 rounded-xl border transition-all duration-200 flex items-center space-x-3 group ${
                       isActive 
-                        ? 'border-blue-500/80 bg-blue-950/20 shadow-md shadow-blue-900/25 scale-[1.02]' 
+                        ? 'border-blue-500/80 bg-blue-950/20 shadow-md shadow-blue-900/25' 
                         : 'border-slate-800 hover:border-slate-700 hover:bg-slate-900/50'
                     }`}
                   >
-                    <div>
+                    <span className={`text-[8px] px-1.5 py-0.5 rounded font-extrabold uppercase tracking-wide shrink-0 ${
+                      user.role === 'SCRB_ADMIN' 
+                        ? 'bg-blue-950 text-blue-400 border border-blue-800/40' 
+                        : user.role === 'DISTRICT_OFFICER'
+                        ? 'bg-amber-950 text-amber-400 border border-amber-800/40'
+                        : 'bg-emerald-950 text-emerald-400 border border-emerald-800/40'
+                    }`}>
+                      {user.role === 'SCRB_ADMIN' ? 'State' : user.role === 'DISTRICT_OFFICER' ? 'District' : 'SI'}
+                    </span>
+                    <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between">
-                        <span className={`text-[8px] px-1.5 py-0.5 rounded font-extrabold uppercase tracking-wide ${
-                          user.role === 'SCRB_ADMIN' 
-                            ? 'bg-blue-950 text-blue-400 border border-blue-800/40' 
-                            : user.role === 'DISTRICT_OFFICER'
-                            ? 'bg-amber-950 text-amber-400 border border-amber-800/40'
-                            : 'bg-emerald-950 text-emerald-400 border border-emerald-800/40'
-                        }`}>
-                          {user.role === 'SCRB_ADMIN' ? 'State' : user.role === 'DISTRICT_OFFICER' ? 'District' : 'SI'}
-                        </span>
-                        <span className="text-[8px] font-mono text-slate-500 font-bold group-hover:text-slate-400 transition-colors">
+                        <h4 className="text-xs font-bold text-slate-100 truncate">{user.name}</h4>
+                        <span className="text-[8px] font-mono text-slate-500 font-bold group-hover:text-slate-400 transition-colors shrink-0 ml-2">
                           {user.badgeId}
                         </span>
                       </div>
-                      <h4 className="text-xs font-bold text-slate-100 mt-2.5 truncate">{user.name}</h4>
-                      <p className="text-[9px] text-slate-400 mt-0.5 font-medium truncate">{user.designation}</p>
+                      <p className="text-[9px] text-slate-400 mt-0.5 font-medium">{user.designation}</p>
                     </div>
-                    <p className="text-[9px] text-slate-500 leading-normal mt-2 font-medium line-clamp-2">
-                      {user.description}
-                    </p>
+                    {isActive && <CheckCircle2 className="h-4 w-4 text-blue-400 shrink-0" />}
                   </button>
                 );
               })}
