@@ -59,6 +59,7 @@ export default function Navbar({ activeRole, setActiveRole, searchTerm, setSearc
               </option>
             ))}
           </select>
+          <span className="text-[8px] text-yellow-500 font-bold uppercase tracking-wider border-l border-slate-700 pl-2 ml-1">For Demo</span>
         </div>
 
         <div className="flex items-center space-x-3">
