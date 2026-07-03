@@ -12,8 +12,8 @@ import {
 } from 'lucide-react';
 
 const emblemSvgLarge = (
-  <svg viewBox="0 0 24 24" width="64" height="64" fill="none" stroke="currentColor" strokeWidth="1.2" className="text-blue-400 filter drop-shadow-[0_0_15px_rgba(37,99,235,0.4)]">
-    <circle cx="12" cy="12" r="10" stroke="rgba(59, 130, 246, 0.4)" strokeWidth="1" />
+  <svg viewBox="0 0 24 24" width="64" height="64" fill="none" stroke="currentColor" strokeWidth="1.2" className="text-[var(--color-primary)] filter drop-shadow-[0_0_15px_var(--color-primary)]">
+    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1" opacity="0.4" />
     <circle cx="12" cy="12" r="7" stroke="rgba(212, 168, 83, 0.5)" />
     <circle cx="12" cy="12" r="4" stroke="currentColor" />
     <path d="M12 1v22M1 12h22" strokeWidth="0.8" opacity="0.3" strokeDasharray="1 1" />
@@ -121,21 +121,21 @@ export default function Login({ onLogin }) {
       <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[var(--color-primary)]/20 to-transparent animate-pulse" />
 
       {/* Main Container */}
-      <div className="relative z-10 max-w-5xl w-full grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6 items-stretch max-h-full">
+      <div className="relative z-10 max-w-4xl w-full grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6 items-stretch max-h-full">
         
         {/* Left Side: Info Briefing Panel */}
-        <div className="lg:col-span-5 flex flex-col justify-between p-6 bg-[#0a192f] border border-blue-900/30 rounded-2xl shadow-2xl text-[var(--color-on-dark)] relative overflow-hidden">
+        <div className="lg:col-span-5 flex flex-col justify-between p-6 bg-blue-950 border border-[var(--color-hairline-dark)] rounded-2xl shadow-2xl text-[var(--color-on-dark)] relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-[var(--color-primary)]/5 to-transparent pointer-events-none" />
           
           <div className="space-y-4">
             <div className="flex items-center space-x-3.5">
-              <div className="p-3 bg-blue-950/80 rounded-2xl border border-slate-700/60 shadow-lg">
+              <div className="p-3 bg-[var(--color-surface-elevated-dark)] rounded-2xl border border-[var(--color-hairline-dark)] shadow-lg">
                 {emblemSvgLarge}
               </div>
               <div>
-                <p className="text-[10px] text-blue-400 font-bold uppercase tracking-[0.2em]">Government of Karnataka</p>
-                <h1 className="text-xl font-black text-slate-50 tracking-wider">KSP - CIP</h1>
-                <p className="text-[10px] text-slate-400 uppercase tracking-widest font-semibold mt-0.5">Crime Intelligence Portal</p>
+                <p className="text-[10px] text-[var(--color-primary)] font-bold uppercase tracking-[0.2em]">Government of Karnataka</p>
+                <h1 className="text-xl font-black text-[var(--color-on-dark)] tracking-wider">KSP - CIP</h1>
+                <p className="text-[10px] text-[var(--color-muted)] uppercase tracking-widest font-semibold mt-0.5">Crime Intelligence Portal</p>
               </div>
             </div>
 
@@ -167,7 +167,7 @@ export default function Login({ onLogin }) {
         <div className="lg:col-span-7 flex flex-col justify-center space-y-4">
           
           {/* Main Credentials Panel */}
-          <div className="p-6 bg-[#0a192f] border border-blue-900/30 rounded-2xl shadow-2xl text-[var(--color-on-dark)] relative">
+          <div className="p-6 bg-[var(--color-surface-card-dark)] border border-[var(--color-hairline-dark)] rounded-2xl shadow-2xl text-[var(--color-on-dark)] relative">
             <div className="absolute top-0 right-0 p-3">
               <span className="text-[10px] bg-[var(--color-surface-elevated-dark)] text-[var(--color-primary)] border border-[var(--color-primary)]/30 px-2 py-0.5 rounded-sm font-bold uppercase tracking-wider">
                 Classified
@@ -254,7 +254,7 @@ export default function Login({ onLogin }) {
           </div>
 
           {/* Quick Profile Selectors Panel */}
-          <div className="p-4 bg-[#0a192f] border border-blue-900/30 rounded-2xl shadow-2xl text-[var(--color-on-dark)] space-y-2">
+          <div className="p-4 bg-[var(--color-surface-card-dark)] border border-[var(--color-hairline-dark)] rounded-2xl shadow-2xl text-[var(--color-on-dark)] space-y-2">
             <p className="text-[10px] font-bold text-[var(--color-muted)] uppercase tracking-widest text-center border-b border-[var(--color-hairline-dark)] pb-3">
               Quick Officer Access Profiles (Only for Demo)
             </p>
@@ -274,7 +274,7 @@ export default function Login({ onLogin }) {
                   >
                     <span className={`text-[8px] px-1.5 py-0.5 rounded font-extrabold uppercase tracking-wide shrink-0 ${
                       user.role === 'SCRB_ADMIN' 
-                        ? 'bg-blue-950 text-blue-400 border border-blue-800/40' 
+                        ? 'bg-[var(--color-primary)]/20 text-[var(--color-primary)] border border-[var(--color-primary)]/40' 
                         : user.role === 'DISTRICT_OFFICER'
                         ? 'bg-amber-950 text-amber-400 border border-amber-800/40'
                         : 'bg-emerald-950 text-emerald-400 border border-emerald-800/40'
@@ -283,8 +283,8 @@ export default function Login({ onLogin }) {
                     </span>
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center justify-between">
-                        <h4 className="text-xs font-bold text-slate-100 truncate">{user.name}</h4>
-                        <span className="text-[8px] font-mono text-slate-500 font-bold group-hover:text-slate-400 transition-colors shrink-0 ml-2">
+                        <h4 className="text-xs font-bold text-[var(--color-on-dark)] truncate">{user.name}</h4>
+                        <span className="text-[8px] font-mono text-[var(--color-muted)] font-bold group-hover:text-[var(--color-on-dark)] transition-colors shrink-0 ml-2">
                           {user.badgeId}
                         </span>
                       </div>

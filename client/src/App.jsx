@@ -258,7 +258,7 @@ export default function App() {
   };
 
   return (
-    <div className="flex h-screen w-screen overflow-hidden bg-[var(--color-canvas-dark)] text-[var(--color-body)] font-nova">
+    <div className="flex h-screen w-full overflow-hidden bg-[var(--color-canvas-dark)] text-[var(--color-body)] font-nova">
       <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} onLogout={handleLogout} />
 
       <main className="flex-1 flex flex-col overflow-hidden relative">
@@ -274,25 +274,44 @@ export default function App() {
         />
 
         {activeTab === 'dashboard' && (
-          <div className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 space-y-6">
-            <div className="card-dark p-6 flex items-center justify-between shadow-md">
-              <div className="flex items-center space-x-3">
-                <div className="p-2.5 rounded-xl bg-[var(--color-surface-elevated-dark)] text-[var(--color-primary)]">
-                  <Shield className="h-5 w-5" />
-                </div>
-                <div>
-                  <div className="flex items-center space-x-2">
-                    {emblemSvg}
-                    <h3 className="text-[20px] font-bold tracking-wide text-[var(--color-on-dark)]">Karnataka State Police — Intelligence Feed</h3>
+          <div className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-10 space-y-8 animate-[fadeIn_0.4s_ease-out_forwards]">
+            
+            {/* Structural Header */}
+            <div className="flex flex-col space-y-4">
+              <div className="flex items-center space-x-4 border-b border-[var(--color-hairline-dark)] pb-4">
+                <span className="text-[10px] font-plex tracking-[0.2em] text-[var(--color-primary)] uppercase">
+                  Section 01 //
+                </span>
+                <h2 className="text-[14px] font-bold tracking-widest text-[var(--color-muted)] uppercase">
+                  Intelligence Feed
+                </h2>
+              </div>
+
+              <div className="glass-panel p-6 flex items-center justify-between shadow-2xl rounded-2xl">
+                <div className="flex items-center space-x-4">
+                  <div className="p-3 rounded-xl bg-[var(--color-surface-elevated-dark)] border border-[var(--color-hairline-dark)] text-[var(--color-primary)] shadow-inner">
+                    <Shield className="h-6 w-6" />
                   </div>
-                  <p className="text-[14px] text-[var(--color-muted)] font-medium mt-0.5">
-                    Authorised Personnel Only &bull; {userDetails.designation} &bull; {userDetails.districtName}
-                  </p>
+                  <div>
+                    <div className="flex items-center space-x-2">
+                      {emblemSvg}
+                      <h3 className="text-[22px] font-bold tracking-wide text-[var(--color-on-dark)]">Karnataka State Police</h3>
+                    </div>
+                    <p className="text-[14px] text-[var(--color-muted)] font-medium mt-1">
+                      Authorised Personnel Only &bull; <span className="text-[var(--color-body)]">{userDetails.designation}</span> &bull; {userDetails.districtName}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex flex-col items-end space-y-2">
+                  <span className="text-[11px] bg-[rgba(246,70,93,0.1)] text-[var(--color-trading-down)] border border-[rgba(246,70,93,0.2)] px-3 py-1.5 rounded-md font-bold uppercase tracking-widest flex items-center">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-trading-down)] animate-pulse mr-2"></span>
+                    Classified
+                  </span>
+                  <span className="text-[10px] text-[var(--color-muted)] font-plex">
+                    {new Date().toISOString().split('T')[0]} // SYS_ONLINE
+                  </span>
                 </div>
               </div>
-              <span className="text-[12px] bg-[var(--color-surface-elevated-dark)] text-[var(--color-primary)] px-3 py-1 rounded-[4px] font-bold uppercase tracking-wider">
-                Classified
-              </span>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -347,7 +366,7 @@ export default function App() {
               <div className="lg:col-span-2">
                 <CrimeTrendsChart title="Crime Volume Registrations (Year-on-Year)" data={trendData} />
               </div>
-              <div className="card-dark p-6 h-[340px] flex flex-col justify-between">
+              <div className="card-dark p-6 h-full min-h-[340px] flex flex-col justify-between">
                 <div>
                   <h3 className="text-[20px] font-semibold text-[var(--color-on-dark)]">Jurisdictional Status</h3>
                   <p className="text-[14px] text-[var(--color-muted)] font-medium mt-0.5">Active Station Performance</p>
@@ -410,7 +429,7 @@ export default function App() {
         )}
 
         {activeTab === 'network' && (
-          <div className="flex-1 flex flex-col overflow-hidden min-h-0 relative">
+          <div className="flex-1 flex flex-col overflow-hidden min-h-0 relative p-4 sm:p-6 lg:p-8 animate-[fadeIn_0.4s_ease-out_forwards]">
             <NetworkGraph activeRole={activeRole} />
           </div>
         )}

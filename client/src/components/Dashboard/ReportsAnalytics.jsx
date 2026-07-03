@@ -247,43 +247,55 @@ export default function ReportsAnalytics({ crimes, offenders, activeRole }) {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="card-dark p-5">
-          <h3 className="text-xs font-bold text-[var(--color-on-dark)] mb-4 flex items-center">
+        <div className="card-dark p-5 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--color-primary)]/5 rounded-full blur-3xl -mr-10 -mt-10 pointer-events-none" />
+          <h3 className="text-xs font-bold text-[var(--color-on-dark)] mb-4 flex items-center relative z-10">
             <PieChart className="h-4 w-4 text-[var(--color-primary)] mr-2" />
             Crime Category Breakdown
           </h3>
-          <div className="space-y-2.5">
+          <div className="space-y-3 relative z-10">
             {categoryBreakdown.map(c => (
-              <div key={c.label}>
+              <div key={c.label} className="group">
                 <div className="flex items-center justify-between mb-1">
-                  <span className="text-[10px] font-medium text-[var(--color-muted)]">{c.label}</span>
-                  <span className="text-[9px] text-[var(--color-muted)]">{c.count} cases</span>
+                  <span className="text-[10px] font-medium text-[var(--color-muted)] group-hover:text-[var(--color-on-dark)] transition-colors">{c.label}</span>
+                  <span className="text-[9px] text-[var(--color-muted)] font-mono">{c.count} cases</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <div className="flex-1 bg-[var(--color-canvas-dark)] rounded-full h-3 overflow-hidden">
-                    <div className="h-full rounded-full bg-[var(--color-primary)] transition-all" style={{ width: `${(c.count / maxCategory) * 100}%` }} />
+                  <div className="flex-1 bg-[var(--color-canvas-dark)] rounded-full h-2.5 border border-[var(--color-hairline-dark)] overflow-hidden">
+                    <div 
+                      className="h-full rounded-full bg-gradient-to-r from-[var(--color-primary)]/50 to-[var(--color-primary)] transition-all duration-700 ease-out shadow-[0_0_8px_var(--color-primary)] opacity-80 group-hover:opacity-100" 
+                      style={{ width: `${(c.count / maxCategory) * 100}%` }} 
+                    />
                   </div>
-                  <span className="text-[8px] text-[var(--color-muted)] w-8 text-right">{c.heinous}H</span>
+                  <span className="text-[8px] font-bold text-[#cc3333] w-8 text-right bg-[#cc3333]/10 px-1 py-0.5 rounded-sm">{c.heinous}H</span>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="card-dark p-5">
-          <h3 className="text-xs font-bold text-[var(--color-on-dark)] mb-4 flex items-center">
+        <div className="card-dark p-5 relative overflow-hidden flex flex-col">
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-48 h-32 bg-[var(--color-primary)]/5 rounded-full blur-3xl pointer-events-none" />
+          <h3 className="text-xs font-bold text-[var(--color-on-dark)] mb-4 flex items-center relative z-10">
             <Calendar className="h-4 w-4 text-[var(--color-primary)] mr-2" />
             Monthly Registration Trend
           </h3>
-          <div className="flex items-end justify-between h-40 gap-1.5">
+          <div className="flex items-end justify-between flex-1 gap-2 relative z-10 pt-4">
+            {/* Grid lines */}
+            <div className="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-20 py-6">
+              {[0, 1, 2, 3].map(i => (
+                <div key={i} className="w-full h-px bg-[var(--color-hairline-dark)]" />
+              ))}
+            </div>
+            
             {monthlyData.map(m => (
-              <div key={m.label} className="flex-1 flex flex-col items-center justify-end h-full">
-                <span className="text-[7px] text-[var(--color-muted)] mb-1">{m.value || ''}</span>
-                <div
-                  className="w-full bg-[var(--color-primary)] rounded-t transition-all duration-300 hover:bg-[var(--color-primary-hover)]"
-                  style={{ height: `${(m.value / maxMonthly) * 100}%`, minHeight: m.value ? '4px' : '0' }}
-                />
-                <span className="text-[7px] text-[var(--color-muted)] mt-1">{m.label}</span>
+              <div key={m.label} className="flex-1 flex flex-col items-center justify-end h-full group">
+                <span className="text-[7px] font-mono text-[var(--color-primary)] opacity-0 group-hover:opacity-100 transition-opacity mb-1 -translate-y-2">{m.value || ''}</span>
+                <div className="w-full relative rounded-t transition-all duration-300 group-hover:-translate-y-1" style={{ height: `${(m.value / maxMonthly) * 100}%`, minHeight: m.value ? '4px' : '0' }}>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-primary)]/20 to-[var(--color-primary)] rounded-t shadow-[0_0_10px_var(--color-primary)] opacity-60 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-white/40 rounded-t" />
+                </div>
+                <span className="text-[7px] text-[var(--color-muted)] font-medium mt-2 uppercase tracking-widest group-hover:text-[var(--color-on-dark)] transition-colors">{m.label}</span>
               </div>
             ))}
           </div>
@@ -301,23 +313,31 @@ export default function ReportsAnalytics({ crimes, offenders, activeRole }) {
             <span className="flex items-center"><span className="w-2 h-2 rounded bg-[var(--color-primary)] mr-1" /> Pending</span>
           </div>
         </div>
-        <div className="space-y-2">
+        <div className="space-y-3 relative z-10">
           {stationWise.map(s => {
             const total = s.count || 1;
             const disposedPct = (s.disposed / total) * 100;
             return (
-              <div key={s.name} className="flex items-center space-x-3">
+              <div key={s.name} className="flex items-center space-x-3 group cursor-default">
                 <div className="w-28 shrink-0">
-                  <p className="text-[10px] font-medium text-[var(--color-muted)] truncate">{s.name}</p>
-                  <p className="text-[7px] text-[var(--color-muted)]">{s.district}</p>
+                  <p className="text-[10px] font-medium text-[var(--color-muted)] group-hover:text-[var(--color-on-dark)] transition-colors truncate">{s.name}</p>
+                  <p className="text-[7px] text-[var(--color-muted)] font-mono">{s.district}</p>
                 </div>
-                <div className="flex-1 bg-[var(--color-canvas-dark)] rounded-full h-3 overflow-hidden flex">
-                  <div className="h-full bg-[#2e7d32] transition-all" style={{ width: `${disposedPct}%` }} />
-                  <div className="h-full bg-[var(--color-primary)] transition-all" style={{ width: `${100 - disposedPct}%` }} />
+                <div className="flex-1 bg-[var(--color-canvas-dark)] rounded-full h-2.5 border border-[var(--color-hairline-dark)] overflow-hidden flex shadow-inner relative group-hover:shadow-[0_0_8px_rgba(255,255,255,0.05)] transition-shadow">
+                  <div 
+                    className="h-full bg-gradient-to-r from-[#1b5e20] to-[#2e7d32] transition-all duration-700 ease-out group-hover:brightness-110 relative" 
+                    style={{ width: `${disposedPct}%` }}
+                  >
+                    <div className="absolute top-0 right-0 bottom-0 w-[1px] bg-white/20" />
+                  </div>
+                  <div 
+                    className="h-full bg-gradient-to-r from-[var(--color-primary)]/70 to-[var(--color-primary)] transition-all duration-700 ease-out group-hover:brightness-110" 
+                    style={{ width: `${100 - disposedPct}%` }} 
+                  />
                 </div>
                 <div className="w-20 text-right shrink-0">
-                  <span className="text-[9px] font-bold text-[var(--color-on-dark)]">{s.count}</span>
-                  <span className="text-[7px] text-[var(--color-muted)] ml-1">({Math.round(disposedPct)}% disposed)</span>
+                  <span className="text-[10px] font-bold text-[var(--color-on-dark)] font-mono">{s.count}</span>
+                  <span className="text-[7px] text-[var(--color-muted)] ml-1 tracking-wider">({Math.round(disposedPct)}%)</span>
                 </div>
               </div>
             );

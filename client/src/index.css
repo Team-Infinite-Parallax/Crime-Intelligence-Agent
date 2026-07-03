@@ -1,52 +1,66 @@
 @import "tailwindcss";
 @import "leaflet/dist/leaflet.css";
 
+@theme {
+  --color-blue-50: #f0f6f9;
+  --color-blue-100: #d9e8f6;
+  --color-blue-200: #aecceb;
+  --color-blue-300: #73b3e7;
+  --color-blue-400: #4f97d1;
+  --color-blue-500: #005ea2;
+  --color-blue-600: #00508a;
+  --color-blue-700: #1a4480;
+  --color-blue-800: #163563;
+  --color-blue-900: #112e51;
+  --color-blue-950: #0b1c33;
+}
+
 @layer base {
   :root {
     --color-primary: #2563eb;
     --color-primary-active: #1d4ed8;
-    --color-primary-disabled: #1e3a8a;
-    --color-ink: #181a20;
-    --color-body: #e2e8f0;
-    --color-body-light: #181a20;
-    --color-muted: #94a3b8;
-    --color-muted-strong: #64748b;
+    --color-primary-disabled: #334155;
+    --color-ink: #f0f0f0;
+    --color-body: #d9e8f6;
+    --color-body-light: #ffffff;
+    --color-muted: #a9aeb1;
+    --color-muted-strong: #c9c9c9;
     --color-hairline-light: #e2e8f0;
-    --color-hairline-dark: #2d4870;
-    --color-border-strong: #94a3b8;
-    --color-canvas-light: #ffffff;
-    --color-canvas-dark: #101e35;
-    --color-surface-card-dark: #172946;
-    --color-surface-elevated-dark: #22385a;
-    --color-surface-soft-light: #f8fafc;
-    --color-surface-strong-light: #f1f5f9;
+    --color-hairline-dark: rgba(255, 255, 255, 0.15);
+    --color-border-strong: rgba(255, 255, 255, 0.3);
+    --color-canvas-light: #f8fafc;
+    --color-canvas-dark: #0f172a;
+    --color-surface-card-dark: #1e293b;
+    --color-surface-elevated-dark: #334155;
+    --color-surface-soft-light: #f4f4f4;
+    --color-surface-strong-light: #e4e2e0;
     --color-on-primary: #ffffff;
-    --color-on-dark: #f8fafc;
-    --color-trading-up: #0ecb81;
-    --color-trading-down: #f6465d;
-    --color-info: #3b82f6;
+    --color-on-dark: #ffffff;
+    --color-trading-up: #2e8540;
+    --color-trading-down: #cd2026;
+    --color-info: #00bde3;
   }
 
   .light-mode {
     --color-primary: #2563eb;
     --color-primary-active: #1d4ed8;
-    --color-primary-disabled: #93c5fd;
-    --color-ink: #f8fafc;
-    --color-body: #334155;
-    --color-body-light: #475569;
-    --color-muted: #64748b;
-    --color-muted-strong: #475569;
-    --color-hairline-light: #334155;
-    --color-hairline-dark: #cbd5e1;
-    --color-border-strong: #94a3b8;
-    --color-canvas-light: #0f172a;
-    --color-canvas-dark: #f1f5f9;
+    --color-primary-disabled: #e2e8f0;
+    --color-ink: #1b1b1b;
+    --color-body: #3d4551;
+    --color-body-light: #565c65;
+    --color-muted: #71767a;
+    --color-muted-strong: #565c65;
+    --color-hairline-light: #dfe1e2;
+    --color-hairline-dark: rgba(0, 0, 0, 0.1);
+    --color-border-strong: #71767a;
+    --color-canvas-light: #f8fafc;
+    --color-canvas-dark: #ffffff;
     --color-surface-card-dark: #ffffff;
-    --color-surface-elevated-dark: #f8fafc;
-    --color-surface-soft-light: #1e293b;
-    --color-surface-strong-light: #0f172a;
+    --color-surface-elevated-dark: #f1f5f9;
+    --color-surface-soft-light: #f4f4f4;
+    --color-surface-strong-light: #e4e2e0;
     --color-on-primary: #ffffff;
-    --color-on-dark: #0f172a;
+    --color-on-dark: #1b1b1b;
   }
 
   body {
@@ -55,12 +69,25 @@
     color: var(--color-body);
     font-family: 'Inter', system-ui, sans-serif;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -109,8 +136,17 @@
 
 .card-dark {
   background-color: var(--color-surface-card-dark);
+  border: 1px solid var(--color-hairline-dark);
   border-radius: 12px;
   color: var(--color-on-dark);
+  box-shadow: 0 4px 24px -12px rgba(0, 0, 0, 0.5);
+}
+
+.glass-panel {
+  background: rgba(0, 34, 51, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--color-hairline-dark);
 }
 
 .leaflet-container {

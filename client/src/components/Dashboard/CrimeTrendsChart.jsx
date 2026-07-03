@@ -71,7 +71,7 @@ export default function CrimeTrendsChart({ title, data }) {
   });
 
   return (
-    <div className="card-dark p-6 flex flex-col h-[340px] relative select-none">
+    <div className="card-dark p-6 flex flex-col h-full min-h-[340px] relative select-none">
       <div className="flex items-center justify-between mb-6">
         <div>
           <h3 className="text-[20px] font-semibold text-[var(--color-on-dark)]">{title}</h3>
@@ -95,11 +95,19 @@ export default function CrimeTrendsChart({ title, data }) {
         >
           <defs>
             <linearGradient id="chart-area-grad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="var(--color-primary)" stopOpacity="0.2" />
+              <stop offset="0%" stopColor="var(--color-primary)" stopOpacity="0.3" />
               <stop offset="100%" stopColor="var(--color-primary)" stopOpacity="0.0" />
             </linearGradient>
+            <linearGradient id="chart-line-grad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stopColor="#3b82f6" />
+              <stop offset="50%" stopColor="var(--color-primary)" />
+              <stop offset="100%" stopColor="#818cf8" />
+            </linearGradient>
             <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-              <feDropShadow dx="0" dy="4" stdDeviation="4" floodColor="var(--color-primary)" floodOpacity="0.2" />
+              <feDropShadow dx="0" dy="4" stdDeviation="6" floodColor="var(--color-primary)" floodOpacity="0.4" />
+            </filter>
+            <filter id="glow-intense" x="-50%" y="-50%" width="200%" height="200%">
+              <feDropShadow dx="0" dy="0" stdDeviation="4" floodColor="var(--color-primary)" floodOpacity="0.8" />
             </filter>
           </defs>
 
@@ -113,6 +121,7 @@ export default function CrimeTrendsChart({ title, data }) {
                 stroke="var(--color-hairline-dark)"
                 strokeWidth="1"
                 strokeDasharray="4 4"
+                opacity={idx === 0 ? 0.8 : 0.4}
               />
               <text
                 x={paddingLeft - 8}
@@ -128,6 +137,21 @@ export default function CrimeTrendsChart({ title, data }) {
             </g>
           ))}
 
+          {/* Vertical grid lines matching data points */}
+          {points.map((p, idx) => (
+            <line
+              key={`vgrid-${idx}`}
+              x1={p.x}
+              y1={paddingTop}
+              x2={p.x}
+              y2={height - paddingBottom}
+              stroke="var(--color-hairline-dark)"
+              strokeWidth="1"
+              strokeDasharray="2 4"
+              opacity="0.2"
+            />
+          ))}
+
           {points.map((p, idx) => {
             const showLabel = points.length <= 12 || idx % 2 === 0;
             if (!showLabel) return null;
@@ -137,27 +161,56 @@ export default function CrimeTrendsChart({ title, data }) {
                 x={p.x}
                 y={height - paddingBottom + 18}
                 fill="var(--color-muted)"
-                fontSize="12"
+                fontSize="11"
                 fontFamily="var(--font-nova)"
-                fontWeight="500"
+                fontWeight="600"
                 textAnchor="middle"
+                className="uppercase tracking-wider"
               >
                 {p.label}
               </text>
             );
           })}
 
-          <path d={areaPath} fill="url(#chart-area-grad)" />
+          <path d={areaPath} fill="url(#chart-area-grad)" style={{ transition: 'all 0.3s ease' }} />
 
           <path
             d={linePath}
             fill="none"
-            stroke="var(--color-primary)"
-            strokeWidth="2.5"
+            stroke="url(#chart-line-grad)"
+            strokeWidth="3"
             strokeLinecap="round"
             strokeLinejoin="round"
             filter="url(#glow)"
+            className="drop-shadow-xl"
+            style={{ transition: 'all 0.3s ease' }}
           />
+
+          {/* Data points */}
+          {points.map((p, idx) => (
+            <g key={`point-${idx}`}>
+              <circle
+                cx={p.x}
+                cy={p.y}
+                r="4"
+                fill="var(--color-canvas-dark)"
+                stroke="var(--color-primary)"
+                strokeWidth="2"
+                filter="url(#glow-intense)"
+                className="transition-all duration-300 hover:r-[6px]"
+              />
+              {/* Outer pulse ring for each point */}
+              <circle
+                cx={p.x}
+                cy={p.y}
+                r="10"
+                fill="none"
+                stroke="var(--color-primary)"
+                strokeWidth="1"
+                opacity="0.2"
+              />
+            </g>
+          ))}
 
           {hoveredIdx !== null && (
             <>
@@ -166,16 +219,18 @@ export default function CrimeTrendsChart({ title, data }) {
                 y1={paddingTop}
                 x2={points[hoveredIdx].x}
                 y2={height - paddingBottom}
-                stroke="var(--color-hairline-dark)"
+                stroke="var(--color-primary)"
                 strokeWidth="1.5"
+                opacity="0.5"
               />
               <circle
                 cx={points[hoveredIdx].x}
                 cy={points[hoveredIdx].y}
-                r="5"
-                fill="var(--color-canvas-dark)"
-                stroke="var(--color-primary)"
-                strokeWidth="3"
+                r="6"
+                fill="var(--color-primary)"
+                stroke="var(--color-canvas-dark)"
+                strokeWidth="2"
+                filter="url(#glow-intense)"
               />
             </>
           )}

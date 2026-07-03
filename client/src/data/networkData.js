@@ -1,7 +1,7 @@
 // ============================================================
 // KSP Criminal Intelligence — Network Graph Data
-// Node Types: offender | victim | policeStation | crime
-// Edge Types: committed | victimized | investigatedBy | coAccused | linkedTo
+// Node Types: offender | victim | policeStation | crime | bankAccount | phone
+// Edge Types: committed | victimized | investigatedBy | coAccused | linkedTo | transferred | called
 // ============================================================
 
 function seededRng(seed) {
@@ -77,6 +77,19 @@ export const crimeNodes = [
   { data: { id: 'cr-16', label: 'FIR #100452026016', type: 'crime', head: 'Property Offences',  sub: 'Vehicle Theft',             date: '2026-06-18', status: 'Chargesheeted',        gravity: '2', community: 4 } },
 ];
 
+// ── Financial Nodes ───────────────────────────────────────────
+export const financialNodes = [
+  { data: { id: 'fin-1', label: 'HDFC Acct ****3821', type: 'bankAccount', bank: 'HDFC', balance: '₹4.2L', community: 0 } },
+  { data: { id: 'fin-2', label: 'SBI Acct ****9932', type: 'bankAccount', bank: 'SBI', balance: '₹12.5L', community: 0 } },
+  { data: { id: 'fin-3', label: 'Crypto Wallet 0x8a', type: 'bankAccount', bank: 'Binance', balance: '2.4 BTC', community: 0 } },
+];
+
+// ── Telecom Nodes ─────────────────────────────────────────────
+export const telecomNodes = [
+  { data: { id: 'tel-1', label: '+91-9876543210', type: 'phone', carrier: 'Jio', imei: 'IMEI-987', community: 0 } },
+  { data: { id: 'tel-2', label: '+91-9123456789', type: 'phone', carrier: 'Airtel', imei: 'IMEI-123', community: 0 } },
+];
+
 // ── Edges ─────────────────────────────────────────────────────
 export const edges = [
   // --- Offender → Crime (committed) ---
@@ -138,6 +151,17 @@ export const edges = [
   { data: { id: 'e-intel-1', source: 'off-1', target: 'off-7', type: 'linkedTo', label: 'Intelligence Link' } },
   { data: { id: 'e-intel-2', source: 'off-3', target: 'off-7', type: 'linkedTo', label: 'Intelligence Link' } },
   { data: { id: 'e-intel-3', source: 'cr-6',  target: 'cr-15', type: 'linkedTo', label: 'MO Match' } },
+
+  // --- Financial Links ---
+  { data: { id: 'e-fin-1', source: 'off-1', target: 'fin-1', type: 'transferred', label: 'Account Holder' } },
+  { data: { id: 'e-fin-2', source: 'vic-1', target: 'fin-1', type: 'transferred', label: 'Fraud Transfer' } },
+  { data: { id: 'e-fin-3', source: 'fin-1', target: 'fin-3', type: 'transferred', label: 'Laundered' } },
+  { data: { id: 'e-fin-4', source: 'off-2', target: 'fin-2', type: 'transferred', label: 'Account Holder' } },
+
+  // --- Telecom Links ---
+  { data: { id: 'e-tel-1', source: 'off-1', target: 'tel-1', type: 'linkedTo', label: 'Registered To' } },
+  { data: { id: 'e-tel-2', source: 'off-2', target: 'tel-2', type: 'linkedTo', label: 'Registered To' } },
+  { data: { id: 'e-tel-3', source: 'tel-1', target: 'tel-2', type: 'called', label: 'High Frequency Calls' } },
 ];
 
 // ── Community Metadata ──────────────────────────────────────
@@ -181,6 +205,8 @@ export const initialElements = [
   ...offenderNodes,
   ...victimNodes,
   ...crimeNodes,
+  ...financialNodes,
+  ...telecomNodes,
   ...edges,
 ];
 
@@ -189,6 +215,8 @@ export const allNodes = [
   ...offenderNodes,
   ...victimNodes,
   ...crimeNodes,
+  ...financialNodes,
+  ...telecomNodes,
   ...hiddenNeighborNodes,
 ];
 
