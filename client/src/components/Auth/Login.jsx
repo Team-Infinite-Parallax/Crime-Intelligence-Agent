@@ -70,6 +70,14 @@ export default function Login({ onLogin }) {
     setBadgeId(profile.badgeId);
     setPasscode(profile.passcode);
     setError(null);
+    setLoading(true);
+    setTimeout(() => {
+      setSuccess(true);
+      setTimeout(() => {
+        onLogin(profile.role);
+        setLoading(false);
+      }, 1000);
+    }, 800);
   };
 
   const handleSubmit = (e) => {
