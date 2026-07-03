@@ -31,7 +31,7 @@ const usersList = [
     designation: 'Director General, SCRB',
     email: 'prashant.kumar@ksp.gov.in',
     badgeId: 'KSP-SCRB-100',
-    passcode: '123',
+    passcode: 'Ansh@123',
     description: 'Statewide intelligence, trends, and risk settings access.'
   },
   {
