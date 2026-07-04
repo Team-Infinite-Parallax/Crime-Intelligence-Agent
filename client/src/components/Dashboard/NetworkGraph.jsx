@@ -12,7 +12,11 @@ import {
   hiddenNeighborNodes, hiddenNeighborEdges
 } from '../../data/networkData';
 
-cytoscape.use(fcose);
+try {
+  cytoscape.use(fcose);
+} catch (e) {
+  // already registered during HMR
+}
 
 const CYTO_STYLE = [
   {
@@ -326,7 +330,7 @@ const NODE_TYPE_META = {
 
 function DetailRow({ label, value, accent }) {
   return (
-    <div className="flex items-start justify-between py-1.5 border-b border-blue-500/5 last:border-0">
+    <div className="flex items-start justify-between py-1.5 border-b border-[var(--color-hairline-dark)] last:border-0">
       <span className="text-[9px] font-semibold text-[var(--color-muted)] uppercase tracking-wide shrink-0 mr-2">{label}</span>
       <span className={`text-[11px] font-medium text-right ${accent || 'text-[var(--color-on-dark)]'}`}>{value ?? '—'}</span>
     </div>
@@ -375,7 +379,6 @@ export default function NetworkGraph() {
     });
 
     cyRef.current = cy;
-    setCyInstance(cy);
 
     setLayoutRunning(true);
     const layout = cy.layout(LAYOUT_CONFIG);
@@ -648,7 +651,7 @@ export default function NetworkGraph() {
     hiddenNeighborNodes.some(n => n.data.parentOffender === selectedNode.id);
 
   return (
-    <div className="flex flex-col h-full w-full gap-0 relative overflow-hidden bg-[var(--color-surface-card-dark)] border border-[var(--color-hairline-dark)] rounded-xl shadow-2xl">
+    <div className="flex flex-col flex-1 h-full w-full gap-0 relative overflow-hidden bg-[var(--color-surface-card-dark)] border border-[var(--color-hairline-dark)] rounded-xl">
 
       <div className="flex items-center justify-between px-6 py-3 border-b border-[var(--color-hairline-dark)] bg-[var(--color-surface-card-dark)] shrink-0 z-10">
         <div className="flex items-center space-x-3">
@@ -673,7 +676,7 @@ export default function NetworkGraph() {
             className="w-full pl-9 pr-4 py-2 bg-[var(--color-canvas-dark)] border border-[var(--color-hairline-dark)] rounded-sm text-xs text-[var(--color-on-dark)] placeholder:text-[var(--color-muted)] focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)] transition-all"
           />
           {searchResults.length > 0 && (
-            <div className="absolute top-full left-0 right-0 mt-1 bg-[var(--color-surface-elevated-dark)] border border-[var(--color-hairline-dark)] rounded-sm shadow-2xl z-50 overflow-hidden max-h-48 overflow-y-auto">
+            <div className="absolute top-full left-0 right-0 mt-1 bg-[var(--color-surface-elevated-dark)] border border-[var(--color-hairline-dark)] rounded-sm z-50 overflow-hidden max-h-48 overflow-y-auto">
               {searchResults.map(r => (
                 <button
                   key={r.id}
@@ -704,7 +707,7 @@ export default function NetworkGraph() {
             onClick={() => setActiveFilter(f)}
             className={`shrink-0 text-[9px] font-semibold uppercase tracking-wide px-2.5 py-1 rounded-md border transition-all ${
               activeFilter === f
-                ? 'bg-[var(--color-primary)]/50 border-blue-700 text-[var(--color-primary)]'
+                ? 'bg-[var(--color-primary)] border-[var(--color-primary)] text-[var(--color-on-primary)]'
                 : 'bg-transparent border-[var(--color-hairline-dark)] text-[var(--color-muted)] hover:text-[var(--color-on-dark)] hover:border-[var(--color-hairline-dark)]'
             }`}
           >
@@ -717,7 +720,7 @@ export default function NetworkGraph() {
         <span className="text-[9px] text-[var(--color-muted)] font-semibold uppercase shrink-0">Community:</span>
         <button
           onClick={() => setCommunityFilter('all')}
-          className={`shrink-0 text-[9px] font-semibold px-2.5 py-1 rounded-md border transition-all ${communityFilter === 'all' ? 'bg-[var(--color-primary)]/50 border-blue-700 text-[var(--color-primary)]' : 'border-[var(--color-hairline-dark)] text-[var(--color-muted)] hover:border-[var(--color-hairline-dark)]'}`}
+          className={`shrink-0 text-[9px] font-semibold px-2.5 py-1 rounded-md border transition-all ${communityFilter === 'all' ? 'bg-[var(--color-primary)] border-[var(--color-primary)] text-[var(--color-on-primary)]' : 'border-[var(--color-hairline-dark)] text-[var(--color-muted)] hover:border-[var(--color-hairline-dark)]'}`}
         >
           All
         </button>
@@ -771,14 +774,14 @@ export default function NetworkGraph() {
               onClick={action}
               title={title}
               style={active && color ? { borderColor: color, color: color, backgroundColor: `${color}1A` } : {}}
-              className={`p-2.5 rounded-sm border transition-all shadow-lg backdrop-blur-sm group relative ${
+              className={`p-2.5 rounded-sm border transition-all group relative ${
                 active && !color
-                  ? 'bg-[var(--color-primary)] border-blue-700 text-[var(--color-on-primary)]'
+                  ? 'bg-[var(--color-primary)] border-[var(--color-primary)] text-[var(--color-on-primary)]'
                   : 'bg-[var(--color-surface-elevated-dark)] border-[var(--color-hairline-dark)] text-[var(--color-muted)] hover:text-[var(--color-on-dark)]'
               }`}
             >
               <Icon className={`h-4 w-4 ${spin ? 'animate-spin' : ''}`} />
-              <div className="absolute left-full ml-2 top-1/2 -translate-y-1/2 bg-[var(--color-surface-elevated-dark)] text-[var(--color-on-dark)] text-[9px] font-semibold px-2 py-1 rounded-sm border border-[var(--color-hairline-dark)] opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50 shadow-xl">
+              <div className="absolute left-full ml-2 top-1/2 -translate-y-1/2 bg-[var(--color-surface-elevated-dark)] text-[var(--color-on-dark)] text-[9px] font-semibold px-2 py-1 rounded-sm border border-[var(--color-hairline-dark)] opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50">
                 {title}
               </div>
             </button>
@@ -786,7 +789,7 @@ export default function NetworkGraph() {
         </div>
 
         {showCommunityLegend && (
-          <div className="absolute left-4 bottom-4 bg-[var(--color-canvas-dark)]/95 backdrop-blur-sm border border-[var(--color-hairline-dark)] rounded-sm z-20 shadow-2xl flex flex-col w-48 max-h-[calc(100%-80px)]">
+          <div className="absolute left-4 bottom-4 bg-[var(--color-surface-card-dark)] border border-[var(--color-hairline-dark)] rounded-sm z-20 flex flex-col w-48 max-h-[calc(100%-80px)]">
             <div className="flex items-center justify-between p-3 pb-2 shrink-0 border-b border-[var(--color-hairline-dark)]">
               <span className="text-[9px] font-bold text-[var(--color-muted)] uppercase tracking-wider">Node Types</span>
               <button onClick={() => setShowCommunityLegend(false)} className="p-0.5 text-[var(--color-muted)] hover:text-[var(--color-on-dark)] hover:bg-[var(--color-surface-elevated-dark)] rounded-sm transition-colors flex items-center justify-center">
@@ -835,7 +838,7 @@ export default function NetworkGraph() {
         {!showCommunityLegend && (
           <button
             onClick={() => setShowCommunityLegend(true)}
-            className="absolute left-4 bottom-4 p-2.5 bg-[var(--color-surface-elevated-dark)]/90 border border-[var(--color-hairline-dark)] rounded-sm text-[var(--color-muted)] hover:text-[var(--color-on-dark)] transition-all z-20 backdrop-blur-sm"
+            className="absolute left-4 bottom-4 p-2.5 bg-[var(--color-surface-elevated-dark)] border border-[var(--color-hairline-dark)] rounded-sm text-[var(--color-muted)] hover:text-[var(--color-on-dark)] transition-all z-20"
             title="Show Legend"
           >
             <Layers className="h-4 w-4" />
@@ -843,7 +846,7 @@ export default function NetworkGraph() {
         )}
 
         <div
-          className={`absolute right-0 top-0 bottom-0 w-72 bg-[var(--color-canvas-dark)]/98 backdrop-blur-xl border-l border-[var(--color-hairline-dark)] flex flex-col transition-transform duration-300 ease-out z-20 shadow-2xl ${
+          className={`absolute right-0 top-0 bottom-0 w-72 bg-[var(--color-surface-card-dark)] border-l border-[var(--color-hairline-dark)] flex flex-col transition-transform duration-300 ease-out z-20 ${
             selectedNode ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
@@ -892,7 +895,7 @@ export default function NetworkGraph() {
                 <div className="absolute right-4 bottom-4 z-10">
                   <button
                     onClick={() => setAiInsightsNode(selectedNode)}
-                    className="p-2 bg-[var(--color-primary)]/10 text-[var(--color-primary)] hover:bg-[var(--color-primary)] hover:text-[var(--color-on-primary)] rounded-full transition-colors shadow-lg"
+                    className="p-2 bg-[var(--color-primary)] text-[var(--color-on-primary)] hover:bg-[var(--color-primary-active)] rounded-full transition-colors"
                     title="Generate AI Insights"
                   >
                     <Bot className="h-4 w-4" />
@@ -975,8 +978,8 @@ export default function NetworkGraph() {
                     onClick={() => expandNode(selectedNode.id)}
                     className={`w-full flex items-center justify-center space-x-2 py-2.5 px-4 rounded-sm border font-semibold text-xs transition-all ${
                       expandedNodes.has(selectedNode.id)
-                        ? 'bg-[var(--color-surface-elevated-dark)] border-blue-500/40 text-[var(--color-primary)] hover:bg-blue-700/40'
-                        : 'bg-[var(--color-surface-elevated-dark)] border-[var(--color-hairline-dark)] text-[var(--color-primary)] hover:bg-blue-700/40'
+                        ? 'bg-[var(--color-surface-elevated-dark)] border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-canvas-dark)]'
+                        : 'bg-[var(--color-surface-elevated-dark)] border-[var(--color-hairline-dark)] text-[var(--color-primary)] hover:bg-[var(--color-canvas-dark)]'
                     }`}
                   >
                     {expandedNodes.has(selectedNode.id) ? (
@@ -1022,7 +1025,7 @@ export default function NetworkGraph() {
           </span>
           {contextMenu && (
             <div
-              className="absolute z-50 bg-[var(--color-surface-elevated-dark)] border border-[var(--color-hairline-dark)] rounded-md shadow-2xl overflow-hidden min-w-[160px]"
+              className="absolute z-50 bg-[var(--color-surface-elevated-dark)] border border-[var(--color-hairline-dark)] rounded-md overflow-hidden min-w-[160px]"
               style={{ left: contextMenu.x, top: contextMenu.y }}
               onMouseLeave={() => setContextMenu(null)}
             >
@@ -1057,8 +1060,8 @@ export default function NetworkGraph() {
           )}
 
           {aiInsightsNode && (
-            <div className="absolute right-[300px] top-4 bottom-4 w-80 bg-[var(--color-surface-card-dark)]/95 backdrop-blur-xl border border-[var(--color-hairline-dark)] rounded-lg shadow-2xl flex flex-col z-30 overflow-hidden animate-[fadeIn_0.3s_ease-out_forwards]">
-              <div className="flex items-center justify-between p-4 border-b border-[var(--color-hairline-dark)] bg-gradient-to-r from-[rgba(0,136,204,0.1)] to-transparent">
+            <div className="absolute right-[300px] top-4 bottom-4 w-80 bg-[var(--color-surface-card-dark)] border border-[var(--color-hairline-dark)] rounded-lg flex flex-col z-30 overflow-hidden animate-[fadeIn_0.3s_ease-out_forwards]">
+              <div className="flex items-center justify-between p-4 border-b border-[var(--color-hairline-dark)]">
                 <div className="flex items-center space-x-2">
                   <Bot className="h-5 w-5 text-[var(--color-primary)]" />
                   <h3 className="text-sm font-bold text-[var(--color-on-dark)]">AI Intelligence Scan</h3>
@@ -1097,7 +1100,7 @@ export default function NetworkGraph() {
           )}
 
           {/* Timeline UI */}
-          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-full max-w-lg bg-[var(--color-surface-card-dark)]/95 backdrop-blur-md border border-[var(--color-hairline-dark)] rounded-full px-6 py-2.5 shadow-2xl flex items-center space-x-4 z-20">
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-full max-w-lg bg-[var(--color-surface-card-dark)] border border-[var(--color-hairline-dark)] rounded-full px-6 py-2.5 flex items-center space-x-4 z-20">
             <Calendar className="h-4 w-4 text-[var(--color-primary)] shrink-0" />
             <div className="flex-1 flex flex-col justify-center">
               <div className="flex justify-between text-[8px] font-bold text-[var(--color-muted)] uppercase tracking-wider mb-1 px-1">
