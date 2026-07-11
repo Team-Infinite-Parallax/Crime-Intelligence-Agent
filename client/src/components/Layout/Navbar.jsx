@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import {
-  Bell,
   Search,
   ChevronDown,
   Shield,
-  User,
-  AlertCircle,
   Sun,
   Moon
 } from 'lucide-react';
@@ -13,14 +10,7 @@ import VoiceSearch from '../Dashboard/VoiceSearch';
 import AlertBadge from '../Dashboard/AlertBadge';
 
 export default function Navbar({ activeRole, setActiveRole, searchTerm, setSearchTerm, userDetails, onVoiceFilters, isDarkMode, toggleDarkMode, alertsOpen, setAlertsOpen }) {
-  const [showNotifications, setShowNotifications] = useState(false);
   const [showProfileDropdown, setShowProfileDropdown] = useState(false);
-
-  const notifications = [
-    { id: 1, title: 'Burglary Spike Alert', desc: 'Geographic crime cluster detected in Bengaluru East (Shivajinagar PS).', time: '10m ago', type: 'warning' },
-    { id: 2, title: 'Repeat Offender Flag', desc: 'Offender Rajesh Choudhary detected in Mysuru district.', time: '1h ago', type: 'danger' },
-    { id: 3, title: 'Chargesheet Deadline', desc: 'Case CrimeNo 10045 pending chargesheet filing (Unit 2).', time: '4h ago', type: 'info' }
-  ];
 
   const roles = [
     { id: 'SCRB_ADMIN', label: 'SCRB Admin (State)', badge: 'State-wide Access' },
@@ -76,48 +66,7 @@ export default function Navbar({ activeRole, setActiveRole, searchTerm, setSearc
             {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
           </button>
 
-          {/* Alert Badge Component - Real-time alerts */}
           <AlertBadge onClick={() => setAlertsOpen(!alertsOpen)} />
-
-          <div className="relative">
-            <button
-              onClick={() => {
-                setShowNotifications(!showNotifications);
-                setShowProfileDropdown(false);
-              }}
-              aria-label="View notifications"
-              className="relative p-2.5 bg-transparent text-[var(--color-muted)] hover:text-[var(--color-on-dark)] hover:bg-[var(--color-surface-elevated-dark)] rounded-lg transition-colors focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:outline-none"
-            >
-              <Bell className="h-5 w-5" />
-              <span className="absolute top-1.5 right-1.5 h-2 w-2 bg-[var(--color-trading-down)] rounded-full animate-ping" aria-hidden="true" />
-              <span className="absolute top-1.5 right-1.5 h-2 w-2 bg-[var(--color-trading-down)] rounded-full" aria-hidden="true" />
-            </button>
-
-            {showNotifications && (
-              <div className="absolute right-0 mt-3 w-80 glass-panel rounded-2xl shadow-2xl p-4 z-50 text-[var(--color-body)]">
-                <div className="flex items-center justify-between pb-3 border-b border-[var(--color-hairline-dark)] mb-2">
-                  <h3 className="text-sm font-bold text-[var(--color-on-dark)]">Notifications</h3>
-                  <span className="text-[9px] bg-[var(--color-surface-elevated-dark)] text-[var(--color-primary)] border border-[var(--color-hairline-dark)] rounded-md px-1.5 py-0.5 font-bold uppercase">3 New</span>
-                </div>
-                <div className="space-y-2.5 max-h-80 overflow-y-auto pr-1">
-                  {notifications.map((notif) => (
-                    <div key={notif.id} className="p-2.5 hover:bg-[var(--color-surface-elevated-dark)] rounded-xl transition-colors border border-transparent hover:border-[var(--color-hairline-dark)] flex items-start space-x-3">
-                      <div className={`p-1.5 rounded-lg shrink-0 mt-0.5 ${notif.type === 'warning' ? 'bg-[rgba(59,130,246,0.1)] text-[var(--color-primary)]' :
-                          notif.type === 'danger' ? 'bg-[rgba(246,70,93,0.1)] text-[var(--color-trading-down)]' : 'bg-[rgba(14,203,129,0.1)] text-[var(--color-trading-up)]'
-                        }`}>
-                        <AlertCircle className="h-4 w-4" />
-                      </div>
-                      <div>
-                        <h4 className="text-xs font-bold text-[var(--color-on-dark)]">{notif.title}</h4>
-                        <p className="text-[11px] text-[var(--color-muted)] mt-0.5 leading-relaxed">{notif.desc}</p>
-                        <span className="text-[10px] text-[var(--color-muted)] mt-1 block">{notif.time}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
         </div>
 
         <div className="relative">
