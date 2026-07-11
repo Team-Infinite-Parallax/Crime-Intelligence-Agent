@@ -19,6 +19,9 @@ import AlertBadge from './components/Dashboard/AlertBadge';
 import AlertCenter from './components/Dashboard/AlertCenter';
 import BehavioralProfiles from './components/Dashboard/BehavioralProfiles';
 import CorrelationHeatmap from './components/Dashboard/CorrelationHeatmap';
+import EmergingTrendAlerts from './components/Dashboard/EmergingTrendAlerts';
+import SocioEconomicOverlay from './components/Dashboard/SocioEconomicOverlay';
+import ResourceDeployment from './components/Dashboard/ResourceDeployment';
 import {
   Shield,
   Users,
@@ -331,6 +334,8 @@ export default function App() {
               </div>
             </div>
 
+            <EmergingTrendAlerts activeRole={activeRole} filters={filters} />
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <CaseOutcomePredictions filters={filters} />
               <TrendForecasts filters={filters} />
@@ -364,6 +369,11 @@ export default function App() {
                   ))
                 )}
               </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <SocioEconomicOverlay activeRole={activeRole} filters={filters} />
+              <ResourceDeployment activeRole={activeRole} filters={filters} />
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">

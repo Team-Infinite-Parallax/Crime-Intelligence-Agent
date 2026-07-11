@@ -62,6 +62,33 @@ export const repeatOffenders = [
     { id: 5, name: 'Anil Deshpande', age: 38, gender: 'Male', riskScore: 49, caseCount: 4, distinctDistricts: 1, moPhrase: 'pushed parked motorcycle silently and departed using hotwire ignition technique', districtId: 4, unitId: 7 }
 ];
 
+export const districtSocioEconomic = [
+  { districtId: 1, name: 'Bengaluru Urban', povertyIndex: 8.2, populationDensity: 4381, urbanizationRate: 99.5, unemploymentRate: 3.8, literacyRate: 91.2, perCapitaIncome: 425000, crimeRatePer100k: 452 },
+  { districtId: 2, name: 'Mysuru', povertyIndex: 14.7, populationDensity: 276, urbanizationRate: 41.5, unemploymentRate: 5.2, literacyRate: 82.4, perCapitaIncome: 185000, crimeRatePer100k: 218 },
+  { districtId: 3, name: 'Belagavi', povertyIndex: 22.3, populationDensity: 354, urbanizationRate: 24.3, unemploymentRate: 7.1, literacyRate: 73.5, perCapitaIncome: 142000, crimeRatePer100k: 195 },
+  { districtId: 4, name: 'Dakshina Kannada', povertyIndex: 11.5, populationDensity: 386, urbanizationRate: 47.8, unemploymentRate: 4.5, literacyRate: 88.6, perCapitaIncome: 265000, crimeRatePer100k: 312 },
+  { districtId: 5, name: 'Kalaburagi', povertyIndex: 28.9, populationDensity: 232, urbanizationRate: 20.1, unemploymentRate: 9.3, literacyRate: 67.8, perCapitaIncome: 98000, crimeRatePer100k: 178 }
+];
+
+export const resourceDeployment = [
+  { unitId: 1, unitName: 'Shivajinagar PS', districtId: 1, currentPatrol: 5, recommendedPatrol: 8, gap: -3, riskLevel: 'critical', hotspotDensity: 24, responseTime: 11.2, priorityScore: 92 },
+  { unitId: 2, unitName: 'Indiranagar PS', districtId: 1, currentPatrol: 4, recommendedPatrol: 6, gap: -2, riskLevel: 'high', hotspotDensity: 18, responseTime: 9.8, priorityScore: 78 },
+  { unitId: 3, unitName: 'Halasuru PS', districtId: 1, currentPatrol: 4, recommendedPatrol: 6, gap: -2, riskLevel: 'high', hotspotDensity: 16, responseTime: 10.5, priorityScore: 74 },
+  { unitId: 4, unitName: 'Devaraja PS', districtId: 2, currentPatrol: 3, recommendedPatrol: 4, gap: -1, riskLevel: 'medium', hotspotDensity: 10, responseTime: 8.2, priorityScore: 58 },
+  { unitId: 5, unitName: 'Lakshmipuram PS', districtId: 2, currentPatrol: 3, recommendedPatrol: 3, gap: 0, riskLevel: 'low', hotspotDensity: 7, responseTime: 7.5, priorityScore: 42 },
+  { unitId: 6, unitName: 'Belagavi Town PS', districtId: 3, currentPatrol: 4, recommendedPatrol: 4, gap: 0, riskLevel: 'low', hotspotDensity: 6, responseTime: 8.9, priorityScore: 38 },
+  { unitId: 7, unitName: 'Mangaluru South PS', districtId: 4, currentPatrol: 5, recommendedPatrol: 7, gap: -2, riskLevel: 'high', hotspotDensity: 22, responseTime: 12.1, priorityScore: 84 },
+  { unitId: 8, unitName: 'Kalaburagi City PS', districtId: 5, currentPatrol: 3, recommendedPatrol: 3, gap: 0, riskLevel: 'low', hotspotDensity: 5, responseTime: 10.8, priorityScore: 32 }
+];
+
+export const crimeCategoryTrends = [
+  { category: 'Property Offences', currentMonth: 147, historicalAvg: 98, trend: 'spiking', spikeRatio: 1.5, anomalyThreshold: 1.3 },
+  { category: 'Cyber Crimes', currentMonth: 89, historicalAvg: 42, trend: 'spiking', spikeRatio: 2.12, anomalyThreshold: 1.3 },
+  { category: 'Crimes Against Body', currentMonth: 56, historicalAvg: 62, trend: 'stable', spikeRatio: 0.9, anomalyThreshold: 1.3 },
+  { category: 'Narcotics NDPS', currentMonth: 34, historicalAvg: 28, trend: 'stable', spikeRatio: 1.21, anomalyThreshold: 1.3 },
+  { category: 'Public Nuisance', currentMonth: 72, historicalAvg: 45, trend: 'spiking', spikeRatio: 1.6, anomalyThreshold: 1.3 }
+];
+
 export const rawCrimesLog = [
     { id: 101, crimeNo: '10041202600001', registrationDate: '2026-07-01', crimeHeadName: 'Property Offences', crimeSubHeadName: 'Burglary by Night', unitName: 'Shivajinagar PS', districtName: 'Bengaluru Urban', districtId: 1, unitId: 1, caseStatusName: 'Under Investigation', gravity: '1', isAnomaly: true },
     { id: 102, crimeNo: '10041202600002', registrationDate: '2026-06-29', crimeHeadName: 'Cyber Crimes', crimeSubHeadName: 'Online Financial Fraud', unitName: 'Indiranagar PS', districtName: 'Bengaluru Urban', districtId: 1, unitId: 2, caseStatusName: 'Chargesheeted', gravity: '2', isAnomaly: false },
