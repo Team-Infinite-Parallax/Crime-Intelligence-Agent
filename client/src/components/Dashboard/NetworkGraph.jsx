@@ -651,9 +651,9 @@ export default function NetworkGraph() {
     hiddenNeighborNodes.some(n => n.data.parentOffender === selectedNode.id);
 
   return (
-    <div className="flex flex-col flex-1 h-full w-full gap-0 relative overflow-hidden bg-[var(--color-surface-card-dark)] border border-[var(--color-hairline-dark)] rounded-xl">
+    <div className="flex flex-col flex-1 h-full w-full gap-0 relative bg-[var(--color-surface-card-dark)] border border-[var(--color-hairline-dark)] rounded-xl">
 
-      <div className="flex items-center justify-between px-6 py-3 border-b border-[var(--color-hairline-dark)] bg-[var(--color-surface-card-dark)] shrink-0 z-10">
+      <div className="flex items-center justify-between px-6 py-3 border-b border-[var(--color-hairline-dark)] bg-[var(--color-surface-card-dark)] shrink-0 z-20 relative">
         <div className="flex items-center space-x-3">
           <div className="p-2 rounded-sm bg-[var(--color-surface-elevated-dark)] border border-[var(--color-hairline-dark)]">
             <Network className="h-4 w-4 text-[var(--color-primary)]" />
@@ -675,29 +675,36 @@ export default function NetworkGraph() {
             placeholder="Search nodes, suspects, stations\u2026"
             className="w-full pl-9 pr-4 py-2 bg-[var(--color-canvas-dark)] border border-[var(--color-hairline-dark)] rounded-sm text-xs text-[var(--color-on-dark)] placeholder:text-[var(--color-muted)] focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)] transition-all"
           />
-          {searchResults.length > 0 && (
-            <div className="absolute top-full left-0 right-0 mt-1 bg-[var(--color-surface-elevated-dark)] border border-[var(--color-hairline-dark)] rounded-sm z-50 overflow-hidden max-h-48 overflow-y-auto">
-              {searchResults.map(r => (
-                <button
-                  key={r.id}
-                  onClick={() => panToNode(r.id)}
-                  className="w-full flex items-center space-x-2.5 px-3 py-2.5 hover:bg-[var(--color-canvas-dark)]/60 text-left border-b border-[var(--color-hairline-dark)] last:border-0 transition-colors"
-                >
-                  {getNodeIcon(r.type)}
-                  <span className="text-xs text-[var(--color-on-dark)] font-medium">{r.label}</span>
-                  <span className="text-[9px] text-[var(--color-muted)] ml-auto capitalize">{r.type}</span>
-                </button>
-              ))}
+          {searchQuery.trim() && (
+            <div className="absolute left-0 right-0 top-full mt-1 z-30">
+            <div className={`bg-[var(--color-surface-elevated-dark)] border border-[var(--color-hairline-dark)] rounded-sm overflow-hidden max-h-48 overflow-y-auto shadow-xl ${searchResults.length > 0 ? '' : ''}`}>
+              {searchResults.length > 0 ? (
+                searchResults.map(r => (
+                  <button
+                    key={r.id}
+                    onClick={() => panToNode(r.id)}
+                    className="w-full flex items-center space-x-2.5 px-3 py-2.5 hover:bg-[var(--color-canvas-dark)]/60 text-left border-b border-[var(--color-hairline-dark)] last:border-0 transition-colors"
+                  >
+                    {getNodeIcon(r.type)}
+                    <span className="text-xs text-[var(--color-on-dark)] font-medium">{r.label}</span>
+                    <span className="text-[9px] text-[var(--color-muted)] ml-auto capitalize">{r.type}</span>
+                  </button>
+                ))
+              ) : (
+                <div className="px-3 py-3 text-xs text-[var(--color-muted)] text-center">No nodes match &quot;{searchQuery}&quot;</div>
+              )}
             </div>
-          )}
-        </div>
+          </div>
+        )}
 
-        <div className="flex items-center space-x-2">
-          <span className={`text-[8px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-md border ${layoutRunning ? 'text-[var(--color-primary)] bg-[var(--color-surface-elevated-dark)] border-[var(--color-hairline-dark)] animate-pulse' : 'text-[#2e7d32] bg-[#2e7d32]/10 border-[#2e7d32]/30'}`}>
-            {layoutRunning ? '\u27F3 Computing' : '\u25CF Live'}
-          </span>
-        </div>
       </div>
+
+      <div className="flex items-center space-x-2">
+        <span className={`text-[8px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-md border ${layoutRunning ? 'text-[var(--color-primary)] bg-[var(--color-surface-elevated-dark)] border-[var(--color-hairline-dark)] animate-pulse' : 'text-[#2e7d32] bg-[#2e7d32]/10 border-[#2e7d32]/30'}`}>
+          {layoutRunning ? '\u27F3 Computing' : '\u25CF Live'}
+        </span>
+      </div>
+    </div>
 
       <div className="flex items-center space-x-2 px-6 py-2.5 bg-[var(--color-surface-card-dark)] border-b border-[var(--color-hairline-dark)] shrink-0 z-10 overflow-x-auto">
         <span className="text-[9px] text-[var(--color-muted)] font-semibold uppercase shrink-0">Node Type:</span>
