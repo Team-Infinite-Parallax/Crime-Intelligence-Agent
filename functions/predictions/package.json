@@ -1,0 +1,12 @@
+{
+  "name": "predictions",
+  "version": "1.0.0",
+  "description": "AI-driven predictions for case outcomes, anomalies, and trends",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test-endpoints.js"
+  },
+  "dependencies": {
+    "zcatalyst-sdk-node": "^1.0.0"
+  }
+}

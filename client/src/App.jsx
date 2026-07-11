@@ -13,6 +13,8 @@ import CopBot from './components/Dashboard/CopBot';
 import RecentCrimesTable from './components/Dashboard/RecentCrimesTable';
 import HotspotMap from './components/Dashboard/HotspotMap';
 import NetworkGraph from './components/Dashboard/NetworkGraph';
+import CaseOutcomePredictions from './components/Dashboard/CaseOutcomePredictions';
+import TrendForecasts from './components/Dashboard/TrendForecasts';
 import {
   Shield,
   Users,
@@ -292,7 +294,7 @@ export default function App() {
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               <div className="lg:col-span-2">
-                <CrimeTrendsChart title="Crime Volume Registrations (Year-on-Year)" data={trendData} />
+                <CrimeTrendsChart title="Crime Volume Registrations (Year-on-Year)" data={trendData} showAnomalies={true} filters={filters} />
               </div>
               <div className="card-dark p-6 h-full min-h-[340px] flex flex-col justify-between">
                 <div>
@@ -320,6 +322,11 @@ export default function App() {
                   </span>
                 </div>
               </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <CaseOutcomePredictions filters={filters} />
+              <TrendForecasts filters={filters} />
             </div>
 
             <div className="space-y-4">

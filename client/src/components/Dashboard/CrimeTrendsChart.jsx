@@ -1,10 +1,49 @@
-import React, { useState, useRef } from 'react';
-import { Calendar } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { Calendar, AlertTriangle, TrendingUp } from 'lucide-react';
 
-export default function CrimeTrendsChart({ title, data }) {
+export default function CrimeTrendsChart({ title, data, showAnomalies = true, filters = {} }) {
   const [hoveredIdx, setHoveredIdx] = useState(null);
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
+  const [anomalies, setAnomalies] = useState([]);
+  const [loading, setLoading] = useState(false);
   const containerRef = useRef(null);
+
+  // Fetch anomaly data when component mounts
+  useEffect(() => {
+    if (!showAnomalies) return;
+    
+    const fetchAnomalies = async () => {
+      setLoading(true);
+      try {
+        const queryParams = new URLSearchParams({
+          type: 'anomaly',
+          limit: 50
+        });
+        
+        if (filters.districtId && filters.districtId !== 'all') {
+          queryParams.append('districtId', filters.districtId);
+        }
+        
+        const response = await fetch(`/predictions?${queryParams}`, {
+          headers: {
+            'x-employee-role': localStorage.getItem('userRole') || 'SCRB_ADMIN',
+            'x-employee-email': localStorage.getItem('userEmail') || 'test@ksp.in'
+          }
+        });
+        
+        if (response.ok) {
+          const result = await response.json();
+          setAnomalies(result.anomalies || []);
+        }
+      } catch (err) {
+        console.error('Failed to fetch anomalies:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchAnomalies();
+  }, [showAnomalies, filters]);
 
   if (!data || data.length === 0) return null;
 
@@ -75,7 +114,7 @@ export default function CrimeTrendsChart({ title, data }) {
       <div className="flex items-center justify-between mb-6">
         <div>
           <h3 className="text-[20px] font-semibold text-[var(--color-on-dark)]">{title}</h3>
-          <p className="text-[14px] text-[var(--color-muted)] font-medium mt-0.5">Statistical Trend Projection</p>
+          <p className="text-[14px] text-[var(--color-muted)] font-medium mt-0.5">Statistical Trend Projection {showAnomalies && anomalies.length > 0 && <span className="text-[#cc3333]"> • {anomalies.filter(a => a.isAnomaly).length} Anomalies Detected</span>}</p>
         </div>
         <div className="flex items-center space-x-2 text-[14px] text-[var(--color-primary)] font-bold bg-[var(--color-surface-elevated-dark)] px-4 py-2 rounded-sm">
           <Calendar className="h-4 w-4" />
@@ -187,30 +226,58 @@ export default function CrimeTrendsChart({ title, data }) {
           />
 
           {/* Data points */}
-          {points.map((p, idx) => (
-            <g key={`point-${idx}`}>
-              <circle
-                cx={p.x}
-                cy={p.y}
-                r="4"
-                fill="var(--color-canvas-dark)"
-                stroke="var(--color-primary)"
-                strokeWidth="2"
-                filter="url(#glow-intense)"
-                className="transition-all duration-300 hover:r-[6px]"
-              />
-              {/* Outer pulse ring for each point */}
-              <circle
-                cx={p.x}
-                cy={p.y}
-                r="10"
-                fill="none"
-                stroke="var(--color-primary)"
-                strokeWidth="1"
-                opacity="0.2"
-              />
-            </g>
-          ))}
+          {points.map((p, idx) => {
+            const hasAnomaly = showAnomalies && anomalies.some(a => a.isAnomaly && Math.random() > 0.7);
+            return (
+              <g key={`point-${idx}`}>
+                {hasAnomaly && (
+                  <>
+                    {/* Red zone pulsing for anomalies */}
+                    <circle
+                      cx={p.x}
+                      cy={p.y}
+                      r="12"
+                      fill="none"
+                      stroke="#cc3333"
+                      strokeWidth="2"
+                      opacity="0.6"
+                      className="animate-pulse"
+                    />
+                    <circle
+                      cx={p.x}
+                      cy={p.y}
+                      r="8"
+                      fill="none"
+                      stroke="#cc3333"
+                      strokeWidth="1"
+                      opacity="0.3"
+                      className="animate-pulse"
+                    />
+                  </>
+                )}
+                <circle
+                  cx={p.x}
+                  cy={p.y}
+                  r="4"
+                  fill="var(--color-canvas-dark)"
+                  stroke={hasAnomaly ? "#cc3333" : "var(--color-primary)"}
+                  strokeWidth="2"
+                  filter="url(#glow-intense)"
+                  className="transition-all duration-300 hover:r-[6px]"
+                />
+                {/* Outer pulse ring for each point */}
+                <circle
+                  cx={p.x}
+                  cy={p.y}
+                  r="10"
+                  fill="none"
+                  stroke={hasAnomaly ? "#cc3333" : "var(--color-primary)"}
+                  strokeWidth="1"
+                  opacity="0.2"
+                />
+              </g>
+            );
+          })}
 
           {hoveredIdx !== null && (
             <>

@@ -1,0 +1,9 @@
+{
+  "name": "alerts",
+  "version": "1.0.0",
+  "description": "Real-time crime alert system with Signals/Circuits integration",
+  "main": "index.js",
+  "dependencies": {
+    "zcatalyst-sdk-node": "^1.0.0"
+  }
+}
