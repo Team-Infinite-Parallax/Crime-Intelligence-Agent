@@ -240,7 +240,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "client_package_dependencies_react",
-      "community": 59,
+      "community": 8,
       "norm_label": "react"
     },
     {
@@ -284,40 +284,10 @@
       "norm_label": "devdependencies"
     },
     {
-      "label": "@testing-library/jest-dom",
-      "file_type": "code",
-      "source_file": "client/package.json",
-      "source_location": "L25",
-      "_origin": "ast",
-      "id": "client_package_devdependencies_testing_library_jest_dom",
-      "community": 7,
-      "norm_label": "@testing-library/jest-dom"
-    },
-    {
-      "label": "@testing-library/react",
-      "file_type": "code",
-      "source_file": "client/package.json",
-      "source_location": "L26",
-      "_origin": "ast",
-      "id": "client_package_devdependencies_testing_library_react",
-      "community": 7,
-      "norm_label": "@testing-library/react"
-    },
-    {
-      "label": "@testing-library/user-event",
-      "file_type": "code",
-      "source_file": "client/package.json",
-      "source_location": "L27",
-      "_origin": "ast",
-      "id": "client_package_devdependencies_testing_library_user_event",
-      "community": 7,
-      "norm_label": "@testing-library/user-event"
-    },
-    {
       "label": "@types/react",
       "file_type": "code",
       "source_file": "client/package.json",
-      "source_location": "L28",
+      "source_location": "L25",
       "_origin": "ast",
       "id": "client_package_devdependencies_types_react",
       "community": 7,
@@ -327,7 +297,7 @@
       "label": "@types/react-dom",
       "file_type": "code",
       "source_file": "client/package.json",
-      "source_location": "L29",
+      "source_location": "L26",
       "_origin": "ast",
       "id": "client_package_devdependencies_types_react_dom",
       "community": 7,
@@ -337,27 +307,17 @@
       "label": "@vitejs/plugin-react",
       "file_type": "code",
       "source_file": "client/package.json",
-      "source_location": "L30",
+      "source_location": "L27",
       "_origin": "ast",
       "id": "client_package_devdependencies_vitejs_plugin_react",
       "community": 7,
       "norm_label": "@vitejs/plugin-react"
     },
     {
-      "label": "jsdom",
-      "file_type": "code",
-      "source_file": "client/package.json",
-      "source_location": "L31",
-      "_origin": "ast",
-      "id": "client_package_devdependencies_jsdom",
-      "community": 7,
-      "norm_label": "jsdom"
-    },
-    {
       "label": "oxlint",
       "file_type": "code",
       "source_file": "client/package.json",
-      "source_location": "L32",
+      "source_location": "L28",
       "_origin": "ast",
       "id": "client_package_devdependencies_oxlint",
       "community": 7,
@@ -367,21 +327,11 @@
       "label": "vite",
       "file_type": "code",
       "source_file": "client/package.json",
-      "source_location": "L33",
+      "source_location": "L29",
       "_origin": "ast",
       "id": "client_package_devdependencies_vite",
       "community": 7,
       "norm_label": "vite"
-    },
-    {
-      "label": "vitest",
-      "file_type": "code",
-      "source_file": "client/package.json",
-      "source_location": "L34",
-      "_origin": "ast",
-      "id": "client_package_devdependencies_vitest",
-      "community": 7,
-      "norm_label": "vitest"
     },
     {
       "label": "App.jsx",
@@ -390,7 +340,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "client_src_app",
-      "community": 52,
+      "community": 8,
       "norm_label": "app.jsx"
     },
     {
@@ -400,27 +350,27 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "client_src_app_app",
-      "community": 52,
+      "community": 8,
       "norm_label": "app()"
     },
     {
       "label": "AppWrapper()",
       "file_type": "code",
       "source_file": "client/src/App.jsx",
-      "source_location": "L89",
+      "source_location": "L80",
       "_origin": "ast",
       "id": "client_src_app_appwrapper",
-      "community": 53,
+      "community": 8,
       "norm_label": "appwrapper()"
     },
     {
       "label": "AppContent()",
       "file_type": "code",
       "source_file": "client/src/App.jsx",
-      "source_location": "L101",
+      "source_location": "L92",
       "_origin": "ast",
       "id": "client_src_app_appcontent",
-      "community": 53,
+      "community": 8,
       "norm_label": "appcontent()"
     },
     {
@@ -430,27 +380,27 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "client_src_components_auth_login",
-      "community": 60,
+      "community": 8,
       "norm_label": "login.jsx"
     },
     {
       "label": "usersList",
       "file_type": "code",
       "source_file": "client/src/components/Auth/Login.jsx",
-      "source_location": "L28",
+      "source_location": "L26",
       "_origin": "ast",
       "id": "client_src_components_auth_login_userslist",
-      "community": 60,
+      "community": 8,
       "norm_label": "userslist"
     },
     {
       "label": "Login()",
       "file_type": "code",
       "source_file": "client/src/components/Auth/Login.jsx",
-      "source_location": "L61",
+      "source_location": "L59",
       "_origin": "ast",
       "id": "client_src_components_auth_login_login",
-      "community": 60,
+      "community": 8,
       "norm_label": "login()"
     },
     {
@@ -460,7 +410,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "client_src_components_dashboard_alertbadge",
-      "community": 53,
+      "community": 8,
       "norm_label": "alertbadge.jsx"
     },
     {
@@ -470,7 +420,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "client_src_components_dashboard_alertbadge_alertbadge",
-      "community": 53,
+      "community": 8,
       "norm_label": "alertbadge()"
     },
     {
@@ -560,7 +510,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "client_src_components_dashboard_copbot",
-      "community": 71,
+      "community": 8,
       "norm_label": "copbot.jsx"
     },
     {
@@ -570,7 +520,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "client_src_components_dashboard_copbot_suggestions",
-      "community": 71,
+      "community": 8,
       "norm_label": "suggestions"
     },
     {
@@ -580,7 +530,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "client_src_components_dashboard_copbot_crimedata",
-      "community": 71,
+      "community": 8,
       "norm_label": "crimedata"
     },
     {
@@ -590,7 +540,7 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "client_src_components_dashboard_copbot_generateresponse",
-      "community": 71,
+      "community": 8,
       "norm_label": "generateresponse()"
     },
     {
@@ -600,7 +550,7 @@
       "source_location": "L104",
       "_origin": "ast",
       "id": "client_src_components_dashboard_copbot_copbot",
-      "community": 71,
+      "community": 8,
       "norm_label": "copbot()"
     },
     {
@@ -610,7 +560,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "client_src_components_dashboard_correlationheatmap",
-      "community": 53,
+      "community": 8,
       "norm_label": "correlationheatmap.jsx"
     },
     {
@@ -620,7 +570,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "client_src_components_dashboard_correlationheatmap_correlationheatmap",
-      "community": 53,
+      "community": 8,
       "norm_label": "correlationheatmap()"
     },
     {
@@ -630,7 +580,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "client_src_components_dashboard_crimetrendschart",
-      "community": 53,
+      "community": 8,
       "norm_label": "crimetrendschart.jsx"
     },
     {
@@ -640,7 +590,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "client_src_components_dashboard_crimetrendschart_crimetrendschart",
-      "community": 53,
+      "community": 8,
       "norm_label": "crimetrendschart()"
     },
     {
@@ -650,7 +600,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "client_src_components_dashboard_emergingtrendalerts",
-      "community": 14,
+      "community": 8,
       "norm_label": "emergingtrendalerts.jsx"
     },
     {
@@ -660,7 +610,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "client_src_components_dashboard_emergingtrendalerts_districts",
-      "community": 14,
+      "community": 8,
       "norm_label": "districts"
     },
     {
@@ -670,7 +620,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "client_src_components_dashboard_emergingtrendalerts_emergingtrendalerts",
-      "community": 59,
+      "community": 8,
       "norm_label": "emergingtrendalerts()"
     },
     {
@@ -680,7 +630,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "client_src_components_dashboard_filters",
-      "community": 53,
+      "community": 8,
       "norm_label": "filters.jsx"
     },
     {
@@ -690,7 +640,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "client_src_components_dashboard_filters_filters",
-      "community": 53,
+      "community": 8,
       "norm_label": "filters()"
     },
     {
@@ -707,7 +657,7 @@
       "label": "stationIcon",
       "file_type": "code",
       "source_file": "client/src/components/Dashboard/HotspotMap.jsx",
-      "source_location": "L33",
+      "source_location": "L31",
       "_origin": "ast",
       "id": "client_src_components_dashboard_hotspotmap_stationicon",
       "community": 14,
@@ -717,7 +667,7 @@
       "label": "getHotspotPulseIcon()",
       "file_type": "code",
       "source_file": "client/src/components/Dashboard/HotspotMap.jsx",
-      "source_location": "L44",
+      "source_location": "L42",
       "_origin": "ast",
       "id": "client_src_components_dashboard_hotspotmap_gethotspotpulseicon",
       "community": 14,
@@ -727,7 +677,7 @@
       "label": "MapController()",
       "file_type": "code",
       "source_file": "client/src/components/Dashboard/HotspotMap.jsx",
-      "source_location": "L55",
+      "source_location": "L53",
       "_origin": "ast",
       "id": "client_src_components_dashboard_hotspotmap_mapcontroller",
       "community": 14,
@@ -737,7 +687,7 @@
       "label": "TIMELINE_STEPS",
       "file_type": "code",
       "source_file": "client/src/components/Dashboard/HotspotMap.jsx",
-      "source_location": "L95",
+      "source_location": "L93",
       "_origin": "ast",
       "id": "client_src_components_dashboard_hotspotmap_timeline_steps",
       "community": 14,
@@ -747,7 +697,7 @@
       "label": "HotspotMap()",
       "file_type": "code",
       "source_file": "client/src/components/Dashboard/HotspotMap.jsx",
-      "source_location": "L107",
+      "source_location": "L105",
       "_origin": "ast",
       "id": "client_src_components_dashboard_hotspotmap_hotspotmap",
       "community": 14,
@@ -767,7 +717,7 @@
       "label": "MapFilters()",
       "file_type": "code",
       "source_file": "client/src/components/Dashboard/MapFilters.jsx",
-      "source_location": "L15",
+      "source_location": "L14",
       "_origin": "ast",
       "id": "client_src_components_dashboard_mapfilters_mapfilters",
       "community": 14,
@@ -780,7 +730,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "client_src_components_dashboard_metriccard",
-      "community": 52,
+      "community": 8,
       "norm_label": "metriccard.jsx"
     },
     {
@@ -790,7 +740,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "client_src_components_dashboard_metriccard_metriccard",
-      "community": 52,
+      "community": 8,
       "norm_label": "metriccard()"
     },
     {
@@ -807,7 +757,7 @@
       "label": "CYTO_STYLE",
       "file_type": "code",
       "source_file": "client/src/components/Dashboard/NetworkGraph.jsx",
-      "source_location": "L51",
+      "source_location": "L21",
       "_origin": "ast",
       "id": "client_src_components_dashboard_networkgraph_cyto_style",
       "community": 10,
@@ -817,7 +767,7 @@
       "label": "LAYOUT_CONFIG",
       "file_type": "code",
       "source_file": "client/src/components/Dashboard/NetworkGraph.jsx",
-      "source_location": "L303",
+      "source_location": "L296",
       "_origin": "ast",
       "id": "client_src_components_dashboard_networkgraph_layout_config",
       "community": 10,
@@ -827,7 +777,7 @@
       "label": "NODE_TYPE_META",
       "file_type": "code",
       "source_file": "client/src/components/Dashboard/NetworkGraph.jsx",
-      "source_location": "L328",
+      "source_location": "L321",
       "_origin": "ast",
       "id": "client_src_components_dashboard_networkgraph_node_type_meta",
       "community": 10,
@@ -837,7 +787,7 @@
       "label": "DetailRow()",
       "file_type": "code",
       "source_file": "client/src/components/Dashboard/NetworkGraph.jsx",
-      "source_location": "L338",
+      "source_location": "L331",
       "_origin": "ast",
       "id": "client_src_components_dashboard_networkgraph_detailrow",
       "community": 10,
@@ -847,7 +797,7 @@
       "label": "NetworkGraph()",
       "file_type": "code",
       "source_file": "client/src/components/Dashboard/NetworkGraph.jsx",
-      "source_location": "L347",
+      "source_location": "L340",
       "_origin": "ast",
       "id": "client_src_components_dashboard_networkgraph_networkgraph",
       "community": 10,
@@ -860,7 +810,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "client_src_components_dashboard_recentcrimestable",
-      "community": 52,
+      "community": 8,
       "norm_label": "recentcrimestable.jsx"
     },
     {
@@ -870,7 +820,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "client_src_components_dashboard_recentcrimestable_recentcrimestable",
-      "community": 52,
+      "community": 8,
       "norm_label": "recentcrimestable()"
     },
     {
@@ -880,7 +830,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "client_src_components_dashboard_reportsanalytics",
-      "community": 52,
+      "community": 8,
       "norm_label": "reportsanalytics.jsx"
     },
     {
@@ -890,7 +840,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "client_src_components_dashboard_reportsanalytics_reportsanalytics",
-      "community": 52,
+      "community": 8,
       "norm_label": "reportsanalytics()"
     },
     {
@@ -900,7 +850,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "client_src_components_dashboard_resourcedeployment",
-      "community": 52,
+      "community": 8,
       "norm_label": "resourcedeployment.jsx"
     },
     {
@@ -910,7 +860,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "client_src_components_dashboard_resourcedeployment_resourcedeployment",
-      "community": 52,
+      "community": 8,
       "norm_label": "resourcedeployment()"
     },
     {
@@ -920,7 +870,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "client_src_components_dashboard_riskcard",
-      "community": 52,
+      "community": 8,
       "norm_label": "riskcard.jsx"
     },
     {
@@ -930,7 +880,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "client_src_components_dashboard_riskcard_riskcard",
-      "community": 52,
+      "community": 8,
       "norm_label": "riskcard()"
     },
     {
@@ -940,7 +890,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "client_src_components_dashboard_riskprofiling",
-      "community": 52,
+      "community": 8,
       "norm_label": "riskprofiling.jsx"
     },
     {
@@ -950,7 +900,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "client_src_components_dashboard_riskprofiling_risk_colors",
-      "community": 52,
+      "community": 8,
       "norm_label": "risk_colors"
     },
     {
@@ -960,7 +910,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "client_src_components_dashboard_riskprofiling_districts",
-      "community": 52,
+      "community": 8,
       "norm_label": "districts"
     },
     {
@@ -970,7 +920,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "client_src_components_dashboard_riskprofiling_riskprofiling",
-      "community": 52,
+      "community": 8,
       "norm_label": "riskprofiling()"
     },
     {
@@ -980,7 +930,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "client_src_components_dashboard_socioeconomicoverlay",
-      "community": 59,
+      "community": 8,
       "norm_label": "socioeconomicoverlay.jsx"
     },
     {
@@ -990,7 +940,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "client_src_components_dashboard_socioeconomicoverlay_factor_meta",
-      "community": 59,
+      "community": 8,
       "norm_label": "factor_meta"
     },
     {
@@ -1000,7 +950,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "client_src_components_dashboard_socioeconomicoverlay_factor_order",
-      "community": 59,
+      "community": 8,
       "norm_label": "factor_order"
     },
     {
@@ -1010,7 +960,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "client_src_components_dashboard_socioeconomicoverlay_socioeconomicoverlay",
-      "community": 59,
+      "community": 8,
       "norm_label": "socioeconomicoverlay()"
     },
     {
@@ -1040,7 +990,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "client_src_components_dashboard_voicesearch",
-      "community": 53,
+      "community": 8,
       "norm_label": "voicesearch.jsx"
     },
     {
@@ -1050,7 +1000,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "client_src_components_dashboard_voicesearch_voicesearch",
-      "community": 53,
+      "community": 8,
       "norm_label": "voicesearch()"
     },
     {
@@ -1060,7 +1010,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "client_src_components_dashboard_wantedmissing",
-      "community": 53,
+      "community": 8,
       "norm_label": "wantedmissing.jsx"
     },
     {
@@ -1070,7 +1020,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "client_src_components_dashboard_wantedmissing_wanteddata",
-      "community": 53,
+      "community": 8,
       "norm_label": "wanteddata"
     },
     {
@@ -1080,7 +1030,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "client_src_components_dashboard_wantedmissing_statuscolors",
-      "community": 53,
+      "community": 8,
       "norm_label": "statuscolors"
     },
     {
@@ -1090,28 +1040,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "client_src_components_dashboard_wantedmissing_wantedmissing",
-      "community": 53,
+      "community": 8,
       "norm_label": "wantedmissing()"
-    },
-    {
-      "label": "HotspotMap.test.jsx",
-      "file_type": "code",
-      "source_file": "client/src/components/Dashboard/__tests__/HotspotMap.test.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "client_src_components_dashboard_tests_hotspotmap_test",
-      "community": 53,
-      "norm_label": "hotspotmap.test.jsx"
-    },
-    {
-      "label": "NetworkGraph.test.jsx",
-      "file_type": "code",
-      "source_file": "client/src/components/Dashboard/__tests__/NetworkGraph.test.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "client_src_components_dashboard_tests_networkgraph_test",
-      "community": 10,
-      "norm_label": "networkgraph.test.jsx"
     },
     {
       "label": "Navbar.jsx",
@@ -1120,17 +1050,17 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "client_src_components_layout_navbar",
-      "community": 53,
+      "community": 8,
       "norm_label": "navbar.jsx"
     },
     {
       "label": "Navbar()",
       "file_type": "code",
       "source_file": "client/src/components/Layout/Navbar.jsx",
-      "source_location": "L21",
+      "source_location": "L13",
       "_origin": "ast",
       "id": "client_src_components_layout_navbar_navbar",
-      "community": 53,
+      "community": 8,
       "norm_label": "navbar()"
     },
     {
@@ -1140,48 +1070,18 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "client_src_components_layout_sidebar",
-      "community": 52,
+      "community": 8,
       "norm_label": "sidebar.jsx"
     },
     {
       "label": "Sidebar()",
       "file_type": "code",
       "source_file": "client/src/components/Layout/Sidebar.jsx",
-      "source_location": "L37",
+      "source_location": "L26",
       "_origin": "ast",
       "id": "client_src_components_layout_sidebar_sidebar",
-      "community": 52,
+      "community": 8,
       "norm_label": "sidebar()"
-    },
-    {
-      "label": "AlertNotification.jsx",
-      "file_type": "code",
-      "source_file": "client/src/components/UI/AlertNotification.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "client_src_components_ui_alertnotification",
-      "community": 60,
-      "norm_label": "alertnotification.jsx"
-    },
-    {
-      "label": "ALERT_TYPES",
-      "file_type": "code",
-      "source_file": "client/src/components/UI/AlertNotification.jsx",
-      "source_location": "L3",
-      "_origin": "ast",
-      "id": "client_src_components_ui_alertnotification_alert_types",
-      "community": 60,
-      "norm_label": "alert_types"
-    },
-    {
-      "label": "AlertNotification()",
-      "file_type": "code",
-      "source_file": "client/src/components/UI/AlertNotification.jsx",
-      "source_location": "L53",
-      "_origin": "ast",
-      "id": "client_src_components_ui_alertnotification_alertnotification",
-      "community": 60,
-      "norm_label": "alertnotification()"
     },
     {
       "label": "FilterContext.jsx",
@@ -1190,7 +1090,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "client_src_contexts_filtercontext",
-      "community": 53,
+      "community": 8,
       "norm_label": "filtercontext.jsx"
     },
     {
@@ -1200,7 +1100,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "client_src_contexts_filtercontext_filtercontext",
-      "community": 53,
+      "community": 8,
       "norm_label": "filtercontext"
     },
     {
@@ -1210,17 +1110,17 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "client_src_contexts_filtercontext_filterprovider",
-      "community": 53,
+      "community": 8,
       "norm_label": "filterprovider()"
     },
     {
       "label": "useFilters()",
       "file_type": "code",
       "source_file": "client/src/contexts/FilterContext.jsx",
-      "source_location": "L78",
+      "source_location": "L90",
       "_origin": "ast",
       "id": "client_src_contexts_filtercontext_usefilters",
-      "community": 53,
+      "community": 8,
       "norm_label": "usefilters()"
     },
     {
@@ -1230,7 +1130,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "client_src_data_constants",
-      "community": 52,
+      "community": 8,
       "norm_label": "constants.js"
     },
     {
@@ -1240,7 +1140,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "client_src_data_constants_districts",
-      "community": 52,
+      "community": 8,
       "norm_label": "districts"
     },
     {
@@ -1250,7 +1150,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "client_src_data_constants_units",
-      "community": 52,
+      "community": 8,
       "norm_label": "units"
     },
     {
@@ -1260,7 +1160,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "client_src_data_constants_getuserdetailsbyrole",
-      "community": 53,
+      "community": 8,
       "norm_label": "getuserdetailsbyrole()"
     },
     {
@@ -1270,7 +1170,7 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "client_src_data_constants_repeatoffenders",
-      "community": 52,
+      "community": 8,
       "norm_label": "repeatoffenders"
     },
     {
@@ -1280,7 +1180,7 @@
       "source_location": "L65",
       "_origin": "ast",
       "id": "client_src_data_constants_districtsocioeconomic",
-      "community": 59,
+      "community": 8,
       "norm_label": "districtsocioeconomic"
     },
     {
@@ -1290,7 +1190,7 @@
       "source_location": "L73",
       "_origin": "ast",
       "id": "client_src_data_constants_resourcedeployment",
-      "community": 52,
+      "community": 8,
       "norm_label": "resourcedeployment"
     },
     {
@@ -1300,7 +1200,7 @@
       "source_location": "L84",
       "_origin": "ast",
       "id": "client_src_data_constants_crimecategorytrends",
-      "community": 14,
+      "community": 8,
       "norm_label": "crimecategorytrends"
     },
     {
@@ -1310,7 +1210,7 @@
       "source_location": "L92",
       "_origin": "ast",
       "id": "client_src_data_constants_rawcrimeslog",
-      "community": 52,
+      "community": 8,
       "norm_label": "rawcrimeslog"
     },
     {
@@ -1570,18 +1470,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "client_src_main",
-      "community": 52,
+      "community": 8,
       "norm_label": "main.jsx"
-    },
-    {
-      "label": "setupTests.js",
-      "file_type": "code",
-      "source_file": "client/src/setupTests.js",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "client_src_setuptests",
-      "community": 72,
-      "norm_label": "setuptests.js"
     },
     {
       "label": "copbotEnhanced.js",
@@ -5824,76 +5714,6 @@
       "norm_label": ".end()"
     },
     {
-      "label": "hotspots.test.js",
-      "file_type": "code",
-      "source_file": "tests/hotspots.test.js",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "tests_hotspots_test",
-      "community": 23,
-      "norm_label": "hotspots.test.js"
-    },
-    {
-      "label": "test",
-      "file_type": "code",
-      "source_file": "tests/hotspots.test.js",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "tests_hotspots_test_test",
-      "community": 23,
-      "norm_label": "test"
-    },
-    {
-      "label": "assert",
-      "file_type": "code",
-      "source_file": "tests/hotspots.test.js",
-      "source_location": "L2",
-      "_origin": "ast",
-      "id": "tests_hotspots_test_assert",
-      "community": 23,
-      "norm_label": "assert"
-    },
-    {
-      "label": "MockResponse",
-      "file_type": "code",
-      "source_file": "tests/hotspots.test.js",
-      "source_location": "L4",
-      "_origin": "ast",
-      "id": "tests_hotspots_test_mockresponse",
-      "community": 23,
-      "norm_label": "mockresponse"
-    },
-    {
-      "label": ".constructor()",
-      "file_type": "code",
-      "source_file": "tests/hotspots.test.js",
-      "source_location": "L5",
-      "_origin": "ast",
-      "id": "tests_hotspots_test_mockresponse_constructor",
-      "community": 23,
-      "norm_label": ".constructor()"
-    },
-    {
-      "label": ".writeHead()",
-      "file_type": "code",
-      "source_file": "tests/hotspots.test.js",
-      "source_location": "L11",
-      "_origin": "ast",
-      "id": "tests_hotspots_test_mockresponse_writehead",
-      "community": 23,
-      "norm_label": ".writehead()"
-    },
-    {
-      "label": ".end()",
-      "file_type": "code",
-      "source_file": "tests/hotspots.test.js",
-      "source_location": "L15",
-      "_origin": "ast",
-      "id": "tests_hotspots_test_mockresponse_end",
-      "community": 23,
-      "norm_label": ".end()"
-    },
-    {
       "label": "graphify.md",
       "file_type": "document",
       "source_file": ".agents/rules/graphify.md",
@@ -6704,20 +6524,10 @@
       "norm_label": "claude.md"
     },
     {
-      "label": "Project Context",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "claude_project_context",
-      "community": 65,
-      "norm_label": "project context"
-    },
-    {
       "label": "graphify",
       "file_type": "document",
       "source_file": "CLAUDE.md",
-      "source_location": "L5",
+      "source_location": "L1",
       "_origin": "ast",
       "id": "claude_graphify",
       "community": 65,
@@ -7414,116 +7224,6 @@
       "norm_label": "rollback plan"
     },
     {
-      "label": "PROBLEM_STATEMENT.md",
-      "file_type": "document",
-      "source_file": "PROBLEM_STATEMENT.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "problem_statement",
-      "community": 58,
-      "norm_label": "problem_statement.md"
-    },
-    {
-      "label": "AI-Driven Crime Analytics & Visualization Platform",
-      "file_type": "document",
-      "source_file": "PROBLEM_STATEMENT.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "problem_statement_ai_driven_crime_analytics_visualization_platform",
-      "community": 58,
-      "norm_label": "ai-driven crime analytics & visualization platform"
-    },
-    {
-      "label": "The Challenge: Moving Beyond Manual Records",
-      "file_type": "document",
-      "source_file": "PROBLEM_STATEMENT.md",
-      "source_location": "L3",
-      "_origin": "ast",
-      "id": "problem_statement_the_challenge_moving_beyond_manual_records",
-      "community": 58,
-      "norm_label": "the challenge: moving beyond manual records"
-    },
-    {
-      "label": "The Proposed Solution: Crime Intelligence & Analytical Platform",
-      "file_type": "document",
-      "source_file": "PROBLEM_STATEMENT.md",
-      "source_location": "L12",
-      "_origin": "ast",
-      "id": "problem_statement_the_proposed_solution_crime_intelligence_analytical_platform",
-      "community": 58,
-      "norm_label": "the proposed solution: crime intelligence & analytical platform"
-    },
-    {
-      "label": "1. Advanced Visualization",
-      "file_type": "document",
-      "source_file": "PROBLEM_STATEMENT.md",
-      "source_location": "L16",
-      "_origin": "ast",
-      "id": "problem_statement_1_advanced_visualization",
-      "community": 58,
-      "norm_label": "1. advanced visualization"
-    },
-    {
-      "label": "2. Criminological Network & Link Analysis",
-      "file_type": "document",
-      "source_file": "PROBLEM_STATEMENT.md",
-      "source_location": "L24",
-      "_origin": "ast",
-      "id": "problem_statement_2_criminological_network_link_analysis",
-      "community": 58,
-      "norm_label": "2. criminological network & link analysis"
-    },
-    {
-      "label": "3. Sociological & AI-Driven Predictive Dashboards",
-      "file_type": "document",
-      "source_file": "PROBLEM_STATEMENT.md",
-      "source_location": "L32",
-      "_origin": "ast",
-      "id": "problem_statement_3_sociological_ai_driven_predictive_dashboards",
-      "community": 58,
-      "norm_label": "3. sociological & ai-driven predictive dashboards"
-    },
-    {
-      "label": "4. Pattern & Trend Discovery",
-      "file_type": "document",
-      "source_file": "PROBLEM_STATEMENT.md",
-      "source_location": "L40",
-      "_origin": "ast",
-      "id": "problem_statement_4_pattern_trend_discovery",
-      "community": 58,
-      "norm_label": "4. pattern & trend discovery"
-    },
-    {
-      "label": "5. Network & Behavioral Analysis",
-      "file_type": "document",
-      "source_file": "PROBLEM_STATEMENT.md",
-      "source_location": "L44",
-      "_origin": "ast",
-      "id": "problem_statement_5_network_behavioral_analysis",
-      "community": 58,
-      "norm_label": "5. network & behavioral analysis"
-    },
-    {
-      "label": "6. AI/ML-Driven Intelligence",
-      "file_type": "document",
-      "source_file": "PROBLEM_STATEMENT.md",
-      "source_location": "L48",
-      "_origin": "ast",
-      "id": "problem_statement_6_ai_ml_driven_intelligence",
-      "community": 58,
-      "norm_label": "6. ai/ml-driven intelligence"
-    },
-    {
-      "label": "Quality Mandate",
-      "file_type": "document",
-      "source_file": "PROBLEM_STATEMENT.md",
-      "source_location": "L54",
-      "_origin": "ast",
-      "id": "problem_statement_quality_mandate",
-      "community": 58,
-      "norm_label": "quality mandate"
-    },
-    {
       "label": "README.md",
       "file_type": "document",
       "source_file": "README.md",
@@ -7534,144 +7234,164 @@
       "norm_label": "readme.md"
     },
     {
-      "label": "\ud83d\udea8 The Problem",
+      "label": "Karnataka State Police (KSP) - Crime Intelligence Agent",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L29",
+      "source_location": "L1",
       "_origin": "ast",
-      "id": "readme_the_problem",
+      "id": "readme_karnataka_state_police_ksp_crime_intelligence_agent",
       "community": 15,
-      "norm_label": "\ud83d\udea8 the problem"
+      "norm_label": "karnataka state police (ksp) - crime intelligence agent"
     },
     {
-      "label": "\ud83d\udca1 The Solution",
+      "label": "\ud83c\udfd7\ufe0f Architecture",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "readme_architecture",
+      "community": 15,
+      "norm_label": "\ud83c\udfd7\ufe0f architecture"
+    },
+    {
+      "label": "\u2728 Features",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L25",
+      "_origin": "ast",
+      "id": "readme_features",
+      "community": 15,
+      "norm_label": "\u2728 features"
+    },
+    {
+      "label": "\ud83d\ude80 Catalyst Services",
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L36",
       "_origin": "ast",
-      "id": "readme_the_solution",
+      "id": "readme_catalyst_services",
       "community": 15,
-      "norm_label": "\ud83d\udca1 the solution"
+      "norm_label": "\ud83d\ude80 catalyst services"
     },
     {
-      "label": "\u2728 Key Features",
+      "label": "\ud83d\udcc1 Folder Structure",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L43",
+      "source_location": "L50",
       "_origin": "ast",
-      "id": "readme_key_features",
+      "id": "readme_folder_structure",
       "community": 15,
-      "norm_label": "\u2728 key features"
+      "norm_label": "\ud83d\udcc1 folder structure"
     },
     {
-      "label": "\ud83d\udee0\ufe0f Tech Stack",
+      "label": "\ud83d\udcbb Installation",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L55",
+      "source_location": "L75",
       "_origin": "ast",
-      "id": "readme_tech_stack",
+      "id": "readme_installation",
       "community": 15,
-      "norm_label": "\ud83d\udee0\ufe0f tech stack"
-    },
-    {
-      "label": "\u2601\ufe0f Zoho Catalyst Ecosystem (Core Infrastructure)",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L57",
-      "_origin": "ast",
-      "id": "readme_zoho_catalyst_ecosystem_core_infrastructure",
-      "community": 15,
-      "norm_label": "\u2601\ufe0f zoho catalyst ecosystem (core infrastructure)"
-    },
-    {
-      "label": "\ud83d\udcbb Application Layer",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L66",
-      "_origin": "ast",
-      "id": "readme_application_layer",
-      "community": 15,
-      "norm_label": "\ud83d\udcbb application layer"
-    },
-    {
-      "label": "\ud83c\udfd7\ufe0f Architecture & Workflow",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L73",
-      "_origin": "ast",
-      "id": "readme_architecture_workflow",
-      "community": 15,
-      "norm_label": "\ud83c\udfd7\ufe0f architecture & workflow"
-    },
-    {
-      "label": "\ud83d\udcf8 Sneak Peek (Dashboard & Analytics)",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L88",
-      "_origin": "ast",
-      "id": "readme_sneak_peek_dashboard_analytics",
-      "community": 15,
-      "norm_label": "\ud83d\udcf8 sneak peek (dashboard & analytics)"
-    },
-    {
-      "label": "\ud83d\udcbb Local Installation & Setup",
-      "file_type": "document",
-      "source_file": "README.md",
-      "source_location": "L113",
-      "_origin": "ast",
-      "id": "readme_local_installation_setup",
-      "community": 15,
-      "norm_label": "\ud83d\udcbb local installation & setup"
+      "norm_label": "\ud83d\udcbb installation"
     },
     {
       "label": "Prerequisites",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L115",
+      "source_location": "L77",
       "_origin": "ast",
       "id": "readme_prerequisites",
       "community": 15,
       "norm_label": "prerequisites"
     },
     {
-      "label": "Quick Start",
+      "label": "Steps",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L121",
+      "source_location": "L83",
       "_origin": "ast",
-      "id": "readme_quick_start",
+      "id": "readme_steps",
       "community": 15,
-      "norm_label": "quick start"
+      "norm_label": "steps"
     },
     {
-      "label": "\u2601\ufe0f Zoho Catalyst Deployment",
+      "label": "\ud83d\udd11 Testing Credentials",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L154",
+      "source_location": "L112",
       "_origin": "ast",
-      "id": "readme_zoho_catalyst_deployment",
+      "id": "readme_testing_credentials",
       "community": 15,
-      "norm_label": "\u2601\ufe0f zoho catalyst deployment"
+      "norm_label": "\ud83d\udd11 testing credentials"
     },
     {
-      "label": "\ud83d\udd11 Demo Access Credentials",
+      "label": "\u2601\ufe0f Deployment",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L171",
+      "source_location": "L124",
       "_origin": "ast",
-      "id": "readme_demo_access_credentials",
+      "id": "readme_deployment",
       "community": 15,
-      "norm_label": "\ud83d\udd11 demo access credentials"
+      "norm_label": "\u2601\ufe0f deployment"
     },
     {
-      "label": "\ud83d\ude80 What's Next? (Roadmap)",
+      "label": "\ud83d\udcf8 Screenshots",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L183",
+      "source_location": "L144",
       "_origin": "ast",
-      "id": "readme_what_s_next_roadmap",
+      "id": "readme_screenshots",
       "community": 15,
-      "norm_label": "\ud83d\ude80 what's next? (roadmap)"
+      "norm_label": "\ud83d\udcf8 screenshots"
+    },
+    {
+      "label": "\ud83d\udcd6 API Documentation",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L158",
+      "_origin": "ast",
+      "id": "readme_api_documentation",
+      "community": 15,
+      "norm_label": "\ud83d\udcd6 api documentation"
+    },
+    {
+      "label": "Base URL",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L160",
+      "_origin": "ast",
+      "id": "readme_base_url",
+      "community": 15,
+      "norm_label": "base url"
+    },
+    {
+      "label": "Endpoints",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L163",
+      "_origin": "ast",
+      "id": "readme_endpoints",
+      "community": 15,
+      "norm_label": "endpoints"
+    },
+    {
+      "label": "\ud83e\udd1d Contributors",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L181",
+      "_origin": "ast",
+      "id": "readme_contributors",
+      "community": 15,
+      "norm_label": "\ud83e\udd1d contributors"
+    },
+    {
+      "label": "\ud83d\udcc4 License",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L189",
+      "_origin": "ast",
+      "id": "readme_license",
+      "community": 15,
+      "norm_label": "\ud83d\udcc4 license"
     },
     {
       "label": "README.md",
@@ -9021,17 +8741,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "client/package.json",
-      "source_location": "L31",
-      "weight": 1.0,
-      "source": "client_package_devdependencies",
-      "target": "client_package_devdependencies_jsdom",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/package.json",
-      "source_location": "L32",
+      "source_location": "L28",
       "weight": 1.0,
       "source": "client_package_devdependencies",
       "target": "client_package_devdependencies_oxlint",
@@ -9044,7 +8754,7 @@
       "source_location": "L25",
       "weight": 1.0,
       "source": "client_package_devdependencies",
-      "target": "client_package_devdependencies_testing_library_jest_dom",
+      "target": "client_package_devdependencies_types_react",
       "confidence_score": 1.0
     },
     {
@@ -9054,27 +8764,7 @@
       "source_location": "L26",
       "weight": 1.0,
       "source": "client_package_devdependencies",
-      "target": "client_package_devdependencies_testing_library_react",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/package.json",
-      "source_location": "L27",
-      "weight": 1.0,
-      "source": "client_package_devdependencies",
-      "target": "client_package_devdependencies_testing_library_user_event",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/package.json",
-      "source_location": "L28",
-      "weight": 1.0,
-      "source": "client_package_devdependencies",
-      "target": "client_package_devdependencies_types_react",
+      "target": "client_package_devdependencies_types_react_dom",
       "confidence_score": 1.0
     },
     {
@@ -9084,16 +8774,6 @@
       "source_location": "L29",
       "weight": 1.0,
       "source": "client_package_devdependencies",
-      "target": "client_package_devdependencies_types_react_dom",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/package.json",
-      "source_location": "L33",
-      "weight": 1.0,
-      "source": "client_package_devdependencies",
       "target": "client_package_devdependencies_vite",
       "confidence_score": 1.0
     },
@@ -9101,20 +8781,10 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "client/package.json",
-      "source_location": "L30",
+      "source_location": "L27",
       "weight": 1.0,
       "source": "client_package_devdependencies",
       "target": "client_package_devdependencies_vitejs_plugin_react",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/package.json",
-      "source_location": "L34",
-      "weight": 1.0,
-      "source": "client_package_devdependencies",
-      "target": "client_package_devdependencies_vitest",
       "confidence_score": 1.0
     },
     {
@@ -9131,7 +8801,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "client/src/App.jsx",
-      "source_location": "L101",
+      "source_location": "L92",
       "weight": 1.0,
       "source": "client_src_app",
       "target": "client_src_app_appcontent",
@@ -9141,7 +8811,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "client/src/App.jsx",
-      "source_location": "L89",
+      "source_location": "L80",
       "weight": 1.0,
       "source": "client_src_app",
       "target": "client_src_app_appwrapper",
@@ -9779,7 +9449,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "client/src/App.jsx",
-      "source_location": "L90",
+      "source_location": "L81",
       "weight": 1.0,
       "source": "client_src_app_appwrapper",
       "target": "client_src_contexts_filtercontext_usefilters",
@@ -9790,7 +9460,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "client/src/App.jsx",
-      "source_location": "L111",
+      "source_location": "L102",
       "weight": 1.0,
       "source": "client_src_app_appcontent",
       "target": "client_src_contexts_filtercontext_usefilters",
@@ -9800,7 +9470,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "client/src/components/Auth/Login.jsx",
-      "source_location": "L61",
+      "source_location": "L59",
       "weight": 1.0,
       "source": "client_src_components_auth_login",
       "target": "client_src_components_auth_login_login",
@@ -9810,32 +9480,10 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "client/src/components/Auth/Login.jsx",
-      "source_location": "L28",
+      "source_location": "L26",
       "weight": 1.0,
       "source": "client_src_components_auth_login",
       "target": "client_src_components_auth_login_userslist",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/Auth/Login.jsx",
-      "source_location": "L14",
-      "weight": 1.0,
-      "source": "client_src_components_auth_login",
-      "target": "client_src_components_ui_alertnotification",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/Auth/Login.jsx",
-      "source_location": "L14",
-      "weight": 1.0,
-      "source": "client_src_components_auth_login",
-      "target": "client_src_components_ui_alertnotification_alertnotification",
       "confidence_score": 1.0
     },
     {
@@ -9853,7 +9501,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "client/src/components/Layout/Navbar.jsx",
-      "source_location": "L11",
+      "source_location": "L10",
       "weight": 1.0,
       "source": "client_src_components_layout_navbar",
       "target": "client_src_components_dashboard_alertbadge",
@@ -9864,7 +9512,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "client/src/components/Layout/Navbar.jsx",
-      "source_location": "L11",
+      "source_location": "L10",
       "weight": 1.0,
       "source": "client_src_components_layout_navbar",
       "target": "client_src_components_dashboard_alertbadge_alertbadge",
@@ -10179,7 +9827,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "client/src/components/Dashboard/CaseOutcomePredictions.jsx",
-      "source_location": "L36",
+      "source_location": "L43",
       "weight": 1.0,
       "source": "client_src_components_dashboard_caseoutcomepredictions_caseoutcomepredictions",
       "target": "client_src_utils_copbotenhanced_fetchpredictions"
@@ -10190,7 +9838,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "client/src/components/Dashboard/CaseOutcomePredictions.jsx",
-      "source_location": "L26",
+      "source_location": "L33",
       "weight": 1.0,
       "source": "client_src_components_dashboard_caseoutcomepredictions_caseoutcomepredictions",
       "target": "client_src_utils_mockapi_fetchwithfallback"
@@ -10520,7 +10168,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "client/src/components/Dashboard/HotspotMap.jsx",
-      "source_location": "L44",
+      "source_location": "L42",
       "weight": 1.0,
       "source": "client_src_components_dashboard_hotspotmap",
       "target": "client_src_components_dashboard_hotspotmap_gethotspotpulseicon",
@@ -10530,7 +10178,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "client/src/components/Dashboard/HotspotMap.jsx",
-      "source_location": "L107",
+      "source_location": "L105",
       "weight": 1.0,
       "source": "client_src_components_dashboard_hotspotmap",
       "target": "client_src_components_dashboard_hotspotmap_hotspotmap",
@@ -10540,7 +10188,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "client/src/components/Dashboard/HotspotMap.jsx",
-      "source_location": "L55",
+      "source_location": "L53",
       "weight": 1.0,
       "source": "client_src_components_dashboard_hotspotmap",
       "target": "client_src_components_dashboard_hotspotmap_mapcontroller",
@@ -10550,7 +10198,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "client/src/components/Dashboard/HotspotMap.jsx",
-      "source_location": "L33",
+      "source_location": "L31",
       "weight": 1.0,
       "source": "client_src_components_dashboard_hotspotmap",
       "target": "client_src_components_dashboard_hotspotmap_stationicon",
@@ -10560,7 +10208,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "client/src/components/Dashboard/HotspotMap.jsx",
-      "source_location": "L95",
+      "source_location": "L93",
       "weight": 1.0,
       "source": "client_src_components_dashboard_hotspotmap",
       "target": "client_src_components_dashboard_hotspotmap_timeline_steps",
@@ -10593,7 +10241,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "client/src/components/Dashboard/HotspotMap.jsx",
-      "source_location": "L31",
+      "source_location": "L29",
       "weight": 1.0,
       "source": "client_src_components_dashboard_hotspotmap",
       "target": "client_src_contexts_filtercontext",
@@ -10604,7 +10252,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "client/src/components/Dashboard/HotspotMap.jsx",
-      "source_location": "L31",
+      "source_location": "L29",
       "weight": 1.0,
       "source": "client_src_components_dashboard_hotspotmap",
       "target": "client_src_contexts_filtercontext_usefilters",
@@ -10655,22 +10303,11 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/Dashboard/__tests__/HotspotMap.test.jsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "client_src_components_dashboard_tests_hotspotmap_test",
-      "target": "client_src_components_dashboard_hotspotmap",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "client/src/components/Dashboard/HotspotMap.jsx",
-      "source_location": "L295",
+      "source_location": "L266",
       "weight": 1.0,
       "source": "client_src_components_dashboard_hotspotmap_hotspotmap",
       "target": "client_src_components_dashboard_hotspotmap_gethotspotpulseicon",
@@ -10682,27 +10319,16 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "client/src/components/Dashboard/HotspotMap.jsx",
-      "source_location": "L108",
+      "source_location": "L106",
       "weight": 1.0,
       "source": "client_src_components_dashboard_hotspotmap_hotspotmap",
       "target": "client_src_contexts_filtercontext_usefilters"
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/Dashboard/__tests__/HotspotMap.test.jsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "client_src_components_dashboard_tests_hotspotmap_test",
-      "target": "client_src_components_dashboard_hotspotmap_hotspotmap",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "client/src/components/Dashboard/MapFilters.jsx",
-      "source_location": "L15",
+      "source_location": "L14",
       "weight": 1.0,
       "source": "client_src_components_dashboard_mapfilters",
       "target": "client_src_components_dashboard_mapfilters_mapfilters",
@@ -10722,7 +10348,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "client/src/components/Dashboard/NetworkGraph.jsx",
-      "source_location": "L51",
+      "source_location": "L21",
       "weight": 1.0,
       "source": "client_src_components_dashboard_networkgraph",
       "target": "client_src_components_dashboard_networkgraph_cyto_style",
@@ -10732,7 +10358,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "client/src/components/Dashboard/NetworkGraph.jsx",
-      "source_location": "L338",
+      "source_location": "L331",
       "weight": 1.0,
       "source": "client_src_components_dashboard_networkgraph",
       "target": "client_src_components_dashboard_networkgraph_detailrow",
@@ -10742,7 +10368,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "client/src/components/Dashboard/NetworkGraph.jsx",
-      "source_location": "L303",
+      "source_location": "L296",
       "weight": 1.0,
       "source": "client_src_components_dashboard_networkgraph",
       "target": "client_src_components_dashboard_networkgraph_layout_config",
@@ -10752,7 +10378,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "client/src/components/Dashboard/NetworkGraph.jsx",
-      "source_location": "L347",
+      "source_location": "L340",
       "weight": 1.0,
       "source": "client_src_components_dashboard_networkgraph",
       "target": "client_src_components_dashboard_networkgraph_networkgraph",
@@ -10762,7 +10388,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "client/src/components/Dashboard/NetworkGraph.jsx",
-      "source_location": "L328",
+      "source_location": "L321",
       "weight": 1.0,
       "source": "client_src_components_dashboard_networkgraph",
       "target": "client_src_components_dashboard_networkgraph_node_type_meta",
@@ -10773,7 +10399,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "client/src/components/Dashboard/NetworkGraph.jsx",
-      "source_location": "L40",
+      "source_location": "L10",
       "weight": 1.0,
       "source": "client_src_components_dashboard_networkgraph",
       "target": "client_src_data_networkdata",
@@ -10784,7 +10410,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "client/src/components/Dashboard/NetworkGraph.jsx",
-      "source_location": "L40",
+      "source_location": "L10",
       "weight": 1.0,
       "source": "client_src_components_dashboard_networkgraph",
       "target": "client_src_data_networkdata_communities",
@@ -10795,7 +10421,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "client/src/components/Dashboard/NetworkGraph.jsx",
-      "source_location": "L40",
+      "source_location": "L10",
       "weight": 1.0,
       "source": "client_src_components_dashboard_networkgraph",
       "target": "client_src_data_networkdata_hiddenneighboredges",
@@ -10806,7 +10432,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "client/src/components/Dashboard/NetworkGraph.jsx",
-      "source_location": "L40",
+      "source_location": "L10",
       "weight": 1.0,
       "source": "client_src_components_dashboard_networkgraph",
       "target": "client_src_data_networkdata_hiddenneighbornodes",
@@ -10817,32 +10443,10 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "client/src/components/Dashboard/NetworkGraph.jsx",
-      "source_location": "L40",
+      "source_location": "L10",
       "weight": 1.0,
       "source": "client_src_components_dashboard_networkgraph",
       "target": "client_src_data_networkdata_initialelements",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/Dashboard/__tests__/NetworkGraph.test.jsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "client_src_components_dashboard_tests_networkgraph_test",
-      "target": "client_src_components_dashboard_networkgraph",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/Dashboard/__tests__/NetworkGraph.test.jsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "client_src_components_dashboard_tests_networkgraph_test",
-      "target": "client_src_components_dashboard_networkgraph_networkgraph",
       "confidence_score": 1.0
     },
     {
@@ -11212,7 +10816,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "client/src/components/Layout/Navbar.jsx",
-      "source_location": "L10",
+      "source_location": "L9",
       "weight": 1.0,
       "source": "client_src_components_layout_navbar",
       "target": "client_src_components_dashboard_voicesearch",
@@ -11234,7 +10838,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "client/src/components/Layout/Navbar.jsx",
-      "source_location": "L10",
+      "source_location": "L9",
       "weight": 1.0,
       "source": "client_src_components_layout_navbar",
       "target": "client_src_components_dashboard_voicesearch_voicesearch",
@@ -11304,32 +10908,10 @@
       "target": "client_src_contexts_filtercontext_usefilters"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/Dashboard/__tests__/HotspotMap.test.jsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "client_src_components_dashboard_tests_hotspotmap_test",
-      "target": "client_src_contexts_filtercontext",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/Dashboard/__tests__/HotspotMap.test.jsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "client_src_components_dashboard_tests_hotspotmap_test",
-      "target": "client_src_contexts_filtercontext_filterprovider",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "client/src/components/Layout/Navbar.jsx",
-      "source_location": "L21",
+      "source_location": "L13",
       "weight": 1.0,
       "source": "client_src_components_layout_navbar",
       "target": "client_src_components_layout_navbar_navbar",
@@ -11340,7 +10922,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "client/src/components/Layout/Navbar.jsx",
-      "source_location": "L12",
+      "source_location": "L11",
       "weight": 1.0,
       "source": "client_src_components_layout_navbar",
       "target": "client_src_contexts_filtercontext",
@@ -11351,7 +10933,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "client/src/components/Layout/Navbar.jsx",
-      "source_location": "L12",
+      "source_location": "L11",
       "weight": 1.0,
       "source": "client_src_components_layout_navbar",
       "target": "client_src_contexts_filtercontext_usefilters",
@@ -11363,7 +10945,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "client/src/components/Layout/Navbar.jsx",
-      "source_location": "L33",
+      "source_location": "L25",
       "weight": 1.0,
       "source": "client_src_components_layout_navbar_navbar",
       "target": "client_src_contexts_filtercontext_usefilters"
@@ -11372,30 +10954,10 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "client/src/components/Layout/Sidebar.jsx",
-      "source_location": "L37",
+      "source_location": "L26",
       "weight": 1.0,
       "source": "client_src_components_layout_sidebar",
       "target": "client_src_components_layout_sidebar_sidebar",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/UI/AlertNotification.jsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "client_src_components_ui_alertnotification",
-      "target": "client_src_components_ui_alertnotification_alert_types",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/UI/AlertNotification.jsx",
-      "source_location": "L53",
-      "weight": 1.0,
-      "source": "client_src_components_ui_alertnotification",
-      "target": "client_src_components_ui_alertnotification_alertnotification",
       "confidence_score": 1.0
     },
     {
@@ -11422,7 +10984,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "client/src/contexts/FilterContext.jsx",
-      "source_location": "L78",
+      "source_location": "L90",
       "weight": 1.0,
       "source": "client_src_contexts_filtercontext",
       "target": "client_src_contexts_filtercontext_usefilters",
@@ -11478,7 +11040,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "client/src/contexts/FilterContext.jsx",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0,
       "source": "client_src_contexts_filtercontext_filterprovider",
       "target": "client_src_data_constants_getuserdetailsbyrole"
@@ -13916,17 +13478,6 @@
       "weight": 1.0,
       "source": "functions_hotspots_index",
       "target": "functions_hotspots_index_url",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "tests/hotspots.test.js",
-      "source_location": "L37",
-      "weight": 1.0,
-      "source": "tests_hotspots_test",
-      "target": "functions_hotspots_index",
       "confidence_score": 1.0
     },
     {
@@ -18281,66 +17832,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "tests/hotspots.test.js",
-      "source_location": "L2",
-      "weight": 1.0,
-      "source": "tests_hotspots_test",
-      "target": "tests_hotspots_test_assert",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "tests/hotspots.test.js",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "tests_hotspots_test",
-      "target": "tests_hotspots_test_mockresponse",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "tests/hotspots.test.js",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "tests_hotspots_test",
-      "target": "tests_hotspots_test_test",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "tests/hotspots.test.js",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "tests_hotspots_test_mockresponse",
-      "target": "tests_hotspots_test_mockresponse_constructor",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "tests/hotspots.test.js",
-      "source_location": "L15",
-      "weight": 1.0,
-      "source": "tests_hotspots_test_mockresponse",
-      "target": "tests_hotspots_test_mockresponse_end",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "tests/hotspots.test.js",
-      "source_location": "L11",
-      "weight": 1.0,
-      "source": "tests_hotspots_test_mockresponse",
-      "target": "tests_hotspots_test_mockresponse_writehead",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": ".agents/rules/graphify.md",
       "source_location": "L6",
       "weight": 1.0,
@@ -19002,20 +18493,10 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CLAUDE.md",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "claude",
-      "target": "claude_graphify",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "CLAUDE.md",
       "source_location": "L1",
       "weight": 1.0,
       "source": "claude",
-      "target": "claude_project_context",
+      "target": "claude_graphify",
       "confidence_score": 1.0
     },
     {
@@ -19691,171 +19172,31 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "PROBLEM_STATEMENT.md",
+      "source_file": "README.md",
       "source_location": "L1",
       "weight": 1.0,
-      "source": "problem_statement",
-      "target": "problem_statement_ai_driven_crime_analytics_visualization_platform",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "PROBLEM_STATEMENT.md",
-      "source_location": "L54",
-      "weight": 1.0,
-      "source": "problem_statement_ai_driven_crime_analytics_visualization_platform",
-      "target": "problem_statement_quality_mandate",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "PROBLEM_STATEMENT.md",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "problem_statement_ai_driven_crime_analytics_visualization_platform",
-      "target": "problem_statement_the_challenge_moving_beyond_manual_records",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "PROBLEM_STATEMENT.md",
-      "source_location": "L12",
-      "weight": 1.0,
-      "source": "problem_statement_ai_driven_crime_analytics_visualization_platform",
-      "target": "problem_statement_the_proposed_solution_crime_intelligence_analytical_platform",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "PROBLEM_STATEMENT.md",
-      "source_location": "L16",
-      "weight": 1.0,
-      "source": "problem_statement_the_proposed_solution_crime_intelligence_analytical_platform",
-      "target": "problem_statement_1_advanced_visualization",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "PROBLEM_STATEMENT.md",
-      "source_location": "L24",
-      "weight": 1.0,
-      "source": "problem_statement_the_proposed_solution_crime_intelligence_analytical_platform",
-      "target": "problem_statement_2_criminological_network_link_analysis",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "PROBLEM_STATEMENT.md",
-      "source_location": "L32",
-      "weight": 1.0,
-      "source": "problem_statement_the_proposed_solution_crime_intelligence_analytical_platform",
-      "target": "problem_statement_3_sociological_ai_driven_predictive_dashboards",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "PROBLEM_STATEMENT.md",
-      "source_location": "L40",
-      "weight": 1.0,
-      "source": "problem_statement_the_proposed_solution_crime_intelligence_analytical_platform",
-      "target": "problem_statement_4_pattern_trend_discovery",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "PROBLEM_STATEMENT.md",
-      "source_location": "L44",
-      "weight": 1.0,
-      "source": "problem_statement_the_proposed_solution_crime_intelligence_analytical_platform",
-      "target": "problem_statement_5_network_behavioral_analysis",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "PROBLEM_STATEMENT.md",
-      "source_location": "L48",
-      "weight": 1.0,
-      "source": "problem_statement_the_proposed_solution_crime_intelligence_analytical_platform",
-      "target": "problem_statement_6_ai_ml_driven_intelligence",
+      "source": "readme",
+      "target": "readme_karnataka_state_police_ksp_crime_intelligence_agent",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L73",
+      "source_location": "L158",
       "weight": 1.0,
-      "source": "readme",
-      "target": "readme_architecture_workflow",
+      "source": "readme_karnataka_state_police_ksp_crime_intelligence_agent",
+      "target": "readme_api_documentation",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L171",
+      "source_location": "L13",
       "weight": 1.0,
-      "source": "readme",
-      "target": "readme_demo_access_credentials",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L43",
-      "weight": 1.0,
-      "source": "readme",
-      "target": "readme_key_features",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L113",
-      "weight": 1.0,
-      "source": "readme",
-      "target": "readme_local_installation_setup",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L88",
-      "weight": 1.0,
-      "source": "readme",
-      "target": "readme_sneak_peek_dashboard_analytics",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L55",
-      "weight": 1.0,
-      "source": "readme",
-      "target": "readme_tech_stack",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "README.md",
-      "source_location": "L29",
-      "weight": 1.0,
-      "source": "readme",
-      "target": "readme_the_problem",
+      "source": "readme_karnataka_state_police_ksp_crime_intelligence_agent",
+      "target": "readme_architecture",
       "confidence_score": 1.0
     },
     {
@@ -19864,57 +19205,97 @@
       "source_file": "README.md",
       "source_location": "L36",
       "weight": 1.0,
-      "source": "readme",
-      "target": "readme_the_solution",
+      "source": "readme_karnataka_state_police_ksp_crime_intelligence_agent",
+      "target": "readme_catalyst_services",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L183",
+      "source_location": "L181",
       "weight": 1.0,
-      "source": "readme",
-      "target": "readme_what_s_next_roadmap",
+      "source": "readme_karnataka_state_police_ksp_crime_intelligence_agent",
+      "target": "readme_contributors",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L154",
+      "source_location": "L124",
       "weight": 1.0,
-      "source": "readme",
-      "target": "readme_zoho_catalyst_deployment",
+      "source": "readme_karnataka_state_police_ksp_crime_intelligence_agent",
+      "target": "readme_deployment",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L66",
+      "source_location": "L25",
       "weight": 1.0,
-      "source": "readme_tech_stack",
-      "target": "readme_application_layer",
+      "source": "readme_karnataka_state_police_ksp_crime_intelligence_agent",
+      "target": "readme_features",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L57",
+      "source_location": "L50",
       "weight": 1.0,
-      "source": "readme_tech_stack",
-      "target": "readme_zoho_catalyst_ecosystem_core_infrastructure",
+      "source": "readme_karnataka_state_police_ksp_crime_intelligence_agent",
+      "target": "readme_folder_structure",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L115",
+      "source_location": "L75",
       "weight": 1.0,
-      "source": "readme_local_installation_setup",
+      "source": "readme_karnataka_state_police_ksp_crime_intelligence_agent",
+      "target": "readme_installation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L189",
+      "weight": 1.0,
+      "source": "readme_karnataka_state_police_ksp_crime_intelligence_agent",
+      "target": "readme_license",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L144",
+      "weight": 1.0,
+      "source": "readme_karnataka_state_police_ksp_crime_intelligence_agent",
+      "target": "readme_screenshots",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L112",
+      "weight": 1.0,
+      "source": "readme_karnataka_state_police_ksp_crime_intelligence_agent",
+      "target": "readme_testing_credentials",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L77",
+      "weight": 1.0,
+      "source": "readme_installation",
       "target": "readme_prerequisites",
       "confidence_score": 1.0
     },
@@ -19922,10 +19303,30 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
-      "source_location": "L121",
+      "source_location": "L83",
       "weight": 1.0,
-      "source": "readme_local_installation_setup",
-      "target": "readme_quick_start",
+      "source": "readme_installation",
+      "target": "readme_steps",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L160",
+      "weight": 1.0,
+      "source": "readme_api_documentation",
+      "target": "readme_base_url",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L163",
+      "weight": 1.0,
+      "source": "readme_api_documentation",
+      "target": "readme_endpoints",
       "confidence_score": 1.0
     },
     {
@@ -20950,5 +20351,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "645292225296f0945f644968bba1ff69443fec35"
+  "built_at_commit": "8d4ddb9ac1e1adde2e813130d4dfdf277d5e3615"
 }

@@ -43,6 +43,7 @@
     --color-surface-sidebar: #0b1c33;
     --color-surface-navbar: #0b1c33;
     --color-glass-bg: rgba(0, 34, 51, 0.7);
+    --color-glass-card: rgba(37, 99, 235, 0.1);
   }
 
   .light-mode {
@@ -69,6 +70,7 @@
     --color-surface-sidebar: #f0f6f9;
     --color-surface-navbar: #f0f6f9;
     --color-glass-bg: rgba(37, 99, 235, 0.1);
+    --color-glass-card: rgba(37, 99, 235, 0.12);
   }
 
   @keyframes fadeIn {
@@ -169,6 +171,16 @@ body {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--color-hairline-dark);
+}
+
+.glass-card {
+  background: var(--color-glass-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--color-hairline-dark);
+  border-radius: 12px;
+  color: var(--color-on-dark);
+  box-shadow: 0 4px 24px -12px rgba(0, 0, 0, 0.5);
 }
 
 .leaflet-container {

@@ -44,7 +44,9 @@ export default function SocioEconomicOverlay() {
   const selectedMeta = FACTOR_META[selectedFactor];
 
   return (
-    <div className="card-dark p-4 sm:p-5 h-full flex flex-col">
+    <div className="card-dark p-4 sm:p-5 h-full flex flex-col relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-[#cc3333]/8 via-[#cc3333]/3 to-transparent backdrop-blur-sm pointer-events-none" />
+      <div className="relative z-10 flex flex-col flex-1">
       <div className="flex items-center justify-between mb-4 shrink-0">
         <div>
           <h3 className="text-sm font-bold text-[var(--color-on-dark)]">Socio-Economic Crime Correlation</h3>
@@ -138,6 +140,7 @@ export default function SocioEconomicOverlay() {
           }) ? 'significant correlation' : 'divergent patterns'} with crime incidence rates.
           Toggle between factors to explore the socio-economic drivers behind crime distribution.
         </p>
+      </div>
       </div>
     </div>
   );

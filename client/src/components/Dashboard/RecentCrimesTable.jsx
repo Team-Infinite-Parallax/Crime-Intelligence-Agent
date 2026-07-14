@@ -25,7 +25,9 @@ export default function RecentCrimesTable({ crimes }) {
   };
 
   return (
-    <div className="card-dark p-4 sm:p-6 flex flex-col justify-between">
+    <div className="card-dark p-4 sm:p-6 flex flex-col justify-between relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/6 via-transparent to-transparent backdrop-blur-sm pointer-events-none" />
+      <div className="relative z-10">
       <div>
         <div className="flex items-center justify-between mb-6 pb-4">
           <div>
@@ -121,6 +123,7 @@ export default function RecentCrimesTable({ crimes }) {
           </div>
         </div>
       )}
+      </div>
     </div>
   );
 }

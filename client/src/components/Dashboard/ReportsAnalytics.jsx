@@ -185,7 +185,9 @@ export default function ReportsAnalytics({ crimes, offenders, activeRole }) {
   };
 
   return (
-    <div className="p-4 sm:p-6 lg:p-8 space-y-4 sm:space-y-6">
+    <div className="p-4 sm:p-6 lg:p-8 space-y-4 sm:space-y-6 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/8 via-transparent to-transparent backdrop-blur-sm pointer-events-none" />
+      <div className="relative z-10 space-y-4 sm:space-y-6">
       <div className="bg-[var(--color-surface-card-dark)] border border-[var(--color-primary)]/15 rounded-sm p-5">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
@@ -364,6 +366,7 @@ export default function ReportsAnalytics({ crimes, offenders, activeRole }) {
             <p className="text-[9px] text-[var(--color-muted)] mt-1">Heinous Crime Ratio</p>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

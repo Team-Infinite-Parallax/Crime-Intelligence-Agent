@@ -25,7 +25,9 @@ export default function Filters() {
   ];
 
   return (
-    <div className="card-dark p-4 sm:p-6 flex flex-col sm:flex-row gap-3 sm:gap-4 items-start sm:items-center justify-between">
+    <div className="glass-card p-4 sm:p-6 flex flex-col sm:flex-row gap-3 sm:gap-4 items-start sm:items-center justify-between relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/10 via-transparent to-transparent backdrop-blur-sm pointer-events-none" />
+      <div className="relative z-10 flex flex-col sm:flex-row gap-3 sm:gap-4 items-start sm:items-center w-full">
       <div className="flex flex-wrap gap-2 sm:gap-3 items-center w-full sm:w-auto">
         <div className="flex items-center space-x-2 text-[var(--color-muted)] mr-2">
           <Filter className="h-4 w-4 text-[var(--color-primary)]" />
@@ -98,6 +100,7 @@ export default function Filters() {
           <RefreshCw className="h-4 w-4 shrink-0" />
           <span>Reset Filters</span>
         </button>
+      </div>
       </div>
     </div>
   );

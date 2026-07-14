@@ -68,7 +68,9 @@ export default function BehavioralProfiles() {
   }
 
   return (
-    <div className="card-dark p-4 sm:p-6 h-full flex flex-col">
+    <div className="card-dark p-4 sm:p-6 h-full flex flex-col relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/8 via-[var(--color-primary)]/3 to-transparent backdrop-blur-sm pointer-events-none" />
+      <div className="relative z-10 flex flex-col flex-1">
       <div className="flex items-center justify-between mb-6 shrink-0">
         <div className="flex items-center space-x-3">
           <div className="p-2.5 rounded-sm bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20">
@@ -182,6 +184,7 @@ export default function BehavioralProfiles() {
           </div>
         </div>
       )}
+      </div>
     </div>
   );
 }

@@ -657,7 +657,8 @@ export default function NetworkGraph() {
     hiddenNeighborNodes.some(n => n.data.parentOffender === selectedNode.id);
 
   return (
-    <div className="flex flex-col flex-1 h-full w-full gap-0 relative bg-[var(--color-surface-card-dark)] border border-[var(--color-hairline-dark)] rounded-xl">
+    <div className="flex flex-col flex-1 h-full w-full gap-0 relative bg-[var(--color-surface-card-dark)] border border-[var(--color-hairline-dark)] rounded-xl overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-[#cc3333]/8 via-[#cc3333]/3 to-transparent backdrop-blur-sm pointer-events-none z-0" />
 
       <div className="flex items-center justify-between px-3 sm:px-6 py-3 border-b border-[var(--color-hairline-dark)] bg-[var(--color-surface-card-dark)] shrink-0 z-20 relative">
         <div className="flex items-center space-x-2 sm:space-x-3 min-w-0">

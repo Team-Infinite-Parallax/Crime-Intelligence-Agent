@@ -51,7 +51,9 @@ export default function CaseOutcomePredictions() {
   };
 
   return (
-    <div className="card-dark p-4 sm:p-6 h-full flex flex-col">
+    <div className="card-dark p-4 sm:p-6 h-full flex flex-col relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/10 via-[var(--color-primary)]/5 to-transparent backdrop-blur-sm pointer-events-none" />
+      <div className="relative z-10 flex flex-col flex-1">
       <div className="flex items-center justify-between mb-6 shrink-0">
         <div className="flex items-center space-x-3">
           <div className="p-2.5 rounded-sm bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20">
@@ -122,6 +124,7 @@ export default function CaseOutcomePredictions() {
       {!loading && predictions.length === 0 && !error && (
         <p className="text-sm text-[var(--color-muted)] text-center py-6 flex-1 flex items-center justify-center">No predictions available for current filters</p>
       )}
+      </div>
     </div>
   );
 }

@@ -19,7 +19,9 @@ export default function ResourceDeployment() {
   const highCount = filtered.filter(r => r.riskLevel === 'high').length;
 
   return (
-    <div className="card-dark p-4 sm:p-5 h-full flex flex-col">
+    <div className="card-dark p-4 sm:p-5 h-full flex flex-col relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/8 via-[var(--color-primary)]/3 to-transparent backdrop-blur-sm pointer-events-none" />
+      <div className="relative z-10 flex flex-col flex-1">
       <div className="flex items-center justify-between mb-4 shrink-0">
         <div>
           <h3 className="text-sm font-bold text-[var(--color-on-dark)]">Smart Resource Deployment</h3>
@@ -118,6 +120,7 @@ export default function ResourceDeployment() {
             {filtered.filter(r => r.gap >= 0).reduce((s, r) => s + Math.max(r.currentPatrol - r.recommendedPatrol, 0), 0)} surplus vehicles.
           </span>
         </p>
+      </div>
       </div>
     </div>
   );

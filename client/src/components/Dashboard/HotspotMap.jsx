@@ -226,6 +226,7 @@ export default function HotspotMap() {
 
   return (
     <div className="flex flex-col grow rounded-sm overflow-hidden border border-[var(--color-hairline-dark)] bg-[var(--color-canvas-dark)] relative min-h-0 h-full">
+      <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/8 via-transparent to-transparent backdrop-blur-sm pointer-events-none z-0" />
 
       <div className="flex-1 relative min-h-0">
         <MapContainer

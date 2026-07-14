@@ -112,7 +112,9 @@ export default function CrimeTrendsChart({ title, data, showAnomalies = true }) 
   });
 
   return (
-    <div className="card-dark p-4 sm:p-6 flex flex-col h-full min-h-[320px] sm:min-h-[380px] relative select-none">
+    <div className="card-dark p-4 sm:p-6 flex flex-col h-full min-h-[320px] sm:min-h-[380px] relative select-none overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/10 via-[var(--color-primary)]/5 to-transparent backdrop-blur-sm pointer-events-none" />
+      <div className="relative z-10">
       <div className="flex items-center justify-between mb-6">
         <div>
           <h3 className="text-[20px] font-semibold text-[var(--color-on-dark)]">{title}</h3>
@@ -316,6 +318,7 @@ export default function CrimeTrendsChart({ title, data, showAnomalies = true }) 
             </span>
           </div>
         )}
+      </div>
       </div>
     </div>
   );

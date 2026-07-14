@@ -79,8 +79,12 @@ export default function CorrelationHeatmap() {
     byCategory[f.category].push(f);
   });
 
+  const primaryFeatureColor = correlations.features?.[0]?.color || 'var(--color-primary)';
+
   return (
-    <div className="card-dark p-4 sm:p-6 h-full flex flex-col">
+    <div className="card-dark p-4 sm:p-6 h-full flex flex-col relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br backdrop-blur-sm pointer-events-none" style={{ background: `linear-gradient(135deg, ${primaryFeatureColor}12 0%, transparent 70%)` }} />
+      <div className="relative z-10">
       <div className="mb-6 shrink-0">
         <h3 className="text-sm font-bold text-[var(--color-on-dark)]">Feature Importance & Crime Correlations</h3>
         <p className="text-[9px] text-[var(--color-muted)] font-semibold uppercase tracking-[0.12em] mt-0.5">
@@ -152,6 +156,7 @@ export default function CorrelationHeatmap() {
         <p className="text-[9px] text-[var(--color-muted)]">
           💡 <span className="font-bold">Insight:</span> Socio-economic factors (poverty, unemployment) account for ~47% of crime prediction accuracy. Target resource deployment to high-poverty districts for maximum impact.
         </p>
+      </div>
       </div>
     </div>
   );

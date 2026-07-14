@@ -1,16 +1,16 @@
-# Graph Report - Crime-Intelligence-Agent  (2026-07-15)
+# Graph Report - Crime-Intelligence-Agent  (2026-07-14)
 
 ## Corpus Check
-- 132 files · ~95,211 words
+- 126 files · ~92,696 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 873 nodes · 1178 edges · 73 communities (63 shown, 10 thin omitted)
+- 845 nodes · 1147 edges · 66 communities (56 shown, 10 thin omitted)
 - Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 36 edges (avg confidence: 0.53)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `64529222`
+- Built from commit: `8d4ddb9a`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -67,15 +67,10 @@
 - [[_COMMUNITY_package.json|package.json]]
 - [[_COMMUNITY_package.json|package.json]]
 - [[_COMMUNITY_Web Interface Guidelines|Web Interface Guidelines]]
-- [[_COMMUNITY_App.jsx|App.jsx]]
-- [[_COMMUNITY_useFilters|useFilters]]
 - [[_COMMUNITY_graphify reference add a URL and watch a folder|graphify reference: add a URL and watch a folder]]
 - [[_COMMUNITY_graphify reference commit hook and native CLAUDE.md integration|graphify reference: commit hook and native CLAUDE.md integration]]
 - [[_COMMUNITY_graphify reference incremental update and cluster-only|graphify reference: incremental update and cluster-only]]
 - [[_COMMUNITY_React + Vite|React + Vite]]
-- [[_COMMUNITY_The Proposed Solution Crime Intelligence & Analytical Platform|The Proposed Solution: Crime Intelligence & Analytical Platform]]
-- [[_COMMUNITY_SocioEconomicOverlay.jsx|SocioEconomicOverlay.jsx]]
-- [[_COMMUNITY_Login.jsx|Login.jsx]]
 - [[_COMMUNITY_graphify reference GitHub clone and cross-repo merge|graphify reference: GitHub clone and cross-repo merge]]
 - [[_COMMUNITY_graphify reference transcribe video and audio|graphify reference: transcribe video and audio]]
 - [[_COMMUNITY_graphify|graphify.md]]
@@ -85,7 +80,6 @@
 - [[_COMMUNITY_extraction-spec|extraction-spec.md]]
 - [[_COMMUNITY_index.js|index.js]]
 - [[_COMMUNITY_index.js|index.js]]
-- [[_COMMUNITY_CopBot.jsx|CopBot.jsx]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `useFilters()` - 34 edges
@@ -100,21 +94,21 @@
 10. `train_and_save_all()` - 12 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `CrimeTrendsChart()` --calls--> `fetchAnomalies()`  [INFERRED]
-  client/src/components/Dashboard/CrimeTrendsChart.jsx → client/src/utils/copbotEnhanced.js
 - `DataExtractor` --uses--> `FeaturePipeline`  [INFERRED]
   ml/deploy.py → ml/feature_engineering.py
 - `AppWrapper()` --calls--> `useFilters()`  [EXTRACTED]
   client/src/App.jsx → client/src/contexts/FilterContext.jsx
 - `AppContent()` --calls--> `useFilters()`  [EXTRACTED]
   client/src/App.jsx → client/src/contexts/FilterContext.jsx
-- `AlertCenter()` --calls--> `useFilters()`  [EXTRACTED]
-  client/src/components/Dashboard/AlertCenter.jsx → client/src/contexts/FilterContext.jsx
+- `BehavioralProfiles()` --calls--> `fetchClusters()`  [INFERRED]
+  client/src/components/Dashboard/BehavioralProfiles.jsx → client/src/utils/copbotEnhanced.js
+- `CaseOutcomePredictions()` --calls--> `fetchPredictions()`  [INFERRED]
+  client/src/components/Dashboard/CaseOutcomePredictions.jsx → client/src/utils/copbotEnhanced.js
 
 ## Import Cycles
 - None detected.
 
-## Communities (73 total, 10 thin omitted)
+## Communities (66 total, 10 thin omitted)
 
 ### Community 0 - "DataFrame"
 Cohesion: 0.07
@@ -145,12 +139,12 @@ Cohesion: 0.07
 Nodes (26): 1. Backend Predictions API (`/predictions`), 1. Start the Backend, 2. Access Dashboard, 2. Frontend Components, 3. Integration Points, 3. Test Filters, 4. Verify Role-Based Access, A. Enhanced CrimeTrendsChart (+18 more)
 
 ### Community 7 - "dependencies"
-Cohesion: 0.06
-Nodes (30): dependencies, cytoscape, cytoscape-fcose, html2pdf.js, leaflet, lucide-react, react-dom, react-leaflet (+22 more)
+Cohesion: 0.08
+Nodes (25): dependencies, cytoscape, cytoscape-fcose, html2pdf.js, leaflet, lucide-react, react-dom, react-leaflet (+17 more)
 
 ### Community 8 - "App.jsx"
-Cohesion: 0.18
-Nodes (19): AlertCenter(), SEVERITY_CONFIG, BehavioralProfiles(), TYPOLOGY_ICONS, CaseOutcomePredictions(), TrendForecasts(), fetchAnomalies(), fetchClusters() (+11 more)
+Cohesion: 0.05
+Nodes (63): react, App(), AppContent(), AppWrapper(), Login(), usersList, AlertBadge(), AlertCenter() (+55 more)
 
 ### Community 9 - "deploy.py"
 Cohesion: 0.14
@@ -173,12 +167,12 @@ Cohesion: 0.10
 Nodes (16): catalyst, { requireAuth }, url, catalyst, requireAuth(), resolveEmployeeByEmail(), resolveEmployeeById(), catalyst (+8 more)
 
 ### Community 14 - "HotspotMap.jsx"
-Cohesion: 0.13
-Nodes (15): DISTRICTS, getHotspotPulseIcon(), HotspotMap(), stationIcon, TIMELINE_STEPS, MapFilters(), crimeCategoryTrends, crimeCategories (+7 more)
+Cohesion: 0.15
+Nodes (13): getHotspotPulseIcon(), HotspotMap(), stationIcon, TIMELINE_STEPS, MapFilters(), crimeCategories, crimeIncidents, districts (+5 more)
 
 ### Community 15 - "Karnataka State Police (KSP) - Crime Intelligence Agent"
-Cohesion: 0.13
-Nodes (14): 💻 Application Layer, 🏗️ Architecture & Workflow, 🔑 Demo Access Credentials, ✨ Key Features, 💻 Local Installation & Setup, Prerequisites, Quick Start, 📸 Sneak Peek (Dashboard & Analytics) (+6 more)
+Cohesion: 0.12
+Nodes (16): 📖 API Documentation, 🏗️ Architecture, Base URL, 🚀 Catalyst Services, 🤝 Contributors, ☁️ Deployment, Endpoints, ✨ Features (+8 more)
 
 ### Community 16 - "copbotEnhanced.js"
 Cohesion: 0.29
@@ -209,8 +203,8 @@ Cohesion: 0.22
 Nodes (8): graphify reference: extra exports and benchmark, Step 6b - Wiki (only if --wiki flag), Step 7 - Neo4j export (only if --neo4j or --neo4j-push flag), Step 7a - FalkorDB export (only if --falkordb or --falkordb-push flag), Step 7b - SVG export (only if --svg flag), Step 7c - GraphML export (only if --graphml flag), Step 7d - MCP server (only if --mcp flag), Step 8 - Token reduction benchmark (only if total_words > 5000)
 
 ### Community 23 - "authMiddleware.js"
-Cohesion: 0.15
-Nodes (10): catalyst, requireAuth(), resolveEmployeeByEmail(), resolveEmployeeById(), catalyst, { requireAuth }, url, assert (+2 more)
+Cohesion: 0.31
+Nodes (7): catalyst, requireAuth(), resolveEmployeeByEmail(), resolveEmployeeById(), catalyst, { requireAuth }, url
 
 ### Community 24 - "authMiddleware.js"
 Cohesion: 0.31
@@ -320,14 +314,6 @@ Nodes (5): dependencies, zcatalyst-sdk-node, main, name, version
 Cohesion: 0.40
 Nodes (4): Guidelines Source, How It Works, Usage, Web Interface Guidelines
 
-### Community 52 - "App.jsx"
-Cohesion: 0.13
-Nodes (15): App(), MetricCard(), RecentCrimesTable(), ReportsAnalytics(), ResourceDeployment(), RiskCard(), DISTRICTS, RISK_COLORS (+7 more)
-
-### Community 53 - "useFilters"
-Cohesion: 0.14
-Nodes (15): AppContent(), AppWrapper(), AlertBadge(), CorrelationHeatmap(), CrimeTrendsChart(), Filters(), VoiceSearch(), statusColors (+7 more)
-
 ### Community 54 - "graphify reference: add a URL and watch a folder"
 Cohesion: 0.50
 Nodes (3): For /graphify add, For --watch, graphify reference: add a URL and watch a folder
@@ -344,38 +330,22 @@ Nodes (3): For --cluster-only, For --update (incremental re-extraction), graphif
 Cohesion: 0.50
 Nodes (3): Expanding the Oxlint configuration, React Compiler, React + Vite
 
-### Community 58 - "The Proposed Solution: Crime Intelligence & Analytical Platform"
-Cohesion: 0.18
-Nodes (10): 1. Advanced Visualization, 2. Criminological Network & Link Analysis, 3. Sociological & AI-Driven Predictive Dashboards, 4. Pattern & Trend Discovery, 5. Network & Behavioral Analysis, 6. AI/ML-Driven Intelligence, AI-Driven Crime Analytics & Visualization Platform, Quality Mandate (+2 more)
-
-### Community 59 - "SocioEconomicOverlay.jsx"
-Cohesion: 0.29
-Nodes (6): react, EmergingTrendAlerts(), FACTOR_META, FACTOR_ORDER, SocioEconomicOverlay(), districtSocioEconomic
-
-### Community 60 - "Login.jsx"
-Cohesion: 0.40
-Nodes (4): Login(), usersList, ALERT_TYPES, AlertNotification()
-
-### Community 71 - "CopBot.jsx"
-Cohesion: 0.50
-Nodes (4): CopBot(), crimeData, generateResponse(), suggestions
-
 ## Knowledge Gaps
-- **408 isolated node(s):** `$schema`, `plugins`, `react/rules-of-hooks`, `react/only-export-components`, `name` (+403 more)
+- **392 isolated node(s):** `$schema`, `plugins`, `react/rules-of-hooks`, `react/only-export-components`, `name` (+387 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **10 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `dependencies` connect `dependencies` to `SocioEconomicOverlay.jsx`?**
-  _High betweenness centrality (0.011) - this node is a cross-community bridge._
-- **Why does `react` connect `SocioEconomicOverlay.jsx` to `dependencies`?**
-  _High betweenness centrality (0.011) - this node is a cross-community bridge._
+- **Why does `dependencies` connect `dependencies` to `App.jsx`?**
+  _High betweenness centrality (0.010) - this node is a cross-community bridge._
+- **Why does `react` connect `App.jsx` to `dependencies`?**
+  _High betweenness centrality (0.010) - this node is a cross-community bridge._
 - **Why does `FeaturePipeline` connect `__init__.py` to `DataFrame`, `deploy.py`?**
   _High betweenness centrality (0.006) - this node is a cross-community bridge._
 - **What connects `$schema`, `plugins`, `react/rules-of-hooks` to the rest of the system?**
-  _450 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _434 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `DataFrame` be split into smaller, more focused modules?**
   _Cohesion score 0.0673903211216644 - nodes in this community are weakly interconnected._
 - **Should `__init__.py` be split into smaller, more focused modules?**

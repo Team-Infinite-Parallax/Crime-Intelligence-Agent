@@ -17,10 +17,13 @@ export default function MetricCard({ title, value, trend, isPositive, icon: Icon
   const linePath = `M ${points.join(' L ')}`;
   const areaPath = `${linePath} L ${width},${height} L 0,${height} Z`;
 
+  const graphColor = isPositive ? 'var(--color-trading-up)' : 'var(--color-trading-down)';
+
   return (
-    <div className="card-dark p-4 sm:p-6 flex flex-col justify-between h-full min-h-[180px] sm:min-h-[200px] hover:-translate-y-1 transition-transform duration-300 cursor-default group relative overflow-hidden">
+    <div className="glass-card p-4 sm:p-6 flex flex-col justify-between h-full min-h-[180px] sm:min-h-[200px] hover:-translate-y-1 transition-transform duration-300 cursor-default group relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br backdrop-blur-sm pointer-events-none" style={{ background: `linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary) 50%, transparent 100%)`, opacity: 0.06 }} />
       {/* Subtle background glow effect on hover */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)] to-transparent opacity-0 group-hover:opacity-[0.03] transition-opacity duration-300 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)] to-transparent opacity-0 group-hover:opacity-[0.08] transition-opacity duration-300 pointer-events-none" />
       
       <div className="flex items-start justify-between relative z-10">
         <div className="space-y-1">
