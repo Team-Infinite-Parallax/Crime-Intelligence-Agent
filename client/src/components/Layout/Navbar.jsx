@@ -44,10 +44,10 @@ export default function Navbar({ onMenuToggle }) {
     <header className="h-14 sm:h-16 border-b border-[var(--color-hairline-dark)] bg-[var(--color-surface-navbar)] flex items-center justify-between px-2 sm:px-4 md:px-6 lg:px-8 z-40 relative shrink-0">
       {/* Left section: hamburger + search */}
       <div className="flex items-center flex-1 gap-2 min-w-0 overflow-hidden">
-        {/* Hamburger button — always visible */}
+        {/* Hamburger button — mobile only (sidebar is persistent on desktop) */}
         <button
           onClick={onMenuToggle}
-          className="p-2 rounded-lg text-[var(--color-muted)] hover:text-[var(--color-on-dark)] hover:bg-[var(--color-surface-elevated-dark)] transition-colors shrink-0"
+          className="md:hidden p-2 rounded-lg text-[var(--color-muted)] hover:text-[var(--color-on-dark)] hover:bg-[var(--color-surface-elevated-dark)] transition-colors shrink-0"
           aria-label="Open navigation menu"
         >
           <Menu className="h-5 w-5" />
