@@ -1,3 +1,7 @@
+## Project Context
+
+**Read `PROBLEM_STATEMENT.md` first** — it defines the core problem, goals, and scope of this project. Every task links back to that document.
+
 ## graphify
 
 This project has a knowledge graph at graphify-out/ with god nodes, community structure, and cross-file relationships.
