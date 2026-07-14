@@ -58,12 +58,21 @@ export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [activeTab, setActiveTab] = useState('dashboard');
   const [mockRole, setMockRole] = useState('SCRB_ADMIN');
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.remove('light-mode');
+    } else {
+      document.documentElement.classList.add('light-mode');
+    }
+  }, [isDarkMode]);
 
   if (!isLoggedIn) {
     return <Login onLogin={(role) => {
       setMockRole(role);
       setIsLoggedIn(true);
-    }} />;
+    }} isDarkMode={isDarkMode} onToggleTheme={() => setIsDarkMode(prev => !prev)} />;
   }
 
   const handleLogout = () => {
@@ -71,7 +80,7 @@ export default function App() {
   };
 
   return (
-    <FilterProvider isLoggedIn={isLoggedIn} onLogout={handleLogout}>
+    <FilterProvider isLoggedIn={isLoggedIn} onLogout={handleLogout} isDarkMode={isDarkMode} toggleDarkMode={() => setIsDarkMode(prev => !prev)}>
       <AppWrapper activeTab={activeTab} setActiveTab={setActiveTab} mockRole={mockRole} />
     </FilterProvider>
   );

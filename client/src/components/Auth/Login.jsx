@@ -8,7 +8,9 @@ import {
   EyeOff,
   AlertTriangle,
   LogIn,
-  CheckCircle2
+  CheckCircle2,
+  Sun,
+  Moon
 } from 'lucide-react';
 
 const emblemSvgLarge = (
@@ -56,7 +58,7 @@ const usersList = [
   }
 ];
 
-export default function Login({ onLogin }) {
+export default function Login({ onLogin, isDarkMode, onToggleTheme }) {
   const [badgeId, setBadgeId] = useState('');
   const [passcode, setPasscode] = useState('');
   const [showPasscode, setShowPasscode] = useState(false);
@@ -116,6 +118,16 @@ export default function Login({ onLogin }) {
 
   return (
     <div className="h-screen w-screen bg-[var(--color-canvas-dark)] flex flex-col items-center justify-center p-4 lg:p-6 text-[var(--color-on-dark)] relative overflow-hidden font-sans">
+      {/* Theme Toggle */}
+      <button
+        onClick={onToggleTheme}
+        className="absolute top-4 right-4 z-20 p-2.5 bg-[var(--color-surface-elevated-dark)] border border-[var(--color-hairline-dark)] rounded-lg text-[var(--color-muted)] hover:text-[var(--color-on-dark)] transition-colors"
+        aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
+        title="Toggle Theme"
+      >
+        {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+      </button>
+
       {/* Decorative scanline or grid patterns */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--color-surface-card-dark),var(--color-canvas-dark))]" />
       <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[var(--color-primary)]/20 to-transparent animate-pulse" />

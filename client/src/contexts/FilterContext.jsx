@@ -3,9 +3,8 @@ import { getUserDetailsByRole, districts, units } from '../data/constants';
 
 const FilterContext = createContext(null);
 
-export function FilterProvider({ children, isLoggedIn, onLogout }) {
+export function FilterProvider({ children, isLoggedIn, onLogout, isDarkMode, toggleDarkMode }) {
   const [activeRole, setActiveRole] = useState('SCRB_ADMIN');
-  const [isDarkMode, setIsDarkMode] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [alertsOpen, setAlertsOpen] = useState(false);
   const [filters, setFilters] = useState({
@@ -27,17 +26,6 @@ export function FilterProvider({ children, isLoggedIn, onLogout }) {
       setFilters(f => ({ ...f, districtId: 'all', unitId: 'all' }));
     }
   }, [activeRole]);
-
-  // Sync class list for dark/light mode
-  useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.remove('light-mode');
-    } else {
-      document.documentElement.classList.add('light-mode');
-    }
-  }, [isDarkMode]);
-
-  const toggleDarkMode = () => setIsDarkMode(prev => !prev);
   
   const resetFilters = () => {
     if (activeRole === 'DISTRICT_OFFICER') {
