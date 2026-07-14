@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { FileCheck, TrendingUp, AlertCircle, Loader } from 'lucide-react';
 import { MOCK_OUTCOMES, fetchWithFallback } from '../../utils/mockApi';
+import { useFilters } from '../../contexts/FilterContext';
 
-export default function CaseOutcomePredictions({ filters = {} }) {
+export default function CaseOutcomePredictions() {
+  const { filters } = useFilters();
   const [predictions, setPredictions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

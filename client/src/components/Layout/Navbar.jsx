@@ -8,8 +8,22 @@ import {
 } from 'lucide-react';
 import VoiceSearch from '../Dashboard/VoiceSearch';
 import AlertBadge from '../Dashboard/AlertBadge';
+import { useFilters } from '../../contexts/FilterContext';
 
-export default function Navbar({ activeRole, setActiveRole, searchTerm, setSearchTerm, userDetails, onVoiceFilters, isDarkMode, toggleDarkMode, alertsOpen, setAlertsOpen }) {
+export default function Navbar() {
+  const {
+    activeRole,
+    setActiveRole,
+    searchTerm,
+    setSearchTerm,
+    userDetails,
+    handleVoiceFilters: onVoiceFilters,
+    isDarkMode,
+    toggleDarkMode,
+    alertsOpen,
+    setAlertsOpen
+  } = useFilters();
+
   const [showProfileDropdown, setShowProfileDropdown] = useState(false);
 
   const roles = [
@@ -73,7 +87,6 @@ export default function Navbar({ activeRole, setActiveRole, searchTerm, setSearc
           <button
             onClick={() => {
               setShowProfileDropdown(!showProfileDropdown);
-              setShowNotifications(false);
             }}
             aria-label="Toggle profile menu"
             aria-haspopup="true"

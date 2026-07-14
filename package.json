@@ -2,10 +2,12 @@
   "name": "crime-intelligence-agent",
   "version": "1.0.0",
   "scripts": {
-    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "sync-middleware": "node scripts/sync-middleware.js",
+    "dev": "npm run sync-middleware && concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "dev:server": "node functions/dev-server.js",
     "dev:client": "npm run dev --prefix client",
-    "build": "npm install --prefix client && npm run build --prefix client && node -e \"const fs = require('fs'); fs.rmSync('dist', { recursive: true, force: true }); fs.cpSync('client/dist', 'dist', { recursive: true })\""
+    "build": "npm run sync-middleware && npm install --prefix client && npm run build --prefix client && node -e \"const fs = require('fs'); fs.rmSync('dist', { recursive: true, force: true }); fs.cpSync('client/dist', 'dist', { recursive: true })\"",
+    "test": "node --test tests/**/*.test.js && python -m unittest ml/tests/test_models.py"
   },
   "dependencies": {
     "express": "^5.2.1",

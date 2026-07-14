@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 
 const emblemSvg = (
-  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-[var(--color-primary)]">
+  <svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-[var(--color-primary)]">
     <circle cx="12" cy="12" r="10" />
     <circle cx="12" cy="12" r="6" />
     <path d="M12 2v20M2 12h20" strokeWidth="1" opacity="0.3" />

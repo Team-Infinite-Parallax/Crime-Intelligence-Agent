@@ -360,7 +360,7 @@ class DistrictRiskScorer:
         raw_scores = self._model.predict(X_scaled)
         # Normalise to 0-100
         scores = np.clip((raw_scores - raw_scores.min()) /
-                         (raw_scores.ptp() + 1e-9) * 100, 0, 100)
+                         (np.ptp(raw_scores) + 1e-9) * 100, 0, 100)
 
         explanations = self._explainer.to_json(
             pd.DataFrame(X_scaled, columns=feat_cols),

@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Loader, AlertCircle } from 'lucide-react';
+import { useFilters } from '../../contexts/FilterContext';
 
-export default function CorrelationHeatmap({ filters = {} }) {
+export default function CorrelationHeatmap() {
+  const { filters } = useFilters();
   const [correlations, setCorrelations] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

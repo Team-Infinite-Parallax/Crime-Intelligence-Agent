@@ -83,11 +83,16 @@ async function resolveEmployeeById(app, employeeId) {
 function requireAuth(allowedRoles = []) {
   return async (req, res, handler) => {
     try {
+      // 1. Check for mock headers FIRST (local testing/development environment)
       const mockRole = req.headers['x-mock-role'];
       const mockEmail = req.headers['x-mock-email'];
       const mockEmployeeId = req.headers['x-mock-employee-id'];
       
-      if (mockRole) {
+      const isLocalDev = process.env.NODE_ENV === 'development' || 
+                         process.env.CATALYST_ENV === 'Development' || 
+                         !process.env.CATALYST_ENV;
+      
+      if (mockRole && isLocalDev) {
         const role = mockRole.toUpperCase();
         if (allowedRoles.length > 0 && !allowedRoles.includes(role)) {
           res.writeHead(403, { 'Content-Type': 'application/json' });
@@ -97,11 +102,12 @@ function requireAuth(allowedRoles = []) {
           }));
         }
 
+        // Try to initialize app if credentials might exist, otherwise fail silently for mock fallback
         let app = null;
         try {
           app = catalyst.initialize(req);
         } catch (initErr) {
-          // Fall back to defaults offline
+          // Silently proceed; we will fall back to static mock data
         }
 
         let employee = null;
@@ -113,11 +119,14 @@ function requireAuth(allowedRoles = []) {
           }
         }
 
+        // Apply robust static defaults if no employee could be resolved from DB
         if (!employee) {
           if (role === 'DISTRICT_OFFICER') {
             employee = { employeeID: mockEmployeeId ? Number(mockEmployeeId) : 9, unitID: 1, districtID: 1, districtName: 'Bengaluru Urban', firstName: 'Mock', lastName: 'DistrictOfficer' };
           } else if (role === 'INVESTIGATION_OFFICER') {
             employee = { employeeID: mockEmployeeId ? Number(mockEmployeeId) : 1, unitID: 1, districtID: 1, districtName: 'Bengaluru Urban', firstName: 'Mohammed', lastName: 'Puttaiah' };
+          } else if (role === 'SCRB_ADMIN') {
+            employee = { employeeID: mockEmployeeId ? Number(mockEmployeeId) : 99, unitID: 0, districtID: 0, districtName: 'State Headquarters', firstName: 'Admin', lastName: 'KSP' };
           }
         }
 
@@ -132,6 +141,7 @@ function requireAuth(allowedRoles = []) {
         return await handler(req, res);
       }
 
+      // 2. Standard Zoho Catalyst Authentication Flow
       let app;
       try {
         app = catalyst.initialize(req);
@@ -187,5 +197,7 @@ function requireAuth(allowedRoles = []) {
 }
 
 module.exports = {
-  requireAuth
+  requireAuth,
+  resolveEmployeeByEmail,
+  resolveEmployeeById
 };

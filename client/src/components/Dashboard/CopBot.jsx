@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send, Bot, User, Download } from 'lucide-react';
+import { useFilters } from '../../contexts/FilterContext';
 
 
 const suggestions = [
@@ -39,7 +40,7 @@ function generateResponse(query) {
   }
 
   if (q.includes('help')) {
-    return `Try asking:\n• "Show me all crimes"\n• "How many cyber crimes?"\n• "High risk offenders"\n• "Crime trends this week"\n• "Burglary in Shivajinagar"`;
+    return `Try asking:\n• "Show me all crimes"\n• "How many cyber crimes?"\n• "High risk offenders"\n• "Crime trends this month"\n• "Burglary in Shivajinagar"`;
   }
 
   if (q.includes('all crime') || q.includes('show crime') || q.includes('list crime') || q.includes('crime list')) {
@@ -100,7 +101,8 @@ function generateResponse(query) {
   return `I couldn't find a specific match for "${query}". Try:\n• "All crimes"\n• "Cyber crimes"\n• "High risk offenders"\n• "Crime trends this week"\n• "Burglary in Shivajinagar"\n• "Help" for more examples.`;
 }
 
-export default function CopBot({ activeRole }) {
+export default function CopBot() {
+  const { activeRole } = useFilters();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
     { from: 'bot', text: `🤖 **KSP CopBot Active**\nनमस्ते! I'm your AI Crime Assistant for **${activeRole}**. Ask me anything about crimes, offenders, or trends.` }
@@ -298,6 +300,7 @@ export default function CopBot({ activeRole }) {
           onClick={() => setIsOpen(true)}
           className="fixed bottom-6 right-6 z-50 p-3.5 rounded-sm bg-[var(--color-primary)] text-[var(--color-canvas-dark)] hover:bg-[var(--color-primary-hover)] transition-all duration-200"
           title="KSP CopBot"
+          aria-label="Open KSP CopBot chat assistant"
         >
           <MessageCircle className="h-6 w-6" />
         </button>
@@ -320,12 +323,14 @@ export default function CopBot({ activeRole }) {
                 onClick={exportChat}
                 className="p-1.5 rounded-sm hover:bg-[var(--color-surface-card-dark)] text-[var(--color-muted)] hover:text-[var(--color-primary)] transition-colors"
                 title="Export Chat as PDF"
+                aria-label="Export conversation transcript as PDF"
               >
                 <Download className="h-4 w-4" />
               </button>
               <button
                 onClick={() => setIsOpen(false)}
                 className="p-1.5 rounded-sm hover:bg-[var(--color-surface-card-dark)] text-[var(--color-muted)] hover:text-[var(--color-on-dark)] transition-colors"
+                aria-label="Close CopBot conversation"
               >
                 <X className="h-4 w-4" />
               </button>
@@ -397,6 +402,7 @@ export default function CopBot({ activeRole }) {
                 onClick={() => handleSend()}
                 disabled={!input.trim() || loading}
                 className="p-2 rounded-sm bg-[var(--color-primary)] text-[var(--color-canvas-dark)] hover:bg-[var(--color-primary-hover)] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                aria-label="Send message to CopBot"
               >
                 <Send className="h-4 w-4" />
               </button>

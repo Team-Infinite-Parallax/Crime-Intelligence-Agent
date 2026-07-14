@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { AlertTriangle, AlertCircle, Clock, Users, Loader, X, CheckCircle } from 'lucide-react';
 import { MOCK_ALERTS, fetchWithFallback } from '../../utils/mockApi';
+import { useFilters } from '../../contexts/FilterContext';
 
 const SEVERITY_CONFIG = {
   critical: { color: '#cc3333', bg: '#8b0000', label: 'CRITICAL', icon: AlertTriangle },
@@ -9,7 +10,8 @@ const SEVERITY_CONFIG = {
   low: { color: '#66cc33', bg: '#339900', label: 'LOW', icon: AlertCircle }
 };
 
-export default function AlertCenter({ isOpen, onClose, filters = {} }) {
+export default function AlertCenter({ isOpen, onClose }) {
+  const { filters } = useFilters();
   const [alerts, setAlerts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [expandedAlert, setExpandedAlert] = useState(null);

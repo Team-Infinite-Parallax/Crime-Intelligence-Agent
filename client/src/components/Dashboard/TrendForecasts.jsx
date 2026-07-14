@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { TrendingUp, TrendingDown, Minus, Loader, AlertCircle } from 'lucide-react';
 import { MOCK_FORECASTS, fetchWithFallback } from '../../utils/mockApi';
+import { useFilters } from '../../contexts/FilterContext';
 
-export default function TrendForecasts({ filters = {} }) {
+export default function TrendForecasts() {
+  const { filters } = useFilters();
   const [forecasts, setForecasts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

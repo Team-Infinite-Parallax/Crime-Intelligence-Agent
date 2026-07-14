@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { TrendingUp, MapPin, Users, DollarSign, GraduationCap } from 'lucide-react';
 import { districtSocioEconomic } from '../../data/constants';
 import { crimeIncidents } from '../../data/mockCrimeData';
+import { useFilters } from '../../contexts/FilterContext';
 
 const FACTOR_META = {
   povertyIndex: { label: 'Poverty Index', icon: DollarSign, unit: '%', color: '#cc3333' },
@@ -14,7 +15,8 @@ const FACTOR_META = {
 
 const FACTOR_ORDER = ['povertyIndex', 'populationDensity', 'urbanizationRate', 'unemploymentRate', 'literacyRate', 'perCapitaIncome'];
 
-export default function SocioEconomicOverlay({ activeRole, filters = {} }) {
+export default function SocioEconomicOverlay() {
+  const { activeRole, filters } = useFilters();
   const [selectedFactor, setSelectedFactor] = React.useState('povertyIndex');
 
   const districtCrimeCounts = useMemo(() => {

@@ -6,6 +6,11 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   base: '/',
+  test: {
+    environment: 'jsdom',
+    globals: true,
+    setupFiles: './src/setupTests.js',
+  },
   server: {
     proxy: {
       '/predictions': 'http://localhost:3001',

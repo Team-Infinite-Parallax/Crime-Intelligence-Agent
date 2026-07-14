@@ -26,6 +26,7 @@ import {
   Clock,
   Navigation
 } from 'lucide-react';
+import { useFilters } from '../../contexts/FilterContext';
 
 const stationIcon = L.divIcon({
   className: 'custom-station-marker',
@@ -101,7 +102,8 @@ const TIMELINE_STEPS = [
   { label: 'Jul 2026', datePrefix: '2026-07' }
 ];
 
-export default function HotspotMap({ activeRole, isDarkMode }) {
+export default function HotspotMap() {
+  const { activeRole, isDarkMode } = useFilters();
   const [activeLayers, setActiveLayers] = useState({
     heatmap: true,
     stations: true,
@@ -227,7 +229,31 @@ export default function HotspotMap({ activeRole, isDarkMode }) {
           zoom={mapZoom}
           className="w-full h-full"
           zoomControl={false}
+          aria-label="Interactive Crime Hotspot Map"
         >
+          <div className="sr-only">
+            <table>
+              <caption>Crime Hotspots Data</caption>
+              <thead>
+                <tr>
+                  <th scope="col">FIR No</th>
+                  <th scope="col">Crime Type</th>
+                  <th scope="col">Location</th>
+                  <th scope="col">Registration Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                {filteredCrimes.map(crime => (
+                  <tr key={`sr-${crime.id}`}>
+                    <td>{crime.crimeNo}</td>
+                    <td>{crime.crimeSubHeadName}</td>
+                    <td>{crime.unitName}, {crime.districtName}</td>
+                    <td>{crime.registrationDate}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
             url={`https://{s}.basemaps.cartocdn.com/${isDarkMode === false ? 'light_all' : 'dark_all'}/{z}/{x}/{y}{r}.png`}
@@ -415,6 +441,7 @@ export default function HotspotMap({ activeRole, isDarkMode }) {
                 ? 'bg-[var(--color-surface-elevated-dark)] text-[var(--color-primary)] border-[var(--color-hairline-dark)] hover:bg-[var(--color-primary)]/20'
                 : 'bg-[var(--color-primary)]/20 hover:bg-[var(--color-primary)]/30 text-[var(--color-primary)] border-[var(--color-primary)]/30'
             }`}
+            aria-label="Play or pause timeline playback"
           >
             {isPlaying ? <Pause className="h-[18px] w-[18px]" fill="currentColor" /> : <Play className="h-[18px] w-[18px]" fill="currentColor" />}
           </button>
@@ -439,6 +466,7 @@ export default function HotspotMap({ activeRole, isDarkMode }) {
               setIsPlaying(false);
             }}
             className="w-full h-1.5 bg-[var(--color-surface-elevated-dark)] rounded-sm appearance-none cursor-pointer focus:outline-none accent-[var(--color-primary)]"
+            aria-label="Timeline navigation month slider"
           />
 
           <div className="flex justify-between text-[7px] font-bold text-[var(--color-muted)] mt-2 px-1 uppercase tracking-wide">

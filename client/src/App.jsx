@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import Sidebar from './components/Layout/Sidebar';
 import Navbar from './components/Layout/Navbar';
 import Login from './components/Auth/Login';
+import { FilterProvider, useFilters } from './contexts/FilterContext';
 import MetricCard from './components/Dashboard/MetricCard';
 import Filters from './components/Dashboard/Filters';
 import CrimeTrendsChart from './components/Dashboard/CrimeTrendsChart';
@@ -56,38 +57,49 @@ const emblemSvg = (
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [activeTab, setActiveTab] = useState('dashboard');
-  const [activeRole, setActiveRole] = useState('SCRB_ADMIN');
-  const [isDarkMode, setIsDarkMode] = useState(true);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [alertsOpen, setAlertsOpen] = useState(false);
-  const [filters, setFilters] = useState({
-    districtId: 'all',
-    unitId: 'all',
-    dateRange: '30days',
-    gravity: 'all'
-  });
+  const [mockRole, setMockRole] = useState('SCRB_ADMIN');
 
-  const userDetails = useMemo(() => getUserDetailsByRole(activeRole), [activeRole]);
+  if (!isLoggedIn) {
+    return <Login onLogin={(role) => {
+      setMockRole(role);
+      setIsLoggedIn(true);
+    }} />;
+  }
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+  };
+
+  return (
+    <FilterProvider isLoggedIn={isLoggedIn} onLogout={handleLogout}>
+      <AppWrapper activeTab={activeTab} setActiveTab={setActiveTab} mockRole={mockRole} />
+    </FilterProvider>
+  );
+}
+
+function AppWrapper({ activeTab, setActiveTab, mockRole }) {
+  const { activeRole, setActiveRole } = useFilters();
 
   useEffect(() => {
-    if (activeRole === 'DISTRICT_OFFICER') {
-      setFilters(f => ({ ...f, districtId: '1', unitId: 'all' }));
-    } else if (activeRole === 'INVESTIGATION_OFFICER') {
-      setFilters(f => ({ ...f, districtId: '1', unitId: '1' }));
-    } else {
-      setFilters(f => ({ ...f, districtId: 'all', unitId: 'all' }));
+    if (mockRole) {
+      setActiveRole(mockRole);
     }
-  }, [activeRole]);
+  }, [mockRole, setActiveRole]);
 
-  useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.remove('light-mode');
-    } else {
-      document.documentElement.classList.add('light-mode');
-    }
-  }, [isDarkMode]);
+  return <AppContent activeTab={activeTab} setActiveTab={setActiveTab} />;
+}
 
-
+function AppContent({ activeTab, setActiveTab }) {
+  const {
+    filters,
+    searchTerm,
+    activeRole,
+    isDarkMode,
+    alertsOpen,
+    setAlertsOpen,
+    userDetails,
+    onLogout
+  } = useFilters();
 
   const filteredCrimes = useMemo(() => {
     return rawCrimesLog.filter(c => {
@@ -146,72 +158,20 @@ export default function App() {
     ];
   }, [activeRole]);
 
-  const handleResetFilters = () => {
-    if (activeRole === 'SCRB_ADMIN') {
-      setFilters({ districtId: 'all', unitId: 'all', dateRange: '30days', gravity: 'all' });
-    } else if (activeRole === 'DISTRICT_OFFICER') {
-      setFilters({ districtId: '1', unitId: 'all', dateRange: '30days', gravity: 'all' });
-    } else {
-      setFilters({ districtId: '1', unitId: '1', dateRange: '30days', gravity: 'all' });
-    }
-    setSearchTerm('');
-  };
-
-  const handleVoiceFilters = (voiceFilters) => {
-    setFilters(prev => {
-      const next = { ...prev };
-      if (activeRole === 'SCRB_ADMIN') {
-        if (voiceFilters.districtId !== 'all') next.districtId = voiceFilters.districtId;
-        if (voiceFilters.unitId !== 'all') next.unitId = voiceFilters.unitId;
-      } else if (activeRole === 'DISTRICT_OFFICER') {
-        next.districtId = '1';
-        if (voiceFilters.unitId !== 'all') {
-          const matchedUnit = units.find(u => Number(u.id) === Number(voiceFilters.unitId));
-          if (matchedUnit && Number(matchedUnit.districtId) === 1) {
-            next.unitId = voiceFilters.unitId;
-          }
-        }
-      } else if (activeRole === 'INVESTIGATION_OFFICER') {
-        next.districtId = '1';
-        next.unitId = '1';
-      }
-      if (voiceFilters.gravity) next.gravity = voiceFilters.gravity;
-      if (voiceFilters.dateRange) next.dateRange = voiceFilters.dateRange;
-      return next;
-    });
-    if (voiceFilters.searchTerm) {
-      setSearchTerm(voiceFilters.searchTerm);
-    }
-  };
-
-  if (!isLoggedIn) {
-    return <Login onLogin={(role) => {
-      setActiveRole(role);
-      setIsLoggedIn(true);
-    }} />;
-  }
-
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-  };
-
   return (
     <div className="flex h-screen w-full overflow-hidden bg-[var(--color-canvas-dark)] text-[var(--color-body)] font-nova">
-      <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} onLogout={handleLogout} />
+      {/* Skip Navigation Link for Keyboard Accessibility */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:bg-[var(--color-primary)] focus:text-white focus:rounded-md font-bold shadow-lg"
+      >
+        Skip to main content
+      </a>
 
-      <main className="flex-1 flex flex-col overflow-hidden relative">
-        <Navbar
-          activeRole={activeRole}
-          setActiveRole={setActiveRole}
-          searchTerm={searchTerm}
-          setSearchTerm={setSearchTerm}
-          userDetails={userDetails}
-          onVoiceFilters={handleVoiceFilters}
-          isDarkMode={isDarkMode}
-          toggleDarkMode={() => setIsDarkMode(!isDarkMode)}
-          alertsOpen={alertsOpen}
-          setAlertsOpen={setAlertsOpen}
-        />
+      <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} onLogout={onLogout} />
+
+      <main id="main-content" className="flex-1 flex flex-col overflow-hidden relative">
+        <Navbar />
 
         {activeTab === 'dashboard' && (
           <div className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-10 space-y-8 animate-[fadeIn_0.4s_ease-out_forwards]">
@@ -293,18 +253,11 @@ export default function App() {
               />
             </div>
 
-            <Filters
-              filters={filters}
-              setFilters={setFilters}
-              districts={districts}
-              units={units}
-              onReset={handleResetFilters}
-              activeRole={activeRole}
-            />
+            <Filters />
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               <div className="lg:col-span-2">
-                <CrimeTrendsChart title="Crime Volume Registrations (Year-on-Year)" data={trendData} showAnomalies={true} filters={filters} />
+                <CrimeTrendsChart title="Crime Volume Registrations (Year-on-Year)" data={trendData} showAnomalies={true} />
               </div>
               <div className="card-dark p-6 h-full min-h-[340px] flex flex-col justify-between">
                 <div>
@@ -334,11 +287,11 @@ export default function App() {
               </div>
             </div>
 
-            <EmergingTrendAlerts activeRole={activeRole} filters={filters} />
+            <EmergingTrendAlerts />
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <CaseOutcomePredictions filters={filters} />
-              <TrendForecasts filters={filters} />
+              <CaseOutcomePredictions />
+              <TrendForecasts />
             </div>
 
             <div className="space-y-4">
@@ -372,16 +325,16 @@ export default function App() {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <SocioEconomicOverlay activeRole={activeRole} filters={filters} />
-              <ResourceDeployment activeRole={activeRole} filters={filters} />
+              <SocioEconomicOverlay />
+              <ResourceDeployment />
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               <div className="lg:col-span-2 h-full">
-                <BehavioralProfiles filters={filters} />
+                <BehavioralProfiles />
               </div>
               <div className="h-full">
-                <CorrelationHeatmap filters={filters} />
+                <CorrelationHeatmap />
               </div>
             </div>
 
@@ -391,7 +344,7 @@ export default function App() {
 
         {activeTab === 'network' && (
           <div className="flex-1 flex flex-col overflow-hidden min-h-0 relative p-4 sm:p-6 lg:p-8 animate-[fadeIn_0.4s_ease-out_forwards]">
-            <NetworkGraph activeRole={activeRole} />
+            <NetworkGraph />
           </div>
         )}
 
@@ -407,7 +360,7 @@ export default function App() {
 
         {activeTab === 'wanted' && (
           <div className="flex-1 overflow-y-auto relative">
-            <WantedMissing activeRole={activeRole} />
+            <WantedMissing />
           </div>
         )}
 
@@ -441,15 +394,15 @@ export default function App() {
 
         {activeTab === 'hotspots' && (
           <div className="flex-1 flex flex-col overflow-hidden min-h-0 relative p-4 sm:p-6 lg:p-8">
-            <HotspotMap activeRole={activeRole} isDarkMode={isDarkMode} />
+            <HotspotMap />
           </div>
         )}
       </main>
 
       {/* Alert Center Modal */}
-      {alertsOpen && <AlertCenter isOpen={alertsOpen} onClose={() => setAlertsOpen(false)} filters={filters} />}
+      {alertsOpen && <AlertCenter isOpen={alertsOpen} onClose={() => setAlertsOpen(false)} />}
 
-      <CopBot activeRole={activeRole} />
+      <CopBot />
     </div>
   );
 }

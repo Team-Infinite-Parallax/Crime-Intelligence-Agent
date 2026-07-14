@@ -1,8 +1,10 @@
 import React, { useMemo } from 'react';
 import { Navigation, Shield, ShieldAlert, AlertTriangle, Plus, Minus } from 'lucide-react';
 import { resourceDeployment } from '../../data/constants';
+import { useFilters } from '../../contexts/FilterContext';
 
-export default function ResourceDeployment({ activeRole, filters = {} }) {
+export default function ResourceDeployment() {
+  const { activeRole, filters } = useFilters();
   const filtered = useMemo(() => {
     return resourceDeployment.filter(r => {
       if (activeRole === 'DISTRICT_OFFICER' && r.districtId !== 1) return false;

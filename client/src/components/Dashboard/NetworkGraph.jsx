@@ -1,4 +1,34 @@
 import React, { useEffect, useRef, useState, useCallback, useMemo } from 'react';
+
+/**
+ * @typedef {Object} NodeData
+ * @property {string} id - Unique identifier for the node
+ * @property {string} label - Display label
+ * @property {string} type - Type of node (offender, victim, crime, phone, bankAccount, policeStation)
+ * @property {number} [riskScore] - Risk score for offenders (0-100)
+ * @property {string} [gravity] - Gravity of crime ('1' for heinous)
+ */
+
+/**
+ * @typedef {Object} EdgeData
+ * @property {string} id - Unique identifier for the edge
+ * @property {string} source - Source node ID
+ * @property {string} target - Target node ID
+ * @property {string} type - Edge relationship type
+ * @property {string} label - Edge display label
+ */
+
+/**
+ * @typedef {Object} CytoscapeElement
+ * @property {NodeData|EdgeData} data - The data object for the element
+ */
+
+/**
+ * NetworkGraph Component
+ * Renders an interactive force-directed graph of criminal entities using Cytoscape.js.
+ * @component
+ * @returns {React.ReactElement} The rendered Network Graph component
+ */
 import cytoscape from 'cytoscape';
 import fcose from 'cytoscape-fcose';
 import {
@@ -754,7 +784,31 @@ export default function NetworkGraph() {
           ref={containerRef}
           className="flex-1 h-full bg-[var(--color-canvas-dark)] relative"
           style={{ minHeight: 0 }}
+          role="region"
+          aria-label="Interactive Criminal Intelligence Network Graph"
         />
+        
+        <div className="sr-only">
+          <table>
+            <caption>Network Graph Elements</caption>
+            <thead>
+              <tr>
+                <th scope="col">Element ID</th>
+                <th scope="col">Label</th>
+                <th scope="col">Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              {initialElements.filter(e => !e.data.source).map(node => (
+                <tr key={`sr-node-${node.data.id}`}>
+                  <td>{node.data.id}</td>
+                  <td>{node.data.label}</td>
+                  <td>{node.data.type}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
 
         {isLoading && (
           <div className="absolute inset-0 flex flex-col items-center justify-center bg-[var(--color-canvas-dark)]/90 z-30">

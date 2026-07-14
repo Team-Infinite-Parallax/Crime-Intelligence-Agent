@@ -1,14 +1,16 @@
 import React from 'react';
 import { Filter, RefreshCw } from 'lucide-react';
+import { useFilters } from '../../contexts/FilterContext';
 
-export default function Filters({
-  filters,
-  setFilters,
-  districts,
-  units,
-  onReset,
-  activeRole
-}) {
+export default function Filters() {
+  const {
+    filters,
+    setFilters,
+    districts,
+    units,
+    resetFilters: onReset,
+    activeRole
+  } = useFilters();
   const dateRanges = [
     { id: '30days', label: 'Last 30 Days' },
     { id: '90days', label: 'Last 90 Days' },

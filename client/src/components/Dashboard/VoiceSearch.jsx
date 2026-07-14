@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { Mic, MicOff, Globe, X, Sparkles, AlertCircle, RefreshCw } from 'lucide-react';
+import { useFilters } from '../../contexts/FilterContext';
 
-export default function VoiceSearch({ onVoiceFilters, activeRole }) {
+export default function VoiceSearch() {
+  const { handleVoiceFilters: onVoiceFilters, activeRole } = useFilters();
   const [isOpen, setIsOpen] = useState(false);
   const [isListening, setIsListening] = useState(false);
   const [lang, setLang] = useState('en-US');
@@ -254,6 +256,7 @@ export default function VoiceSearch({ onVoiceFilters, activeRole }) {
               setIsOpen(false);
             }}
             className="text-[var(--color-muted)] hover:text-[var(--color-on-dark)] hover:bg-[var(--color-surface-elevated-dark)] rounded-full transition-colors p-1.5"
+            aria-label="Close voice search modal"
           >
             <X className="h-5 w-5" />
           </button>
@@ -293,6 +296,7 @@ export default function VoiceSearch({ onVoiceFilters, activeRole }) {
                   ? 'bg-red-900/20 border-red-500/50 text-red-500 scale-105 shadow-[0_0_30px_rgba(239,68,68,0.3)]'
                   : 'bg-[var(--color-surface-elevated-dark)]/50 border-[var(--color-hairline-dark)] text-[var(--color-primary)] hover:scale-105 hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] shadow-lg shadow-[var(--color-primary)]/5'
               }`}
+              aria-label={isListening ? "Stop listening" : "Start listening"}
             >
               {isListening && (
                 <>
@@ -350,6 +354,7 @@ export default function VoiceSearch({ onVoiceFilters, activeRole }) {
                   disabled={!transcript.trim() || processing}
                   className="absolute bottom-2 right-2 p-1.5 bg-[var(--color-primary)]/20 text-[var(--color-primary)] hover:bg-[var(--color-primary)]/40 rounded-sm transition-colors disabled:opacity-50"
                   title="Submit Query"
+                  aria-label="Submit voice query"
                 >
                   <Sparkles className="h-4 w-4" />
                 </button>
@@ -383,6 +388,7 @@ export default function VoiceSearch({ onVoiceFilters, activeRole }) {
         onClick={() => setIsOpen(true)}
         className="p-2 bg-[var(--color-surface-elevated-dark)] border border-[var(--color-hairline-dark)] rounded-sm text-[var(--color-muted)] hover:text-[var(--color-primary)] hover:bg-[var(--color-canvas-dark)] transition-all hover:scale-105 duration-150 flex items-center justify-center cursor-pointer shadow-md shrink-0"
         title="Voice Search AI"
+        aria-label="Voice Search AI"
       >
         <Mic className="h-[18px] w-[18px] shrink-0" />
       </button>

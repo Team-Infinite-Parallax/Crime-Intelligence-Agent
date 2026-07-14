@@ -88,7 +88,11 @@ function requireAuth(allowedRoles = []) {
       const mockEmail = req.headers['x-mock-email'];
       const mockEmployeeId = req.headers['x-mock-employee-id'];
       
-      if (mockRole) {
+      const isLocalDev = process.env.NODE_ENV === 'development' || 
+                         process.env.CATALYST_ENV === 'Development' || 
+                         !process.env.CATALYST_ENV;
+      
+      if (mockRole && isLocalDev) {
         const role = mockRole.toUpperCase();
         if (allowedRoles.length > 0 && !allowedRoles.includes(role)) {
           res.writeHead(403, { 'Content-Type': 'application/json' });
@@ -121,6 +125,8 @@ function requireAuth(allowedRoles = []) {
             employee = { employeeID: mockEmployeeId ? Number(mockEmployeeId) : 9, unitID: 1, districtID: 1, districtName: 'Bengaluru Urban', firstName: 'Mock', lastName: 'DistrictOfficer' };
           } else if (role === 'INVESTIGATION_OFFICER') {
             employee = { employeeID: mockEmployeeId ? Number(mockEmployeeId) : 1, unitID: 1, districtID: 1, districtName: 'Bengaluru Urban', firstName: 'Mohammed', lastName: 'Puttaiah' };
+          } else if (role === 'SCRB_ADMIN') {
+            employee = { employeeID: mockEmployeeId ? Number(mockEmployeeId) : 99, unitID: 0, districtID: 0, districtName: 'State Headquarters', firstName: 'Admin', lastName: 'KSP' };
           }
         }
 

@@ -1,7 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Calendar, AlertTriangle, TrendingUp } from 'lucide-react';
+import { useFilters } from '../../contexts/FilterContext';
 
-export default function CrimeTrendsChart({ title, data, showAnomalies = true, filters = {} }) {
+export default function CrimeTrendsChart({ title, data, showAnomalies = true }) {
+  const { filters } = useFilters();
   const [hoveredIdx, setHoveredIdx] = useState(null);
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
   const [anomalies, setAnomalies] = useState([]);

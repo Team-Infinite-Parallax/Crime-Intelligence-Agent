@@ -2,10 +2,12 @@ import React, { useMemo } from 'react';
 import { TrendingUp, TrendingDown, AlertTriangle, Activity, BarChart3, Clock } from 'lucide-react';
 import { crimeCategoryTrends } from '../../data/constants';
 import { crimeIncidents } from '../../data/mockCrimeData';
+import { useFilters } from '../../contexts/FilterContext';
 
 const DISTRICTS = ['Bengaluru Urban', 'Mysuru', 'Belagavi', 'Dakshina Kannada', 'Kalaburagi'];
 
-export default function EmergingTrendAlerts({ activeRole, filters = {} }) {
+export default function EmergingTrendAlerts() {
+  const { activeRole, filters } = useFilters();
   const [selectedDistrict, setSelectedDistrict] = React.useState('all');
   const [timeRange, setTimeRange] = React.useState('3months');
 

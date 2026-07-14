@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Loader, AlertCircle, Users, TrendingUp } from 'lucide-react';
 import { MOCK_CLUSTERS, MOCK_TYPOLOGIES, fetchWithFallback } from '../../utils/mockApi';
+import { useFilters } from '../../contexts/FilterContext';
 
 const TYPOLOGY_ICONS = {
   'Organized Network': '🕷️',
@@ -9,7 +10,8 @@ const TYPOLOGY_ICONS = {
   'Wandering Opportunist': '🗺️'
 };
 
-export default function BehavioralProfiles({ filters = {} }) {
+export default function BehavioralProfiles() {
+  const { filters } = useFilters();
   const [clusters, setClusters] = useState([]);
   const [typologies, setTypologies] = useState([]);
   const [summary, setSummary] = useState([]);
