@@ -130,6 +130,7 @@ export default function Login({ onLogin, isDarkMode, onToggleTheme }) {
 
       {/* Decorative scanline or grid patterns */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--color-surface-card-dark),var(--color-canvas-dark))]" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(37,99,235,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(37,99,235,0.08)_1px,transparent_1px)] bg-[size:40px_40px] animate-[gridMove_20s_linear_infinite]" />
       <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[var(--color-primary)]/20 to-transparent animate-pulse" />
 
       {/* Main Container */}
