@@ -80,8 +80,8 @@ export default function RiskProfiling({ offenders }) {
   const maxCases = Math.max(...districtHeat.map(d => d[1]), 1);
 
   return (
-    <div className="p-4 sm:p-6 lg:p-8 space-y-4 sm:space-y-6 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/6 via-transparent to-transparent backdrop-blur-sm pointer-events-none" />
+    <div className="relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/6 via-transparent to-transparent pointer-events-none" />
       <div className="relative z-10 space-y-4 sm:space-y-6">
       <div className="bg-[var(--color-surface-card-dark)] border border-[var(--color-primary)]/15 rounded-sm p-5">
         <div className="flex items-center justify-between">

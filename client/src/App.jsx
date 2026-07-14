@@ -363,7 +363,7 @@ function AppContent({ activeTab, setActiveTab }) {
         )}
 
         {activeTab === 'risk' && (
-          <div className="flex-1 overflow-y-auto relative">
+          <div className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-10 space-y-8 animate-[fadeIn_0.4s_ease-out_forwards]">
             <RiskProfiling
               offenders={filteredOffenders}
               crimes={filteredCrimes}
@@ -373,13 +373,13 @@ function AppContent({ activeTab, setActiveTab }) {
         )}
 
         {activeTab === 'wanted' && (
-          <div className="flex-1 overflow-y-auto relative">
+          <div className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-10 space-y-8 animate-[fadeIn_0.4s_ease-out_forwards]">
             <WantedMissing />
           </div>
         )}
 
         {activeTab === 'reports' && (
-          <div className="flex-1 overflow-y-auto relative">
+          <div className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-10 space-y-8 animate-[fadeIn_0.4s_ease-out_forwards]">
             <ReportsAnalytics
               crimes={filteredCrimes}
               offenders={filteredOffenders}
