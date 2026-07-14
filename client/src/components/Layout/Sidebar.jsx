@@ -35,7 +35,7 @@ const emblemSvg = (
  * @param {Function} props.onMobileClose
  */
 export default function Sidebar({ activeTab, setActiveTab, onLogout, isMobileOpen, onMobileClose }) {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true);
 
   const handleNavClick = (tabId) => {
     setActiveTab(tabId);
