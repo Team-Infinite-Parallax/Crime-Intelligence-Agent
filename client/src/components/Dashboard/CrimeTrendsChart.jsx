@@ -15,27 +15,29 @@ export default function CrimeTrendsChart({ title, data, showAnomalies = true }) 
   // Fetch anomaly data when component mounts
   useEffect(() => {
     if (!showAnomalies) return;
-    
-    const fetchAnomalies = async () => {
+
+    let cancelled = false;
+    const loadAnomalies = async () => {
       setLoading(true);
       try {
         const params = {};
         if (filters.districtId && filters.districtId !== 'all') {
           params.districtId = filters.districtId;
         }
-        
+
         const result = await fetchAnomalies(params);
-        if (result && result.anomalies) {
+        if (!cancelled && result && result.anomalies) {
           setAnomalies(result.anomalies);
         }
       } catch (err) {
         console.error('Failed to fetch anomalies:', err);
       } finally {
-        setLoading(false);
+        if (!cancelled) setLoading(false);
       }
     };
 
-    fetchAnomalies();
+    loadAnomalies();
+    return () => { cancelled = true; };
   }, [showAnomalies, filters]);
 
   if (!data || data.length === 0) return null;
@@ -99,6 +101,18 @@ export default function CrimeTrendsChart({ title, data, showAnomalies = true }) 
     const y = paddingTop + chartHeight - (idx / (gridCount - 1)) * chartHeight;
     return { val: Math.round(val), y };
   });
+
+  // Deterministically flag the k most deviant data points, where k = detected anomaly count
+  const anomalyCount = showAnomalies ? anomalies.filter(a => a.isAnomaly).length : 0;
+  const anomalousIndices = new Set();
+  if (anomalyCount > 0) {
+    const mean = values.reduce((sum, v) => sum + v, 0) / values.length;
+    values
+      .map((v, idx) => ({ idx, deviation: Math.abs(v - mean) }))
+      .sort((a, b) => b.deviation - a.deviation)
+      .slice(0, Math.min(anomalyCount, values.length))
+      .forEach(({ idx }) => anomalousIndices.add(idx));
+  }
 
   return (
     <div className="card-dark p-4 sm:p-6 flex flex-col h-full min-h-[320px] sm:min-h-[380px] relative select-none overflow-hidden">
@@ -220,7 +234,7 @@ export default function CrimeTrendsChart({ title, data, showAnomalies = true }) 
 
           {/* Data points */}
           {points.map((p, idx) => {
-            const hasAnomaly = showAnomalies && anomalies.some(a => a.isAnomaly && Math.random() > 0.7);
+            const hasAnomaly = anomalousIndices.has(idx);
             return (
               <g key={`point-${idx}`}>
                 {hasAnomaly && (
