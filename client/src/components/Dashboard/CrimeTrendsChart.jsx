@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Calendar } from 'lucide-react';
 import { useFilters } from '../../contexts/FilterContext';
+import { fetchAnomalies } from '../../utils/api';
 
 export default function CrimeTrendsChart({ title, data, showAnomalies = true }) {
   const { filters } = useFilters();
@@ -18,25 +19,14 @@ export default function CrimeTrendsChart({ title, data, showAnomalies = true }) 
     const fetchAnomalies = async () => {
       setLoading(true);
       try {
-        const queryParams = new URLSearchParams({
-          type: 'anomaly',
-          limit: 50
-        });
-        
+        const params = {};
         if (filters.districtId && filters.districtId !== 'all') {
-          queryParams.append('districtId', filters.districtId);
+          params.districtId = filters.districtId;
         }
         
-        const response = await fetch(`/predictions?${queryParams}`, {
-          headers: {
-            'x-employee-role': localStorage.getItem('userRole') || 'SCRB_ADMIN',
-            'x-employee-email': localStorage.getItem('userEmail') || 'test@ksp.in'
-          }
-        });
-        
-        if (response.ok) {
-          const result = await response.json();
-          setAnomalies(result.anomalies || []);
+        const result = await fetchAnomalies(params);
+        if (result && result.anomalies) {
+          setAnomalies(result.anomalies);
         }
       } catch (err) {
         console.error('Failed to fetch anomalies:', err);

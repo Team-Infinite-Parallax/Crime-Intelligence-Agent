@@ -41,6 +41,11 @@ export default function AlertCenter({ isOpen, onClose }) {
 
   const handleAcknowledge = async (alertId) => {
     try {
+      if (import.meta.env.PROD || import.meta.env.VITE_USE_MOCK_API === 'true' || !import.meta.env.VITE_API_URL) {
+        setAcknowledged(prev => new Set([...prev, alertId]));
+        return;
+      }
+
       const response = await fetch('/alerts', {
         method: 'POST',
         headers: {

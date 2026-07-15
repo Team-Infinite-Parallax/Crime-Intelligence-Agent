@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AlertTriangle, Bell } from 'lucide-react';
+import { fetchAlerts } from '../../utils/api';
 
 export default function AlertBadge({ onClick, disabled = false }) {
   const [criticalCount, setCriticalCount] = useState(0);
@@ -9,15 +10,9 @@ export default function AlertBadge({ onClick, disabled = false }) {
   useEffect(() => {
     const fetchAlertCounts = async () => {
       try {
-        const response = await fetch('/alerts?limit=50', {
-          headers: {
-            'x-employee-role': localStorage.getItem('userRole') || 'SCRB_ADMIN',
-            'x-employee-email': localStorage.getItem('userEmail') || 'test@ksp.in'
-          }
-        });
+        const result = await fetchAlerts({ limit: 50 });
 
-        if (response.ok) {
-          const result = await response.json();
+        if (result) {
           setCriticalCount(result.critical || 0);
           setHighCount(result.high || 0);
           

@@ -91,6 +91,11 @@ export const MOCK_ALERTS = [
 ];
 
 export async function fetchWithFallback(url, options = {}) {
+  // Prevent 404 console errors in production for non-existent mock endpoints
+  if (import.meta.env.PROD || import.meta.env.VITE_USE_MOCK_API === 'true') {
+    return null;
+  }
+
   try {
     const response = await fetch(url, {
       headers: {

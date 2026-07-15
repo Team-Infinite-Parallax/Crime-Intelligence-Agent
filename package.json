@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "express": "^5.2.1",
+    "zcatalyst-cli": "^1.27.0",
     "zcatalyst-sdk-node": "^3.4.0"
   },
   "devDependencies": {
