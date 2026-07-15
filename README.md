@@ -238,6 +238,31 @@ npm run dev
 ```
 *Frontend running on `http://localhost:5173` and backend API services running on `http://localhost:3001`.*
 
+**5. Setup Database (Catalyst DataStore)**
+
+The complete FIR database implementation (26 tables, 50,000 records) is ready to deploy:
+
+```bash
+# One-command setup (production - 50,000 records)
+node database/setup-database.js
+
+# Quick test setup (1,000 records)
+node database/setup-database.js --test-only
+```
+
+This will:
+- ✅ Generate synthetic FIR data (50,000 cases from 2023-2026)
+- ✅ Import to Catalyst DataStore with full referential integrity
+- ✅ Verify database and provide summary statistics
+
+**📖 Database Documentation:**
+- [Quick Start Guide](./database/QUICK_START.md) — Get database running in 10 minutes
+- [Deployment Guide](./docs/DATABASE_DEPLOYMENT_GUIDE.md) — Complete step-by-step walkthrough
+- [Implementation Summary](./docs/DATABASE_IMPLEMENTATION_SUMMARY.md) — What was built and how to use it
+- [Database API Reference](./database/README.md) — Query functions and usage examples
+
+**Note:** Backend Catalyst functions are already integrated with the database. Frontend updates to use real APIs are documented in the deployment guide.
+
 ---
 
 ## 🔑 Demo Access Credentials

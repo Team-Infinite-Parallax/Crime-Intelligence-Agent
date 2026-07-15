@@ -1,0 +1,250 @@
+{
+  "tables": [
+    {
+      "table_name": "State",
+      "columns": [
+        {
+          "column_name": "StateID",
+          "data_type": "bigint",
+          "is_mandatory": true,
+          "is_unique": true
+        },
+        {
+          "column_name": "StateName",
+          "data_type": "text",
+          "max_length": 100,
+          "is_mandatory": true
+        },
+        {
+          "column_name": "NationalityID",
+          "data_type": "int"
+        },
+        {
+          "column_name": "Active",
+          "data_type": "boolean",
+          "default_value": true
+        }
+      ]
+    },
+    {
+      "table_name": "District",
+      "columns": [
+        {
+          "column_name": "DistrictID",
+          "data_type": "bigint",
+          "is_mandatory": true,
+          "is_unique": true
+        },
+        {
+          "column_name": "DistrictName",
+          "data_type": "text",
+          "max_length": 100,
+          "is_mandatory": true
+        },
+        {
+          "column_name": "StateID",
+          "data_type": "bigint",
+          "is_mandatory": true
+        },
+        {
+          "column_name": "Active",
+          "data_type": "boolean",
+          "default_value": true
+        }
+      ]
+    },
+    {
+      "table_name": "UnitType",
+      "columns": [
+        {
+          "column_name": "UnitTypeID",
+          "data_type": "bigint",
+          "is_mandatory": true,
+          "is_unique": true
+        },
+        {
+          "column_name": "UnitTypeName",
+          "data_type": "text",
+          "max_length": 100,
+          "is_mandatory": true
+        },
+        {
+          "column_name": "CityDistState",
+          "data_type": "text",
+          "max_length": 50
+        },
+        {
+          "column_name": "Hierarchy",
+          "data_type": "int"
+        },
+        {
+          "column_name": "Active",
+          "data_type": "boolean",
+          "default_value": true
+        }
+      ]
+    },
+    {
+      "table_name": "Unit",
+      "columns": [
+        {
+          "column_name": "UnitID",
+          "data_type": "bigint",
+          "is_mandatory": true,
+          "is_unique": true
+        },
+        {
+          "column_name": "UnitName",
+          "data_type": "text",
+          "max_length": 255,
+          "is_mandatory": true
+        },
+        {
+          "column_name": "TypeID",
+          "data_type": "bigint"
+        },
+        {
+          "column_name": "ParentUnit",
+          "data_type": "bigint"
+        },
+        {
+          "column_name": "NationalityID",
+          "data_type": "int"
+        },
+        {
+          "column_name": "StateID",
+          "data_type": "bigint"
+        },
+        {
+          "column_name": "DistrictID",
+          "data_type": "bigint"
+        },
+        {
+          "column_name": "latitude",
+          "data_type": "double"
+        },
+        {
+          "column_name": "longitude",
+          "data_type": "double"
+        },
+        {
+          "column_name": "Active",
+          "data_type": "boolean",
+          "default_value": true
+        }
+      ]
+    },
+    {
+      "table_name": "Rank",
+      "columns": [
+        {
+          "column_name": "RankID",
+          "data_type": "bigint",
+          "is_mandatory": true,
+          "is_unique": true
+        },
+        {
+          "column_name": "RankName",
+          "data_type": "text",
+          "max_length": 100,
+          "is_mandatory": true
+        },
+        {
+          "column_name": "Hierarchy",
+          "data_type": "int"
+        },
+        {
+          "column_name": "Active",
+          "data_type": "boolean",
+          "default_value": true
+        }
+      ]
+    },
+    {
+      "table_name": "Designation",
+      "columns": [
+        {
+          "column_name": "DesignationID",
+          "data_type": "bigint",
+          "is_mandatory": true,
+          "is_unique": true
+        },
+        {
+          "column_name": "DesignationName",
+          "data_type": "text",
+          "max_length": 100,
+          "is_mandatory": true
+        },
+        {
+          "column_name": "Active",
+          "data_type": "boolean",
+          "default_value": true
+        },
+        {
+          "column_name": "SortOrder",
+          "data_type": "int"
+        }
+      ]
+    },
+    {
+      "table_name": "Employee",
+      "columns": [
+        {
+          "column_name": "EmployeeID",
+          "data_type": "bigint",
+          "is_mandatory": true,
+          "is_unique": true
+        },
+        {
+          "column_name": "DistrictID",
+          "data_type": "bigint"
+        },
+        {
+          "column_name": "UnitID",
+          "data_type": "bigint"
+        },
+        {
+          "column_name": "RankID",
+          "data_type": "bigint"
+        },
+        {
+          "column_name": "DesignationID",
+          "data_type": "bigint"
+        },
+        {
+          "column_name": "KGID",
+          "data_type": "text",
+          "max_length": 50,
+          "is_unique": true
+        },
+        {
+          "column_name": "FirstName",
+          "data_type": "text",
+          "max_length": 100,
+          "is_mandatory": true
+        },
+        {
+          "column_name": "EmployeeDOB",
+          "data_type": "date"
+        },
+        {
+          "column_name": "GenderID",
+          "data_type": "int"
+        },
+        {
+          "column_name": "BloodGroupID",
+          "data_type": "int"
+        },
+        {
+          "column_name": "PhysicallyChallenged",
+          "data_type": "boolean",
+          "default_value": false
+        },
+        {
+          "column_name": "AppointmentDate",
+          "data_type": "date"
+        }
+      ]
+    }
+  ]
+}
