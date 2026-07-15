@@ -51,10 +51,15 @@
   "49": "package.json",
   "50": "package.json",
   "51": "Web Interface Guidelines",
+  "52": "App.jsx",
+  "53": "useFilters",
   "54": "graphify reference: add a URL and watch a folder",
   "55": "graphify reference: commit hook and native CLAUDE.md integration",
   "56": "graphify reference: incremental update and cluster-only",
   "57": "React + Vite",
+  "58": "The Proposed Solution: Crime Intelligence & Analytical Platform",
+  "59": "SocioEconomicOverlay.jsx",
+  "60": "Login.jsx",
   "61": "graphify reference: GitHub clone and cross-repo merge",
   "62": "graphify reference: transcribe video and audio",
   "63": "graphify.md",
@@ -64,5 +69,10 @@
   "67": "extraction-spec.md",
   "68": "index.js",
   "69": "index.js",
-  "70": "vite.config.js"
+  "70": "vite.config.js",
+  "71": "CopBot.jsx",
+  "72": "setupTests.js",
+  "73": "RiskProfiling.jsx",
+  "74": "ReportsAnalytics.test.jsx",
+  "75": "index.js"
 }

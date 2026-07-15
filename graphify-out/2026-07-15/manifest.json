@@ -15,8 +15,8 @@
     "semantic_hash": ""
   },
   "client/package.json": {
-    "mtime": 1783791864.5317767,
-    "ast_hash": "0a313604f34be69e42216841303d3733",
+    "mtime": 1784039176.9926434,
+    "ast_hash": "c894ddaa41a05ac0a4033236552246fc",
     "semantic_hash": ""
   },
   "client/public/client-package.json": {
@@ -25,13 +25,13 @@
     "semantic_hash": ""
   },
   "client/src/App.jsx": {
-    "mtime": 1784037859.5409808,
-    "ast_hash": "c2e15bda201cce5a81b7af40cba37f70",
+    "mtime": 1784099961.7518635,
+    "ast_hash": "36b9821bbf938bbb8a28c55fa6771440",
     "semantic_hash": ""
   },
   "client/src/components/Auth/Login.jsx": {
-    "mtime": 1784030131.4217465,
-    "ast_hash": "94ff35cee54ebb47c773a70669e2d5d7",
+    "mtime": 1784064192.5314796,
+    "ast_hash": "42ad0d7d82b50ddd38556f1a24a21bd6",
     "semantic_hash": ""
   },
   "client/src/components/Dashboard/AlertBadge.jsx": {
@@ -40,118 +40,118 @@
     "semantic_hash": ""
   },
   "client/src/components/Dashboard/AlertCenter.jsx": {
-    "mtime": 1784037750.4904234,
-    "ast_hash": "a8163ec1e9da46e998ee933d33bcadcd",
+    "mtime": 1784099894.0540187,
+    "ast_hash": "95c42e60e9868ff6df71f5adf7e9bbc6",
     "semantic_hash": ""
   },
   "client/src/components/Dashboard/BehavioralProfiles.jsx": {
-    "mtime": 1784037721.407499,
-    "ast_hash": "f4714c7d1d15ac28dc5ac4024b71196e",
+    "mtime": 1784099936.2538145,
+    "ast_hash": "00c0eb1bf5e46a349ba873160fd00531",
     "semantic_hash": ""
   },
   "client/src/components/Dashboard/CaseOutcomePredictions.jsx": {
-    "mtime": 1784037646.0874243,
-    "ast_hash": "d7717ae5f5b65fea14c34e75963e7bd4",
+    "mtime": 1784099747.4905922,
+    "ast_hash": "f77838d16e8a83f2cabfbf274e3f8a34",
     "semantic_hash": ""
   },
   "client/src/components/Dashboard/CopBot.jsx": {
-    "mtime": 1784037535.6594167,
-    "ast_hash": "c126dae8b74977bc0d640e02b411984d",
+    "mtime": 1784062102.345852,
+    "ast_hash": "c24d90459a2f54256a2f1c7ba5dc5772",
     "semantic_hash": ""
   },
   "client/src/components/Dashboard/CorrelationHeatmap.jsx": {
-    "mtime": 1784037730.81202,
-    "ast_hash": "9cec09567eb73f3d36e29ae3fa458aaf",
+    "mtime": 1784062049.4423733,
+    "ast_hash": "5e463c3a574bbd3326e0aec1715fa30b",
     "semantic_hash": ""
   },
   "client/src/components/Dashboard/CrimeTrendsChart.jsx": {
-    "mtime": 1784037595.5232368,
-    "ast_hash": "ea97c83327e2ea8c98cd3676b9592a23",
+    "mtime": 1784100195.2654798,
+    "ast_hash": "be8565d681cf97cc89616794e211296c",
     "semantic_hash": ""
   },
   "client/src/components/Dashboard/EmergingTrendAlerts.jsx": {
-    "mtime": 1784037631.3374507,
-    "ast_hash": "a05386270e671c39a8e11fccd3c30b16",
+    "mtime": 1784099985.901295,
+    "ast_hash": "be0d3af3eb04e70df9dc6b233a2bf31d",
     "semantic_hash": ""
   },
   "client/src/components/Dashboard/Filters.jsx": {
-    "mtime": 1784037396.736824,
-    "ast_hash": "affc23c345cd501a4fd71642dcecb46c",
+    "mtime": 1784061744.7379637,
+    "ast_hash": "f5c35ba9ad7f14e92b4186c7e5fc8a25",
     "semantic_hash": ""
   },
   "client/src/components/Dashboard/HotspotMap.jsx": {
-    "mtime": 1784037565.6158898,
-    "ast_hash": "f4f9ecc2f73b7732b9f573f061f9b966",
+    "mtime": 1784099735.4375904,
+    "ast_hash": "36833a3964b3efa16b221387c373e017",
     "semantic_hash": ""
   },
   "client/src/components/Dashboard/MapFilters.jsx": {
-    "mtime": 1783791864.551701,
-    "ast_hash": "d48d1db6252833da384c27dcfefda4fc",
+    "mtime": 1784058687.0700426,
+    "ast_hash": "ea55eb7e7c5fce8369eb502db8cc03eb",
     "semantic_hash": ""
   },
   "client/src/components/Dashboard/MetricCard.jsx": {
-    "mtime": 1783791864.5527005,
-    "ast_hash": "121f91316bd75ed57355a6fe713e8ec4",
+    "mtime": 1784099762.9112697,
+    "ast_hash": "7682f619c062370e03753f23b04a9665",
     "semantic_hash": ""
   },
   "client/src/components/Dashboard/NetworkGraph.jsx": {
-    "mtime": 1784028646.5468316,
-    "ast_hash": "6ff86848b50fcf58f7cbf3a19fee78f2",
+    "mtime": 1784100119.70976,
+    "ast_hash": "69a5c614b77eccea1dc79c2ab86cd982",
     "semantic_hash": ""
   },
   "client/src/components/Dashboard/RecentCrimesTable.jsx": {
-    "mtime": 1783791864.5560637,
-    "ast_hash": "69bb35aaeafeabd84eb7073de73f93ee",
+    "mtime": 1784099762.3206668,
+    "ast_hash": "06a2e5159691a5e1a92527ae6be5be24",
     "semantic_hash": ""
   },
   "client/src/components/Dashboard/ReportsAnalytics.jsx": {
-    "mtime": 1784028646.563882,
-    "ast_hash": "66fb02d7ad45fad937714d5bb8383431",
+    "mtime": 1784099748.656276,
+    "ast_hash": "a2b5c888587eb16fef48b8947d3f51c9",
     "semantic_hash": ""
   },
   "client/src/components/Dashboard/ResourceDeployment.jsx": {
-    "mtime": 1784037701.5373566,
-    "ast_hash": "7ca6a85bebad9232bc306f782b49a15f",
+    "mtime": 1784099744.812148,
+    "ast_hash": "16fe0a0f3c1d16402131d33cd0ceb5c6",
     "semantic_hash": ""
   },
   "client/src/components/Dashboard/RiskCard.jsx": {
-    "mtime": 1783791864.558539,
-    "ast_hash": "091692454e4d625c9b193ba14f16831e",
+    "mtime": 1784062095.9941604,
+    "ast_hash": "16e2740e21a29295e2ba2170dd37f39d",
     "semantic_hash": ""
   },
   "client/src/components/Dashboard/RiskProfiling.jsx": {
-    "mtime": 1784029170.161832,
-    "ast_hash": "da5047e1da9769ad49ea8d50e21ed7dd",
+    "mtime": 1784098003.9158456,
+    "ast_hash": "a230c000ec75e529cccba38291f7c03a",
     "semantic_hash": ""
   },
   "client/src/components/Dashboard/SocioEconomicOverlay.jsx": {
-    "mtime": 1784037672.857862,
-    "ast_hash": "7fcbff7339cf9b536687b34cb689e6e1",
+    "mtime": 1784099746.8247023,
+    "ast_hash": "09ad8f6b55c9dfa3a6a0b0c5b3af1704",
     "semantic_hash": ""
   },
   "client/src/components/Dashboard/TrendForecasts.jsx": {
-    "mtime": 1784037653.9134247,
-    "ast_hash": "d2305f2ac81e09ae1188fb100abf2e4a",
+    "mtime": 1784062660.4537613,
+    "ast_hash": "530f9c6dd9d67001d4e117aa3f6c155e",
     "semantic_hash": ""
   },
   "client/src/components/Dashboard/VoiceSearch.jsx": {
-    "mtime": 1784037474.9276087,
-    "ast_hash": "7d9a170435a27080d413b3a805511ef9",
+    "mtime": 1784099880.8067427,
+    "ast_hash": "392c9cfff18b828af5cdd3b13eff61a8",
     "semantic_hash": ""
   },
   "client/src/components/Dashboard/WantedMissing.jsx": {
-    "mtime": 1784037847.17606,
-    "ast_hash": "cf42bf3cd50aff45385df665e0893bc5",
+    "mtime": 1784099881.9136374,
+    "ast_hash": "a41f389cf28dc6d1302ef20d54ac440b",
     "semantic_hash": ""
   },
   "client/src/components/Layout/Navbar.jsx": {
-    "mtime": 1784037436.8106413,
-    "ast_hash": "238e8d2f33c138a485cd894031419b12",
+    "mtime": 1784058687.103152,
+    "ast_hash": "9dfceb996ad7caddd728716a16e3ce5a",
     "semantic_hash": ""
   },
   "client/src/components/Layout/Sidebar.jsx": {
-    "mtime": 1784029107.202535,
-    "ast_hash": "f8c003902824ed8d0f702e0d40562fb7",
+    "mtime": 1784099764.4438322,
+    "ast_hash": "84b0c96e15967b97162c24c0b3e9df59",
     "semantic_hash": ""
   },
   "client/src/data/constants.js": {
@@ -165,8 +165,8 @@
     "semantic_hash": ""
   },
   "client/src/data/networkData.js": {
-    "mtime": 1783791864.568382,
-    "ast_hash": "dfae6f40422a0a2abff4318a3912c778",
+    "mtime": 1784099805.5042653,
+    "ast_hash": "acf4df0f6b6d9698d2be093f618c861b",
     "semantic_hash": ""
   },
   "client/src/main.jsx": {
@@ -175,13 +175,13 @@
     "semantic_hash": ""
   },
   "client/src/utils/copbotEnhanced.js": {
-    "mtime": 1784028646.6133842,
-    "ast_hash": "9b88f17bf650e9a6f28e4eb123183706",
+    "mtime": 1784099804.653932,
+    "ast_hash": "3e1a46ca4043131dd43a3cafc075202c",
     "semantic_hash": ""
   },
   "client/vite.config.js": {
-    "mtime": 1784028646.61538,
-    "ast_hash": "6931d125bdc4d9b4adbf0ef7c542fade",
+    "mtime": 1784039129.7684622,
+    "ast_hash": "23595d633d29146276b76db94fb880e0",
     "semantic_hash": ""
   },
   "data-generator/generate.py": {
@@ -215,7 +215,7 @@
     "semantic_hash": ""
   },
   "functions/alerts/authMiddleware.js": {
-    "mtime": 1784038613.6935124,
+    "mtime": 1784098938.8529017,
     "ast_hash": "1022c3c81a44c4d0cc3b50785fefc78c",
     "semantic_hash": ""
   },
@@ -260,7 +260,7 @@
     "semantic_hash": ""
   },
   "functions/clustering/authMiddleware.js": {
-    "mtime": 1784038613.6945558,
+    "mtime": 1784098938.8529017,
     "ast_hash": "1022c3c81a44c4d0cc3b50785fefc78c",
     "semantic_hash": ""
   },
@@ -280,7 +280,7 @@
     "semantic_hash": ""
   },
   "functions/crimelist/authMiddleware.js": {
-    "mtime": 1784038613.6945558,
+    "mtime": 1784098938.8529017,
     "ast_hash": "1022c3c81a44c4d0cc3b50785fefc78c",
     "semantic_hash": ""
   },
@@ -300,7 +300,7 @@
     "semantic_hash": ""
   },
   "functions/dashboard/authMiddleware.js": {
-    "mtime": 1784038613.6968968,
+    "mtime": 1784098938.8529017,
     "ast_hash": "1022c3c81a44c4d0cc3b50785fefc78c",
     "semantic_hash": ""
   },
@@ -335,7 +335,7 @@
     "semantic_hash": ""
   },
   "functions/hotspots/authMiddleware.js": {
-    "mtime": 1784038613.6968968,
+    "mtime": 1784098938.8529017,
     "ast_hash": "1022c3c81a44c4d0cc3b50785fefc78c",
     "semantic_hash": ""
   },
@@ -355,7 +355,7 @@
     "semantic_hash": ""
   },
   "functions/network/authMiddleware.js": {
-    "mtime": 1784038613.6968968,
+    "mtime": 1784098938.8529017,
     "ast_hash": "1022c3c81a44c4d0cc3b50785fefc78c",
     "semantic_hash": ""
   },
@@ -375,7 +375,7 @@
     "semantic_hash": ""
   },
   "functions/predictions/authMiddleware.js": {
-    "mtime": 1784038613.6968968,
+    "mtime": 1784098938.8529017,
     "ast_hash": "1022c3c81a44c4d0cc3b50785fefc78c",
     "semantic_hash": ""
   },
@@ -385,8 +385,8 @@
     "semantic_hash": ""
   },
   "functions/predictions/index.js": {
-    "mtime": 1784028646.853212,
-    "ast_hash": "2d7e93e54e2939a18267de1aa0b51931",
+    "mtime": 1784099228.5289042,
+    "ast_hash": "31c8b87b6c50e8d6882edf2ae9ae9458",
     "semantic_hash": ""
   },
   "functions/predictions/package.json": {
@@ -395,7 +395,7 @@
     "semantic_hash": ""
   },
   "functions/risk/authMiddleware.js": {
-    "mtime": 1784038613.6968968,
+    "mtime": 1784098938.8684928,
     "ast_hash": "1022c3c81a44c4d0cc3b50785fefc78c",
     "semantic_hash": ""
   },
@@ -480,8 +480,8 @@
     "semantic_hash": ""
   },
   "package.json": {
-    "mtime": 1784037917.1920743,
-    "ast_hash": "1d08eb0b2656b38588a197abe3023df8",
+    "mtime": 1784097628.6504178,
+    "ast_hash": "eb5189e8a6a49d20d256d980de61531a",
     "semantic_hash": ""
   },
   "skills-lock.json": {
@@ -565,23 +565,13 @@
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1783791864.5151014,
-    "ast_hash": "8a6643a420fdad6bfb583523bc6cef16",
-    "semantic_hash": ""
-  },
-  "DESIGN.md": {
-    "mtime": 1783791864.5161016,
-    "ast_hash": "053340eaf6ae5c8536e9c33f880ccb2c",
-    "semantic_hash": ""
-  },
-  "PHASE1_IMPLEMENTATION.md": {
-    "mtime": 1783793540.878765,
-    "ast_hash": "f806c6640e085284f318e7d8b3c79919",
+    "mtime": 1784059668.6274736,
+    "ast_hash": "1193220c05ada85e1b608a3ce11f64c8",
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1783791864.5171032,
-    "ast_hash": "2b2b61e3b30424aa7fcf3942d7cb9543",
+    "mtime": 1784103737.6057372,
+    "ast_hash": "1bc088a9768a9a1b34610a61a1df1809",
     "semantic_hash": ""
   },
   "catalyst-pipelines.yml": {
@@ -660,8 +650,8 @@
     "semantic_hash": ""
   },
   "client/src/contexts/FilterContext.jsx": {
-    "mtime": 1784037336.202679,
-    "ast_hash": "601bbcf19f555072b5382e1b4a073d06",
+    "mtime": 1784099910.5818603,
+    "ast_hash": "f2440d57297b8d1ba9e10d8b4d9f87de",
     "semantic_hash": ""
   },
   "ml/tests/test_models.py": {
@@ -677,6 +667,131 @@
   "tests/auth.test.js": {
     "mtime": 1784037883.3011782,
     "ast_hash": "5942d2ef92a0b23236f4c356327cb852",
+    "semantic_hash": ""
+  },
+  "client/src/components/Dashboard/__tests__/HotspotMap.test.jsx": {
+    "mtime": 1784039065.5547352,
+    "ast_hash": "dffe494bb2c46ea74a78ed0558c20dd2",
+    "semantic_hash": ""
+  },
+  "client/src/components/Dashboard/__tests__/NetworkGraph.test.jsx": {
+    "mtime": 1784098439.919357,
+    "ast_hash": "b1d36592eec115a740f903bbb3984794",
+    "semantic_hash": ""
+  },
+  "client/src/components/UI/AlertNotification.jsx": {
+    "mtime": 1784059774.4621499,
+    "ast_hash": "d0b94675a0ffcdad3ea47d6c1e791399",
+    "semantic_hash": ""
+  },
+  "client/src/setupTests.js": {
+    "mtime": 1784039127.7503445,
+    "ast_hash": "00e47f7b9836e8f731101981fa2bb2de",
+    "semantic_hash": ""
+  },
+  "tests/hotspots.test.js": {
+    "mtime": 1784062811.3558645,
+    "ast_hash": "da3d3628280e8fb0ce0bc63a63eeeba8",
+    "semantic_hash": ""
+  },
+  "PROBLEM_STATEMENT.md": {
+    "mtime": 1784059748.4738472,
+    "ast_hash": "468a6f3af4c8881b43dd9fd1cc4a8187",
+    "semantic_hash": ""
+  },
+  ".claude/settings.local.json": {
+    "mtime": 1784097529.9943683,
+    "ast_hash": "55361b34bc85e4426388eb6f878259d8",
+    "semantic_hash": ""
+  },
+  "client/src/components/Dashboard/__tests__/BehavioralProfiles.test.jsx": {
+    "mtime": 1784099854.805812,
+    "ast_hash": "e3d9ff5363708d42f1784d31a3cad134",
+    "semantic_hash": ""
+  },
+  "client/src/components/Dashboard/__tests__/CaseOutcomePredictions.test.jsx": {
+    "mtime": 1784062763.5976207,
+    "ast_hash": "5ec5ec1dec3e5c446d195ed33497dbc2",
+    "semantic_hash": ""
+  },
+  "client/src/components/Dashboard/__tests__/CorrelationHeatmap.test.jsx": {
+    "mtime": 1784099853.6853817,
+    "ast_hash": "f5143c9c7eb060e19588816e52775568",
+    "semantic_hash": ""
+  },
+  "client/src/components/Dashboard/__tests__/CrimeTrendsChart.test.jsx": {
+    "mtime": 1784098374.9884956,
+    "ast_hash": "45c26d4768e7cb6f47efbbb04024f679",
+    "semantic_hash": ""
+  },
+  "client/src/components/Dashboard/__tests__/EmergingTrendAlerts.test.jsx": {
+    "mtime": 1784062729.56546,
+    "ast_hash": "1276d92498ee3739ba6c0594e7b8ba1d",
+    "semantic_hash": ""
+  },
+  "client/src/components/Dashboard/__tests__/MetricCard.test.jsx": {
+    "mtime": 1784099851.9541037,
+    "ast_hash": "e0bf0534a70319db480f6888ffc2c975",
+    "semantic_hash": ""
+  },
+  "client/src/components/Dashboard/__tests__/ReportsAnalytics.test.jsx": {
+    "mtime": 1784100060.5875926,
+    "ast_hash": "7cda0a32bfe777b5761630c3686b80ff",
+    "semantic_hash": ""
+  },
+  "client/src/components/Dashboard/__tests__/ResourceDeployment.test.jsx": {
+    "mtime": 1784099854.2054608,
+    "ast_hash": "ae8b409287663b6b493a52db64f1561d",
+    "semantic_hash": ""
+  },
+  "client/src/components/Dashboard/__tests__/RiskProfiling.test.jsx": {
+    "mtime": 1784099853.0885572,
+    "ast_hash": "95f4efe4852c32415df09d847545a51d",
+    "semantic_hash": ""
+  },
+  "client/src/components/Dashboard/__tests__/SocioEconomicOverlay.test.jsx": {
+    "mtime": 1784099852.5335405,
+    "ast_hash": "03842bf07bf4fe33d2b947b12627137b",
+    "semantic_hash": ""
+  },
+  "client/src/components/Dashboard/__tests__/TrendForecasts.test.jsx": {
+    "mtime": 1784062766.3865545,
+    "ast_hash": "e73af7a1d839cc11c245cc2f100fd461",
+    "semantic_hash": ""
+  },
+  "functions/ml-batch-update/index.js": {
+    "mtime": 1784099034.756812,
+    "ast_hash": "93ed87fd9606657e5cabbbd56c026ba7",
+    "semantic_hash": ""
+  },
+  "ml/export_predictions.py": {
+    "mtime": 1784098985.3581998,
+    "ast_hash": "cf6f5d6bfe032eaf3037a320f37d5174",
+    "semantic_hash": ""
+  },
+  "DESIGN_SYSTEM.md": {
+    "mtime": 1784097777.9004421,
+    "ast_hash": "8dbef2734172b0076bf504a2ffbe1fa4",
+    "semantic_hash": ""
+  },
+  "docs/DATASET_Entity_Relationship_Diagram_Database_Design_Document.md": {
+    "mtime": 1784103527.4244287,
+    "ast_hash": "6cb1aa55b9becc167e3745c903460b1e",
+    "semantic_hash": ""
+  },
+  "docs/ML_INTEGRATION.md": {
+    "mtime": 1784099124.7818995,
+    "ast_hash": "12fbd6ff71fd1ec9e2207f7f8216294b",
+    "semantic_hash": ""
+  },
+  "docs/schema.sql": {
+    "mtime": 1784103649.7346282,
+    "ast_hash": "d2aee45820e2252de42396cd57cfab19",
+    "semantic_hash": ""
+  },
+  "docs/DATASET_Catalyst_by_Zoho_Supported_Features_Services.md": {
+    "mtime": 1784103727.9791293,
+    "ast_hash": "6827a7c1ad5441fbffd36ce06784e558",
     "semantic_hash": ""
   }
 }

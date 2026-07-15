@@ -1,16 +1,16 @@
 # Graph Report - Crime-Intelligence-Agent  (2026-07-15)
 
 ## Corpus Check
-- 132 files · ~95,211 words
+- 149 files · ~101,378 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 873 nodes · 1178 edges · 73 communities (63 shown, 10 thin omitted)
-- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 36 edges (avg confidence: 0.53)
+- 929 nodes · 1255 edges · 79 communities (69 shown, 10 thin omitted)
+- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 40 edges (avg confidence: 0.56)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `64529222`
+- Built from commit: `1b86fb63`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -86,18 +86,24 @@
 - [[_COMMUNITY_index.js|index.js]]
 - [[_COMMUNITY_index.js|index.js]]
 - [[_COMMUNITY_CopBot.jsx|CopBot.jsx]]
+- [[_COMMUNITY_RiskProfiling.jsx|RiskProfiling.jsx]]
+- [[_COMMUNITY_ReportsAnalytics.test.jsx|ReportsAnalytics.test.jsx]]
+- [[_COMMUNITY_index.js|index.js]]
+- [[_COMMUNITY_The Proposed Solution Crime Intelligence & Analytical Platform|The Proposed Solution: Crime Intelligence & Analytical Platform]]
+- [[_COMMUNITY_🚨 Crime Intelligence Agent|🚨 Crime Intelligence Agent]]
+- [[_COMMUNITY_✨ Key Features|✨ Key Features]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `useFilters()` - 34 edges
+1. `useFilters()` - 30 edges
 2. `Table Definitions (28 tables)` - 29 edges
 3. `1. Table-by-Table Deep Dive` - 29 edges
-4. `fetchWithFallback()` - 14 edges
-5. `FeaturePipeline` - 13 edges
-6. `HotspotPredictor` - 13 edges
-7. `CatalystQuickML` - 13 edges
-8. `ExplainabilityWrapper` - 12 edges
-9. `AnomalyDetector` - 12 edges
-10. `train_and_save_all()` - 12 edges
+4. `🗂️ Table Definitions` - 27 edges
+5. `fetchWithFallback()` - 14 edges
+6. `HotspotPredictor` - 14 edges
+7. `FeaturePipeline` - 13 edges
+8. `AnomalyDetector` - 13 edges
+9. `CatalystQuickML` - 13 edges
+10. `FilterProvider()` - 12 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `CrimeTrendsChart()` --calls--> `fetchAnomalies()`  [INFERRED]
@@ -108,25 +114,25 @@
   client/src/App.jsx → client/src/contexts/FilterContext.jsx
 - `AppContent()` --calls--> `useFilters()`  [EXTRACTED]
   client/src/App.jsx → client/src/contexts/FilterContext.jsx
-- `AlertCenter()` --calls--> `useFilters()`  [EXTRACTED]
-  client/src/components/Dashboard/AlertCenter.jsx → client/src/contexts/FilterContext.jsx
+- `BehavioralProfiles()` --calls--> `useFilters()`  [EXTRACTED]
+  client/src/components/Dashboard/BehavioralProfiles.jsx → client/src/contexts/FilterContext.jsx
 
 ## Import Cycles
 - None detected.
 
-## Communities (73 total, 10 thin omitted)
+## Communities (79 total, 10 thin omitted)
 
 ### Community 0 - "DataFrame"
-Cohesion: 0.07
-Nodes (30): Karnataka Police — ML Package Init ==================================== Export, AnomalyDetector, CaseOutcomePredictor, DistrictRiskScorer, ExplainabilityWrapper, HotspotPredictor, DataFrame, Series (+22 more)
+Cohesion: 0.06
+Nodes (33): generate_sample_data(), Generate sample training data for demonstration., Train models and export predictions., train_and_export_predictions(), AnomalyDetector, CaseOutcomePredictor, DistrictRiskScorer, ExplainabilityWrapper (+25 more)
 
 ### Community 1 - "__init__.py"
-Cohesion: 0.09
-Nodes (20): BaseEstimator, AccusedFeatureTransformer, CaseFeatureTransformer, CatalystDataLoader, DistrictRiskFeatureTransformer, FeaturePipeline, MOTextFeatureTransformer, DataFrame (+12 more)
+Cohesion: 0.10
+Nodes (21): BaseEstimator, AccusedFeatureTransformer, CaseFeatureTransformer, CatalystDataLoader, DistrictRiskFeatureTransformer, FeaturePipeline, MOTextFeatureTransformer, DataFrame (+13 more)
 
 ### Community 2 - "DESIGN.md"
-Cohesion: 0.05
-Nodes (41): Border Radius Scale, Brand & Accent, Breakpoints, Buttons, Cards & Containers, Collapsing Strategy, Colors, Components (+33 more)
+Cohesion: 0.06
+Nodes (36): Accessibility Guidelines, ARIA Support, Base Unit: 4px, Border Colors, Border Radius, Buttons, Cards, Classification Badges (+28 more)
 
 ### Community 3 - "Table Definitions (28 tables)"
 Cohesion: 0.07
@@ -142,14 +148,14 @@ Nodes (26): For /graphify add and --watch, For /graphify query, For the commit h
 
 ### Community 6 - "Phase 1 Implementation: ML Model Integration - Complete"
 Cohesion: 0.07
-Nodes (26): 1. Backend Predictions API (`/predictions`), 1. Start the Backend, 2. Access Dashboard, 2. Frontend Components, 3. Integration Points, 3. Test Filters, 4. Verify Role-Based Access, A. Enhanced CrimeTrendsChart (+18 more)
+Nodes (27): 10. CrimeHead, 11. CrimeSubHead, 12. CasteMaster, 13. ReligionMaster, 14. OccupationMaster, 15. CaseStatusMaster, 16. Court, 17. District (+19 more)
 
 ### Community 7 - "dependencies"
 Cohesion: 0.06
 Nodes (30): dependencies, cytoscape, cytoscape-fcose, html2pdf.js, leaflet, lucide-react, react-dom, react-leaflet (+22 more)
 
 ### Community 8 - "App.jsx"
-Cohesion: 0.18
+Cohesion: 0.16
 Nodes (19): AlertCenter(), SEVERITY_CONFIG, BehavioralProfiles(), TYPOLOGY_ICONS, CaseOutcomePredictions(), TrendForecasts(), fetchAnomalies(), fetchClusters() (+11 more)
 
 ### Community 9 - "deploy.py"
@@ -157,7 +163,7 @@ Cohesion: 0.14
 Nodes (18): _compute_psi(), DataExtractor, DataFrame, Returns dict of {table_name: DataFrame}., Extract via Catalyst DataStore CoQL (production path)., Pre-computes expensive ML predictions and stores them as JSON cache files., Packages ML artifacts and deploys to Catalyst environment.      Deployment ste, Monitors model health and data drift.      Checks:         1. Prediction dist (+10 more)
 
 ### Community 10 - "networkData.js"
-Cohesion: 0.11
+Cohesion: 0.12
 Nodes (17): CYTO_STYLE, LAYOUT_CONFIG, NetworkGraph(), NODE_TYPE_META, allEdges, allNodes, communities, crimeNodes (+9 more)
 
 ### Community 11 - "CatalystQuickML"
@@ -174,11 +180,11 @@ Nodes (16): catalyst, { requireAuth }, url, catalyst, requireAuth(), resolveEmpl
 
 ### Community 14 - "HotspotMap.jsx"
 Cohesion: 0.13
-Nodes (15): DISTRICTS, getHotspotPulseIcon(), HotspotMap(), stationIcon, TIMELINE_STEPS, MapFilters(), crimeCategoryTrends, crimeCategories (+7 more)
+Nodes (15): react, DISTRICTS, EmergingTrendAlerts(), FACTOR_META, FACTOR_ORDER, SocioEconomicOverlay(), districtSocioEconomic, crimeCategories (+7 more)
 
 ### Community 15 - "Karnataka State Police (KSP) - Crime Intelligence Agent"
-Cohesion: 0.13
-Nodes (14): 💻 Application Layer, 🏗️ Architecture & Workflow, 🔑 Demo Access Credentials, ✨ Key Features, 💻 Local Installation & Setup, Prerequisites, Quick Start, 📸 Sneak Peek (Dashboard & Analytics) (+6 more)
+Cohesion: 0.07
+Nodes (30): 1. ML Models (Python), 1. Set Up Catalyst Cron Job, 2. Create DataStore Tables, 2. Prediction Export Script, 3. Batch Update Cron Job, 3. Test ML Script Locally, 4. Manual Test Run, 4. Predictions API (+22 more)
 
 ### Community 16 - "copbotEnhanced.js"
 Cohesion: 0.29
@@ -237,8 +243,8 @@ Cohesion: 0.29
 Nodes (6): Design principles, Frontend Design, Ground it in the subject, More on writing in design, Process: brainstorm, explore, plan, critique, build, critique again, Restraint and self-critique
 
 ### Community 30 - "Karnataka Police FIR Database Design & Architecture Document"
-Cohesion: 0.29
-Nodes (6): 3.1 Clustered / Primary Key Indices, 3.2 Recommended Secondary & Composite Indices, 3. Database Indexing Strategy, 7. Operational Best Practices & Scaling Recommendations, AI Crime Intelligence Platform (Zoho Catalyst Implementation), Karnataka Police FIR Database Design & Architecture Document
+Cohesion: 0.20
+Nodes (10): 2.1 Administrative & Geographic Roll-Up, 2.2 Core Case Transactions (Star Schema Core), 2.3 Legal & Categorical Classification, 2. Entity-Relationship Mapping & Hierarchy, 3.1 Clustered / Primary Key Indices, 3.2 Recommended Secondary & Composite Indices, 3. Database Indexing Strategy, 7. Operational Best Practices & Scaling Recommendations (+2 more)
 
 ### Community 32 - "sync-middleware.js"
 Cohesion: 0.33
@@ -281,8 +287,8 @@ Cohesion: 0.40
 Nodes (5): 4.1 Daily Station Crime Summary (`DailyUnitCrimeSummary`), 4.2 Offender Co-occurrence Matrix (`OffenderCooccurrence`), 4.3 District Performance Metrics (`DistrictClearanceAggregates`), 4.4 Spatial Heatmap Grid (`SpatialCrimeGrid`), 4. Analytical Acceleration: Derived & Aggregate Tables
 
 ### Community 42 - "Navbar.jsx"
-Cohesion: 0.50
-Nodes (4): 2.1 Administrative & Geographic Roll-Up, 2.2 Core Case Transactions (Star Schema Core), 2.3 Legal & Categorical Classification, 2. Entity-Relationship Mapping & Hierarchy
+Cohesion: 0.18
+Nodes (5): 🛠️ Catalyst Service Mapping, DATASET: Catalyst by Zoho — Supported Features & Services, 🎨 Color Legend, DATASET: Entity Relationship Diagram — Database Design Document, 🔗 Relationship Matrix
 
 ### Community 43 - "index.js"
 Cohesion: 0.33
@@ -321,12 +327,12 @@ Cohesion: 0.40
 Nodes (4): Guidelines Source, How It Works, Usage, Web Interface Guidelines
 
 ### Community 52 - "App.jsx"
-Cohesion: 0.13
-Nodes (15): App(), MetricCard(), RecentCrimesTable(), ReportsAnalytics(), ResourceDeployment(), RiskCard(), DISTRICTS, RISK_COLORS (+7 more)
+Cohesion: 0.17
+Nodes (9): App(), MetricCard(), RecentCrimesTable(), RiskCard(), statusColors, wantedData, WantedMissing(), Sidebar() (+1 more)
 
 ### Community 53 - "useFilters"
-Cohesion: 0.14
-Nodes (15): AppContent(), AppWrapper(), AlertBadge(), CorrelationHeatmap(), CrimeTrendsChart(), Filters(), VoiceSearch(), statusColors (+7 more)
+Cohesion: 0.21
+Nodes (9): AppContent(), AppWrapper(), AlertBadge(), CrimeTrendsChart(), Filters(), mockData, VoiceSearch(), Navbar() (+1 more)
 
 ### Community 54 - "graphify reference: add a URL and watch a folder"
 Cohesion: 0.50
@@ -345,12 +351,12 @@ Cohesion: 0.50
 Nodes (3): Expanding the Oxlint configuration, React Compiler, React + Vite
 
 ### Community 58 - "The Proposed Solution: Crime Intelligence & Analytical Platform"
-Cohesion: 0.18
-Nodes (10): 1. Advanced Visualization, 2. Criminological Network & Link Analysis, 3. Sociological & AI-Driven Predictive Dashboards, 4. Pattern & Trend Discovery, 5. Network & Behavioral Analysis, 6. AI/ML-Driven Intelligence, AI-Driven Crime Analytics & Visualization Platform, Quality Mandate (+2 more)
+Cohesion: 0.21
+Nodes (10): CorrelationHeatmap(), ResourceDeployment(), FilterContext, FilterProvider(), crimeCategoryTrends, districts, getUserDetailsByRole(), rawCrimesLog (+2 more)
 
 ### Community 59 - "SocioEconomicOverlay.jsx"
-Cohesion: 0.29
-Nodes (6): react, EmergingTrendAlerts(), FACTOR_META, FACTOR_ORDER, SocioEconomicOverlay(), districtSocioEconomic
+Cohesion: 0.31
+Nodes (5): getHotspotPulseIcon(), HotspotMap(), stationIcon, TIMELINE_STEPS, MapFilters()
 
 ### Community 60 - "Login.jsx"
 Cohesion: 0.40
@@ -360,25 +366,49 @@ Nodes (4): Login(), usersList, ALERT_TYPES, AlertNotification()
 Cohesion: 0.50
 Nodes (4): CopBot(), crimeData, generateResponse(), suggestions
 
+### Community 73 - "RiskProfiling.jsx"
+Cohesion: 0.40
+Nodes (4): DISTRICTS, RISK_COLORS, RiskProfiling(), mockOffenders
+
+### Community 74 - "ReportsAnalytics.test.jsx"
+Cohesion: 0.50
+Nodes (3): ReportsAnalytics(), mockCrimes, mockOffenders
+
+### Community 75 - "index.js"
+Cohesion: 0.50
+Nodes (3): catalyst, path, { spawn }
+
+### Community 76 - "The Proposed Solution: Crime Intelligence & Analytical Platform"
+Cohesion: 0.18
+Nodes (10): 1. Advanced Visualization, 2. Criminological Network & Link Analysis, 3. Sociological & AI-Driven Predictive Dashboards, 4. Pattern & Trend Discovery, 5. Network & Behavioral Analysis, 6. AI/ML-Driven Intelligence, AI-Driven Crime Analytics & Visualization Platform, Quality Mandate (+2 more)
+
+### Community 77 - "🚨 Crime Intelligence Agent"
+Cohesion: 0.20
+Nodes (10): 🏗️ Architecture & Data Flow, 🚨 Crime Intelligence Agent, 🔑 Demo Access Credentials, 📂 Documentation & Reference Datasets, 💻 Getting Started, Prerequisites, Quick Start (Local Development), 📋 The Challenge: Moving Beyond Manual Records (+2 more)
+
+### Community 78 - "✨ Key Features"
+Cohesion: 0.50
+Nodes (4): 📊 1. Advanced Geospatial Visualization, 🔗 2. Criminological Network & Link Analysis, 🧠 3. Sociological & AI-Driven Predictive Dashboards, ✨ Key Features
+
 ## Knowledge Gaps
-- **408 isolated node(s):** `$schema`, `plugins`, `react/rules-of-hooks`, `react/only-export-components`, `name` (+403 more)
+- **444 isolated node(s):** `$schema`, `plugins`, `react/rules-of-hooks`, `react/only-export-components`, `name` (+439 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **10 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `dependencies` connect `dependencies` to `SocioEconomicOverlay.jsx`?**
+- **Why does `Karnataka Police FIR Database Design & Architecture Document` connect `Karnataka Police FIR Database Design & Architecture Document` to `1. Table-by-Table Deep Dive`, `4. Analytical Acceleration: Derived & Aggregate Tables`, `Navbar.jsx`, `copbotEnhanced.js`, `SocioEconomicOverlay.jsx`?**
+  _High betweenness centrality (0.018) - this node is a cross-community bridge._
+- **Why does `Karnataka State Police - Crime Intelligence Platform Design System` connect `DESIGN.md` to `Navbar.jsx`?**
+  _High betweenness centrality (0.013) - this node is a cross-community bridge._
+- **Why does `dependencies` connect `dependencies` to `HotspotMap.jsx`?**
   _High betweenness centrality (0.011) - this node is a cross-community bridge._
-- **Why does `react` connect `SocioEconomicOverlay.jsx` to `dependencies`?**
-  _High betweenness centrality (0.011) - this node is a cross-community bridge._
-- **Why does `FeaturePipeline` connect `__init__.py` to `DataFrame`, `deploy.py`?**
-  _High betweenness centrality (0.006) - this node is a cross-community bridge._
 - **What connects `$schema`, `plugins`, `react/rules-of-hooks` to the rest of the system?**
-  _450 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _488 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `DataFrame` be split into smaller, more focused modules?**
-  _Cohesion score 0.0673903211216644 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06169772256728778 - nodes in this community are weakly interconnected._
 - **Should `__init__.py` be split into smaller, more focused modules?**
-  _Cohesion score 0.09468599033816426 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.09574468085106383 - nodes in this community are weakly interconnected._
 - **Should `DESIGN.md` be split into smaller, more focused modules?**
-  _Cohesion score 0.047619047619047616 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05555555555555555 - nodes in this community are weakly interconnected._
