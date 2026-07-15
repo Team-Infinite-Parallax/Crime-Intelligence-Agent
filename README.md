@@ -1,122 +1,124 @@
 <div align="center">
   
-  <h1>🚨 Crime Intelligence Agent (CIA) 🚨</h1>
-  <p><strong>Next-Generation Predictive Policing and Real-Time Crime Analytics powered by Zoho Catalyst</strong></p>
+  <h1>🚨 Crime Intelligence Agent</h1>
+  <p><strong>AI-Driven Crime Analytics & Visualization Platform for the Karnataka State Police</strong></p>
   
   <p>
-    <a href="#-the-problem">Problem</a> •
-    <a href="#-the-solution">Solution</a> •
+    <a href="#-the-challenge">Challenge</a> •
+    <a href="#-solution">Solution</a> •
     <a href="#-features">Features</a> •
     <a href="#-tech-stack">Tech Stack</a> •
-    <a href="#-architecture">Architecture</a> •
-    <a href="#-installation">Installation</a>
+    <a href="#-getting-started">Getting Started</a> •
+    <a href="#-demo-access">Demo Access</a>
   </p>
 </div>
 
 ---
 
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg?style=flat-square)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://opensource.org/licenses/MIT)
-[![Zoho Catalyst](https://img.shields.io/badge/Powered_by-Zoho_Catalyst-orange.svg?style=flat-square)]()
-[![React](https://img.shields.io/badge/Frontend-React_18-61DAFB.svg?style=flat-square&logo=react)]()
-[![Node.js](https://img.shields.io/badge/Backend-Node.js_18.x-339933.svg?style=flat-square&logo=node.js)]()
-[![Python ML](https://img.shields.io/badge/ML-Python_3.13-3776AB.svg?style=flat-square&logo=python)]()
+[![React](https://img.shields.io/badge/React-18-61DAFB.svg?style=flat-square&logo=react)]()
+[![Node.js](https://img.shields.io/badge/Node.js-18.x-339933.svg?style=flat-square&logo=node.js)]()
+[![Python](https://img.shields.io/badge/ML-Python_3.13-3776AB.svg?style=flat-square&logo=python)]()
+[![Zoho Catalyst](https://img.shields.io/badge/Zoho-Catalyst-orange.svg?style=flat-square)]()
 
-An AI-powered **Crime Intelligence Agent** designed specifically for the **Karnataka State Police**. The platform leverages the **Zoho Catalyst** serverless ecosystem to process First Information Reports (FIRs) in real-time, generate automated intelligence on crime hotspots, and proactively send alerts to commanding officers. By transforming raw text into predictive intelligence, this tool significantly improves response times and law enforcement strategy.
-
----
-
-## 🚨 The Problem
-
-Law enforcement agencies collect vast amounts of data through FIRs, but traditional methods of analysis are **reactive** and **manual**. 
-- 📉 **Siloed Data:** Hard to detect emerging patterns across different jurisdictions.
-- 🕒 **Delayed Responses:** Manual intelligence reporting takes days, leading to missed opportunities for crime prevention.
-- 📍 **Inefficient Resource Allocation:** Without real-time hotspot tracking, patrol dispatching relies on intuition rather than data.
-
-## 💡 The Solution
-
-**Crime Intelligence Agent (CIA)** shifts the paradigm from reactive policing to **proactive, predictive enforcement**. 
-By utilizing Zoho's robust serverless architecture and QuickML, our platform instantly processes incoming FIRs, identifies geographic anomalies, forecasts future crime volumes, and generates automated, actionable intelligence reports for stakeholders at every level (State, District, and Station).
+A next-generation platform that transforms how law enforcement processes, analyzes, and acts on crime data. Built for the **Karnataka State Police (KSP)**, it replaces siloed manual records with interactive dashboards, geospatial intelligence, network analysis, and ML-driven predictions — enabling proactive, data-informed policing at State, District, and Station levels.
 
 ---
 
-## ✨ Key Features
+## 📋 The Challenge
 
-- ⚡ **Real-Time FIR Processing**: Instant ingestion, parsing, and structuring of textual FIR data using Catalyst Advanced I/O.
-- 🔮 **Predictive Policing (AI/ML)**: Time-series forecasting to predict future crime volumes by district using Catalyst QuickML.
-- 🚨 **Automated Anomaly Detection**: Proactive identification of irregular crime spikes in specific jurisdictions.
-- 🗺️ **Geospatial Hotspot Mapping**: Interactive, animated crime density and hotspot maps (built with React Leaflet) for instant situational awareness.
-- 📄 **Automated Intelligence Reports**: Dynamic PDF reports generated from ML insights using Catalyst SmartBrowz.
-- 🔔 **Instant Escalations & Alerts**: Automated Email/SMS alerts triggered by Event Signals and sent to jurisdictional officers when severe anomalies are detected.
-- 🛡️ **Role-Based Access Control (RBAC)**: Tailored dashboards for State Admins, District Officers, and Investigating Officers.
+The KSP maintains extensive crime records, but the analytical ecosystem is fragmented:
+
+- **Data Silos** — Records trapped in Excel sheets, no cross-jurisdictional visibility
+- **Reactive Policing** — Manual intelligence reporting takes days, delaying intervention
+- **Hidden Patterns** — No AI to surface behavioral links, organized crime networks, or emerging trends
+- **Information Gaps** — SCRB receives limited, fragmented data for state-wide analysis
+
+Details: [`PROBLEM_STATEMENT.md`](./PROBLEM_STATEMENT.md)
+
+## 💡 Solution
+
+**Crime Intelligence Agent** shifts from reactive record-keeping to a **Strategic Intelligence Hub**:
+
+- Interactive dashboards and geospatial maps for real-time situational awareness
+- Criminological network & link analysis to reveal hidden criminal associations
+- Sociological correlation overlays (urbanization, population, socio-economic indicators)
+- ML-driven predictive risk scoring, anomaly detection, and trend forecasting
+- Role-based access control for SCRB Admins, District Officers, and Station Officers
+
+---
+
+## ✨ Features
+
+### 📊 Advanced Visualization
+- **District-Level Drill-down** — Interactive maps for SCRB to visualize crime patterns across districts and police stations
+- **Spatiotemporal Clusters** — Identify hotspots by layering time-of-day with location
+- **Emerging Trend Alerts** — Visual indicators when a crime category spikes vs historical averages
+
+### 🔗 Network & Link Analysis
+- **Relationship Mapping** — Node-based visualization connecting suspects, victims, and locations
+- **Repeat Offender Tracking** — Visual profiles linking individuals to multiple incidents with MO
+- **Association Detection** — Uncover hidden criminal networks invisible in isolated records
+
+### 🧠 AI/ML-Driven Intelligence
+- **Predictive Risk Scoring** — Forecast high-risk areas and emerging crime typologies
+- **Anomaly Detection** — Flag incidents deviating from behavioral patterns
+- **Time-Series Forecasting** — Predict crime volumes by district using QuickML
+- **Socio-Economic Correlation** — Understand the "why" behind the "where"
+
+### 🚨 Automated Operations
+- **Real-Time FIR Processing** — Instant ingestion and structuring of textual FIR data
+- **Automated Intelligence Reports** — Dynamic PDF generation from ML insights
+- **Proactive Alerts** — Email/SMS notifications sent when anomalies are detected
+- **Resource Deployment** — Data-driven patrol dispatch recommendations
 
 ---
 
 ## 🛠️ Tech Stack
 
-### ☁️ Zoho Catalyst Ecosystem (Core Infrastructure)
-- **Catalyst Datastore**: Relational database for FIRs, Districts, Stations, and ML Predictions.
-- **Catalyst Advanced I/O**: Node.js/Express backend powering the REST API.
-- **Catalyst Event Signals**: Asynchronous triggers that fire upon new FIR insertions.
-- **Catalyst Circuits**: Workflow orchestration for the multi-step AI inference pipeline.
-- **Catalyst QuickML**: Machine learning model training and deployment for forecasting.
-- **Catalyst SmartBrowz**: Dynamic PDF Intelligence Report generation.
-- **Catalyst Mail/Cron**: Scheduled and event-driven alert notifications.
+### Cloud Infrastructure (Zoho Catalyst)
+- **Catalyst Datastore** — Relational database for FIRs, Districts, Stations, ML Predictions
+- **Catalyst Advanced I/O** — Node.js/Express REST API backend
+- **Catalyst Event Signals** — Asynchronous triggers on new FIR insertions
+- **Catalyst Circuits** — Workflow orchestration for AI inference pipeline
+- **Catalyst QuickML** — ML model training and deployment for forecasting
+- **Catalyst SmartBrowz** — Dynamic PDF intelligence report generation
 
-### 💻 Application Layer
-- **Frontend**: React.js 18, TailwindCSS, React Leaflet (Maps), Recharts (Data Visualization).
-- **Backend API**: Node.js, Express.js.
-- **Data Science / ML**: Python 3.13, Scikit-Learn, Pandas (for local feature engineering).
+### Application Layer
+- **Frontend**: React 18, TailwindCSS, React Leaflet (maps), Recharts (visualization), Framer Motion
+- **Backend API**: Node.js, Express.js
+- **Data Science / ML**: Python 3.13, Scikit-Learn, Pandas, XGBoost, Imbalanced-learn
 
----
-
-## 🏗️ Architecture & Workflow
-
-The system follows a highly scalable, serverless microservices architecture:
-
-1. **FIR Ingestion**: An officer submits an FIR via the React Dashboard. The REST API saves it to the Catalyst Datastore.
-2. **Event Trigger**: A Catalyst Event Signal is fired upon database insertion.
-3. **Orchestration**: Catalyst Circuits manage the intelligence pipeline.
-4. **AI Inference**: The FIR data is processed. Catalyst QuickML evaluates historical context and determines if an anomaly exists.
-5. **Action**: 
-   - If an anomaly is detected, Catalyst Mail sends an instant alert to the District Officer.
-   - Hotspot Maps on the dashboard are updated via WebSocket/Polling.
-   - SmartBrowz generates a new Intelligence PDF.
+### Design System
+A comprehensive [design system](./DESIGN_SYSTEM.md) with WCAG 2.1 AAA compliance — navy/gold palette optimized for command-center dark-mode environments, semantic alert colors, and police-specific typography.
 
 ---
 
-## 📸 Sneak Peek (Dashboard & Analytics)
+## 🏗️ Architecture
 
-<div align="center">
-  <table width="100%">
-    <tr>
-      <td width="50%" align="center"><b>Dashboard Overview & Metrics</b></td>
-      <td width="50%" align="center"><b>Geospatial Crime Hotspots</b></td>
-    </tr>
-    <tr>
-      <td><img src="https://via.placeholder.com/600x350/1e293b/ffffff?text=Interactive+Dashboard+UI" alt="Dashboard Overview"></td>
-      <td><img src="https://via.placeholder.com/600x350/1e293b/ffffff?text=Geospatial+Heatmap" alt="Hotspot Map"></td>
-    </tr>
-    <tr>
-      <td width="50%" align="center"><b>Predictive Trend Analysis</b></td>
-      <td width="50%" align="center"><b>Automated PDF Reporting (SmartBrowz)</b></td>
-    </tr>
-    <tr>
-      <td><img src="https://via.placeholder.com/600x350/1e293b/ffffff?text=AI+Crime+Forecasting" alt="AI Trends"></td>
-      <td><img src="https://via.placeholder.com/600x350/1e293b/ffffff?text=Intelligence+Report" alt="PDF Report"></td>
-    </tr>
-  </table>
-</div>
+The system follows a serverless microservices architecture:
+
+1. **FIR Ingestion** — Officer submits FIR via the React dashboard; REST API stores it in Catalyst Datastore
+2. **Event Trigger** — Catalyst Event Signal fires on database insertion
+3. **Orchestration** — Circuits manage the multi-step intelligence pipeline
+4. **AI Inference** — QuickML evaluates historical context and determines anomalies
+5. **Action** — Alerts dispatched via Catalyst Mail, hotspots update on dashboards, intelligence PDFs generated
+
+Additional documentation:
+- [Database Design](./docs/database_design_document.md)
+- [ML Integration](./docs/ML_INTEGRATION.md)
+- [Design Patterns](./docs/patterns.md)
+- [Graph Knowledge Base](./graphify-out/GRAPH_REPORT.md)
 
 ---
 
-## 💻 Local Installation & Setup
+## 💻 Getting Started
 
 ### Prerequisites
 - [Node.js](https://nodejs.org/) (v18+)
 - [Python](https://www.python.org/) (3.13+)
 - [Zoho Catalyst CLI](https://catalyst.zoho.com/help/cli.html) (`npm install -g zcatalyst-cli`)
-- A Zoho Catalyst Account
+- A Zoho Catalyst account
 
 ### Quick Start
 
@@ -139,38 +141,25 @@ npm install
 npm run dev
 ```
 
-**4. Setup Python ML Environment (Optional, for synthetic data & tuning)**
+**4. Setup Python ML Environment (optional)**
 ```bash
-cd ../
+cd ..
 python -m venv .venv
-# Activate virtual env:
 # Windows: .venv\Scripts\activate
 # Mac/Linux: source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
----
-
-## ☁️ Zoho Catalyst Deployment
-
-Deploying the application to production is fully automated via the CLI:
-
+### Zoho Catalyst Deployment
 ```bash
-# 1. Login to your Catalyst account
 catalyst login
-
-# 2. Initialize the project context
 catalyst init
-
-# 3. Deploy Client, Functions, and Schema
 catalyst deploy
 ```
 
 ---
 
-## 🔑 Demo Access Credentials
-
-The portal features comprehensive role-based access control. Test the system using these pre-configured accounts:
+## 🔑 Demo Access
 
 | Role | Officer Name | Login ID | Passcode | Access Level |
 | :--- | :--- | :--- | :--- | :--- |
@@ -180,15 +169,51 @@ The portal features comprehensive role-based access control. Test the system usi
 
 ---
 
-## 🚀 What's Next? (Roadmap)
+## 🗺️ Project Structure
 
-- **CCTV Integration**: Real-time facial recognition and vehicle plate tracking linked directly to the intelligence pipeline.
-- **NLP on FIR Narratives**: Extracting MO (Modus Operandi) and suspect descriptions automatically using LLMs.
-- **Social Media Sentiment**: Monitoring public sentiment as a leading indicator for potential riots or unrest.
+```
+├── client/                  # React frontend
+│   ├── src/
+│   │   ├── components/      # Dashboard widgets, Layouts
+│   │   ├── contexts/        # Filter state management
+│   │   ├── data/            # Static data & network graph data
+│   │   └── utils/           # Helpers & CoP bot integration
+├── functions/               # Zoho Catalyst serverless functions
+│   ├── api_service/         # REST API (Node.js/Express)
+│   ├── predictions/         # ML prediction handler
+│   └── ml-batch-update/     # Batch ML update function
+├── ml/                      # Python ML scripts
+│   ├── models.py            # Model definitions
+│   ├── feature_engineering.py
+│   ├── quickml_integration.py
+│   └── tests/               # ML test suite
+├── docs/                    # Documentation
+├── scripts/                 # Utility scripts
+├── tests/                   # Integration/E2E tests
+├── data-generator/          # Synthetic data generation
+├── DESIGN_SYSTEM.md         # Design system & visual spec
+├── PROBLEM_STATEMENT.md     # Problem & scope definition
+└── graphify-out/            # Knowledge graph (architecture)
+```
+
+---
+
+## 🚀 Roadmap
+
+- **CCTV Integration** — Real-time facial recognition and vehicle plate tracking
+- **NLP on FIR Narratives** — Automated MO extraction and suspect description parsing using LLMs
+- **Social Media Sentiment** — Public sentiment monitoring as a leading indicator for unrest
+- **Graph Knowledge Base** — Persistent queryable knowledge graph of the codebase via [graphify](https://github.com/anomalyco/graphify)
+
+---
+
+## Quality Mandate
+
+This project targets **100/100** across Code Quality, Security, Efficiency, Testing, Accessibility, and Problem Statement Alignment. See [`PROBLEM_STATEMENT.md`](./PROBLEM_STATEMENT.md#quality-mandate) for details.
 
 ---
 
 <div align="center">
-  <b>Built with ❤️ for the Hackathon</b><br>
+  <b>Built for the Karnataka State Police</b><br>
   <i>Empowering Law Enforcement with Data-Driven Intelligence</i>
 </div>
