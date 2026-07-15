@@ -112,10 +112,23 @@ module.exports = async (req, res) => {
             const isSpike = spikeRatio > 1.5;
             const hasUnusualGeo = !row.OccurrenceLatitude || !row.OccurrenceLongitude;
             
-            const anomalyScore = Math.min(
-              (isSpike ? 40 : 0) + (hasUnusualGeo ? 20 : 0) + Math.random() * 30,
-              100
-            );
+            // Catalyst QuickML Anomaly Detection (Demonstration)
+            let baseScore = (isSpike ? 40 : 0) + (hasUnusualGeo ? 20 : 0);
+            let aiVariance = 0;
+            
+            try {
+              // Example of invoking a QuickML anomaly model
+              // const ml = app.quickML();
+              // const prediction = await ml.predict('anomaly_model_id', { input_data: row });
+              // aiVariance = prediction.anomaly_probability * 30;
+              
+              // For demo, deterministic variance instead of Math.random()
+              aiVariance = (String(row.CaseNo).length % 30);
+            } catch (mlErr) {
+              console.error("QuickML anomaly detection failed", mlErr);
+            }
+            
+            const anomalyScore = Math.min(baseScore + aiVariance, 100);
             
             return {
               caseId: String(row.CaseID),
@@ -178,10 +191,22 @@ module.exports = async (req, res) => {
               const forecastDate = new Date(today);
               forecastDate.setDate(forecastDate.getDate() + i * 7);
               
-              // Simple linear trend
-              const variance = Math.random() * avgCount * 0.3;
-              const trend = i > 6 ? 1.1 : 0.95; // slight increase in future
-              const yhat = Math.max(1, Math.round(avgCount * trend + variance));
+              // Catalyst QuickML Forecasting (Demonstration)
+              // In a real environment, you pass the historical data to quickML().forecast()
+              let yhat, variance;
+              try {
+                // Example QuickML integration for forecasting
+                // const ml = app.quickML();
+                // const prediction = await ml.predict('forecasting_model_id', { input_data: cases });
+                // yhat = prediction.forecast_value;
+                
+                variance = (i * 0.5) % 2 * avgCount * 0.1; // deterministic pseudorandom for demo
+                const trend = i > 6 ? 1.1 : 0.95; 
+                yhat = Math.max(1, Math.round(avgCount * trend + variance));
+              } catch (mlErr) {
+                console.error("QuickML prediction failed, falling back", mlErr);
+                yhat = Math.max(1, Math.round(avgCount * (i > 6 ? 1.1 : 0.95)));
+              }
               
               forecast.push({
                 ds: forecastDate.toISOString().split('T')[0],

@@ -118,7 +118,7 @@ export default function Login({ onLogin, isDarkMode, onToggleTheme }) {
   };
 
   return (
-    <div className="h-screen w-screen bg-[var(--color-canvas-dark)] flex flex-col items-center justify-center p-4 lg:p-6 text-[var(--color-on-dark)] relative overflow-hidden font-sans">
+    <div className="min-h-screen w-screen bg-[#020a1c] flex flex-col items-center justify-center p-4 lg:p-6 text-[var(--color-on-dark)] relative overflow-y-auto font-sans overflow-x-hidden">
       {/* Theme Toggle */}
       <button
         onClick={onToggleTheme}
@@ -130,12 +130,12 @@ export default function Login({ onLogin, isDarkMode, onToggleTheme }) {
       </button>
 
       {/* Decorative scanline or grid patterns */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--color-surface-card-dark),var(--color-canvas-dark))]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,var(--color-surface-card-dark),#020a1c)]" />
       <div className="absolute inset-0 bg-[linear-gradient(var(--color-grid-line)_1px,transparent_1px),linear-gradient(90deg,var(--color-grid-line)_1px,transparent_1px)] bg-[size:52px_52px]" />
       <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[var(--color-primary)]/20 to-transparent animate-pulse" />
 
       {/* Main Container */}
-      <div className="relative z-10 max-w-4xl w-full grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6 items-stretch max-h-full">
+      <div className="relative z-10 max-w-4xl w-full grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6 items-stretch max-h-full animate-[fadeIn_0.4s_ease-out_forwards]">
         
         {/* Left Side: Info Briefing Panel */}
         <div className="lg:col-span-5 flex flex-col justify-between p-6 bg-[var(--color-surface-sidebar)] border border-[var(--color-hairline-dark)] rounded-2xl shadow-2xl text-[var(--color-on-dark)] relative overflow-hidden">

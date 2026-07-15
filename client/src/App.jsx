@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import Sidebar from './components/Layout/Sidebar';
 import Navbar from './components/Layout/Navbar';
 import Login from './components/Auth/Login';
+import IntroAnimation from './components/Auth/IntroAnimation';
 import { FilterProvider, useFilters } from './contexts/FilterContext';
 import MetricCard from './components/Dashboard/MetricCard';
 import Filters from './components/Dashboard/Filters';
@@ -56,6 +57,7 @@ const emblemSvg = (
 
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [showIntro, setShowIntro] = useState(false);
   const [activeTab, setActiveTab] = useState('dashboard');
   const [mockRole, setMockRole] = useState('SCRB_ADMIN');
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -68,20 +70,29 @@ export default function App() {
     }
   }, [isDarkMode]);
 
-  if (!isLoggedIn) {
-    return <Login onLogin={(role) => {
-      setMockRole(role);
-      setIsLoggedIn(true);
-    }} isDarkMode={isDarkMode} onToggleTheme={() => setIsDarkMode(prev => !prev)} />;
-  }
-
   const handleLogout = () => {
     setIsLoggedIn(false);
+    setShowIntro(false);
   };
 
   return (
-    <FilterProvider isLoggedIn={isLoggedIn} onLogout={handleLogout} isDarkMode={isDarkMode} toggleDarkMode={() => setIsDarkMode(prev => !prev)}>
-      <AppWrapper activeTab={activeTab} setActiveTab={setActiveTab} mockRole={mockRole} />
+    <FilterProvider isLoggedIn={isLoggedIn || showIntro} onLogout={handleLogout} isDarkMode={isDarkMode} toggleDarkMode={() => setIsDarkMode(prev => !prev)}>
+      {(!isLoggedIn && !showIntro) ? (
+        <Login onLogin={(role) => {
+          setMockRole(role);
+          setShowIntro(true);
+        }} isDarkMode={isDarkMode} onToggleTheme={() => setIsDarkMode(prev => !prev)} />
+      ) : (
+        <>
+          <AppWrapper activeTab={activeTab} setActiveTab={setActiveTab} mockRole={mockRole} />
+          {showIntro && (
+            <IntroAnimation onComplete={() => {
+              setShowIntro(false);
+              setIsLoggedIn(true);
+            }} />
+          )}
+        </>
+      )}
     </FilterProvider>
   );
 }

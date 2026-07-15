@@ -34,12 +34,12 @@ export default function Filters() {
           <span className="text-[12px] font-bold uppercase tracking-[0.12em]">Filters</span>
         </div>
 
-        <div className="relative">
+        <div className="relative w-full sm:w-auto">
           <select
             value={filters.districtId}
             disabled={activeRole !== 'SCRB_ADMIN'}
             onChange={(e) => setFilters({ ...filters, districtId: e.target.value, unitId: 'all' })}
-            className={`bg-[var(--color-surface-elevated-dark)] border-none text-[var(--color-on-dark)] text-[14px] font-medium rounded-sm px-3 py-2 focus:outline-none cursor-pointer h-[40px] ${activeRole !== 'SCRB_ADMIN' ? 'opacity-60 cursor-not-allowed' : ''
+            className={`w-full sm:w-auto bg-[var(--color-surface-elevated-dark)] border-none text-[var(--color-on-dark)] text-[14px] font-medium rounded-sm px-3 py-2 focus:outline-none cursor-pointer h-[40px] ${activeRole !== 'SCRB_ADMIN' ? 'opacity-60 cursor-not-allowed' : ''
               }`}
           >
             <option value="all">All Districts</option>
@@ -49,12 +49,12 @@ export default function Filters() {
           </select>
         </div>
 
-        <div className="relative">
+        <div className="relative w-full sm:w-auto">
           <select
             value={filters.unitId}
             disabled={activeRole === 'INVESTIGATION_OFFICER'}
             onChange={(e) => setFilters({ ...filters, unitId: e.target.value })}
-            className={`bg-[var(--color-surface-elevated-dark)] border-none text-[var(--color-on-dark)] text-[14px] font-medium rounded-sm px-3 py-2 focus:outline-none cursor-pointer h-[40px] ${activeRole === 'INVESTIGATION_OFFICER' ? 'opacity-60 cursor-not-allowed' : ''
+            className={`w-full sm:w-auto bg-[var(--color-surface-elevated-dark)] border-none text-[var(--color-on-dark)] text-[14px] font-medium rounded-sm px-3 py-2 focus:outline-none cursor-pointer h-[40px] ${activeRole === 'INVESTIGATION_OFFICER' ? 'opacity-60 cursor-not-allowed' : ''
               }`}
           >
             <option value="all">All Stations</option>
@@ -67,11 +67,11 @@ export default function Filters() {
           </select>
         </div>
 
-        <div className="relative">
+        <div className="relative w-full sm:w-auto">
           <select
             value={filters.dateRange}
             onChange={(e) => setFilters({ ...filters, dateRange: e.target.value })}
-            className="bg-[var(--color-surface-elevated-dark)] border-none text-[var(--color-on-dark)] text-[14px] font-medium rounded-sm px-3 py-2 focus:outline-none cursor-pointer h-[40px]"
+            className="w-full sm:w-auto bg-[var(--color-surface-elevated-dark)] border-none text-[var(--color-on-dark)] text-[14px] font-medium rounded-sm px-3 py-2 focus:outline-none cursor-pointer h-[40px]"
           >
             {dateRanges.map(d => (
               <option key={d.id} value={d.id}>{d.label}</option>
@@ -79,11 +79,11 @@ export default function Filters() {
           </select>
         </div>
 
-        <div className="relative">
+        <div className="relative w-full sm:w-auto">
           <select
             value={filters.gravity}
             onChange={(e) => setFilters({ ...filters, gravity: e.target.value })}
-            className="bg-[var(--color-surface-elevated-dark)] border-none text-[var(--color-on-dark)] text-[14px] font-medium rounded-sm px-3 py-2 focus:outline-none cursor-pointer h-[40px]"
+            className="w-full sm:w-auto bg-[var(--color-surface-elevated-dark)] border-none text-[var(--color-on-dark)] text-[14px] font-medium rounded-sm px-3 py-2 focus:outline-none cursor-pointer h-[40px]"
           >
             {gravities.map(g => (
               <option key={g.id} value={g.id}>{g.label}</option>

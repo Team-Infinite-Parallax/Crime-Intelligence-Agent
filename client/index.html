@@ -14,7 +14,15 @@
 </head>
 
 <body>
-  <div id="root"></div>
+  <div id="root">
+    <div style="position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; flex-direction: column; background-color: #0a0f1f; overflow: hidden; z-index: 9999;">
+      <div style="width: 48px; height: 48px; border: 3px solid rgba(37, 99, 235, 0.2); border-top-color: #3b82f6; border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 24px;"></div>
+      <style>
+        @keyframes spin { to { transform: rotate(360deg); } }
+      </style>
+      <div style="font-family: 'Inter', system-ui, sans-serif; font-size: 12px; letter-spacing: 0.2em; color: #a9aeb1; text-transform: uppercase;">Initializing Secure Portal...</div>
+    </div>
+  </div>
   <script type="module" src="/src/main.jsx"></script>
 </body>
 

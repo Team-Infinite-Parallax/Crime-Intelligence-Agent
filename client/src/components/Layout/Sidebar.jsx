@@ -82,13 +82,21 @@ export default function Sidebar({ activeTab, setActiveTab, onLogout, isMobileOpe
               >
                 <ChevronRight className="h-4 w-4" />
               </button>
-              <div className="bg-[var(--color-surface-elevated-dark)] p-2 rounded-lg border border-[var(--color-hairline-dark)]">
+              <div 
+                className="bg-[var(--color-surface-elevated-dark)] p-2 rounded-lg border border-[var(--color-hairline-dark)] cursor-pointer hover:bg-[var(--color-surface-hover)] transition-colors"
+                onClick={() => handleNavClick('dashboard')}
+                title="Go to Dashboard"
+              >
                 {emblemSvg}
               </div>
             </div>
           ) : (
             <>
-              <div className="flex items-center space-x-3 min-w-0">
+              <div 
+                className="flex items-center space-x-3 min-w-0 cursor-pointer hover:opacity-80 transition-opacity"
+                onClick={() => handleNavClick('dashboard')}
+                title="Go to Dashboard"
+              >
                 <div className="bg-[var(--color-surface-elevated-dark)] p-2 rounded-lg border border-[var(--color-hairline-dark)] shrink-0">
                   {emblemSvg}
                 </div>
@@ -170,8 +178,7 @@ export default function Sidebar({ activeTab, setActiveTab, onLogout, isMobileOpe
 
   return (
     <>
-      {/* Desktop sidebar — persistent, collapse/expand (md+) */}
-      <div className={`hidden md:block flex-shrink-0 transition-all duration-300 ease-in-out ${isCollapsed ? 'w-20' : 'w-64'}`}>
+      <div className={`hidden md:block flex-shrink-0 transition-all duration-300 ease-in-out relative z-10 ${isCollapsed ? 'w-20' : 'w-64'}`}>
         {sidebarInner(isCollapsed)}
       </div>
 

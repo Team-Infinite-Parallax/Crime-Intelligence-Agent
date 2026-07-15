@@ -153,11 +153,18 @@ async function insertWithRetry(table, batch, tableName, batchNum, totalBatches) 
 
 (async () => {
   try {
-    const config = {};
-    if (process.env.CATALYST_PROJECT_ID) {
-      config.project_id = process.env.CATALYST_PROJECT_ID;
-      config.project_key = process.env.CATALYST_PROJECT_KEY;
-      config.environment = process.env.CATALYST_ENVIRONMENT;
+    let config;
+    if (process.env.CATALYST_TOKEN) {
+      config = {
+        project_id: process.env.CATALYST_PROJECT_ID,
+        token: process.env.CATALYST_TOKEN
+      };
+    } else if (process.env.CATALYST_PROJECT_ID) {
+      config = {
+        project_id: process.env.CATALYST_PROJECT_ID,
+        project_key: process.env.CATALYST_PROJECT_KEY,
+        environment: process.env.CATALYST_ENVIRONMENT
+      };
     }
     const app = catalyst.initializeApp(config);
     const datastore = app.datastore();

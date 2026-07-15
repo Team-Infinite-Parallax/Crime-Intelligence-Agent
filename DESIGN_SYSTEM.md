@@ -51,7 +51,7 @@ This design system defines the visual language and interaction patterns for the 
 
 ```
 --color-canvas-dark: #0f172a      /* Page background */
---color-surface-card: #1e293b     /* Card backgrounds */
+--color-surface-card: #11223f     /* Card backgrounds */
 --color-surface-elevated: #334155 /* Elevated panels, modals */
 --color-surface-hover: #475569    /* Hover states */
 ```

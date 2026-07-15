@@ -186,7 +186,6 @@ export default function ReportsAnalytics({ crimes, offenders: _offenders, active
 
   return (
     <div className="relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/8 via-transparent to-transparent pointer-events-none" />
       <div className="relative z-10 space-y-4 sm:space-y-6">
       <div className="bg-[var(--color-surface-card-dark)] border border-[var(--color-primary)]/15 rounded-sm p-5">
         <div className="flex items-center justify-between">
