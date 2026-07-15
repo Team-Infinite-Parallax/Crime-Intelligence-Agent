@@ -266,7 +266,7 @@ catalyst deploy
 
 | Role | Officer Name | Login ID | Passcode | Access Level |
 | :--- | :--- | :--- | :--- | :--- |
-| 🛡️ **SCRB Admin (HQ)** | Prashant Kumar | `KSP-SCRB-100` | `100` | State-wide analytics, ML config, System overview |
+| 🛡️ **SCRB Admin (HQ)** | Prashant Kumar | `KSP-SCRB-100` | `Ansh@123` | State-wide analytics, ML config, System overview |
 | 📍 **District Officer** | Praveen Verma | `KSP-DIST-009` | `009` | District-level hotspots, Anomaly alerts, Resource planning |
 | 🚓 **Station Officer** | Mohammed Puttaiah | `KSP-UNIT-001` | `001` | Station-level FIR logging, Local case management |
 
